@@ -245,8 +245,11 @@
     footer a:hover { color: var(--white); }
 
     /* ANIMATIONS */
-    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .fade-in.visible { opacity: 1; transform: none; }
+    .fade-in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+      .fade-in.visible { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body>
@@ -507,12 +510,13 @@
           in den b&#252;rokratischen ersten Wochen. Kein Aufwand f&#252;r Sie, echter Mehrwert f&#252;r Ihre Kunden.
         </div>
       </div>
-      <a href="mailto:info@nachklang.app?subject=Bestatter-Kooperation" class="bestatter-cta">
+      <a href="/cdn-cgi/l/email-protection#026b6c646d426c63616a696e636c652c6372723d717760686761763f4067717663767667702f496d6d72677063766b6d6c" class="bestatter-cta">
         Kooperation anfragen &#8594;
       </a>
     </div>
   </div>
 </section>
+
 
 
 <!-- FOOTER -->
@@ -523,4 +527,32 @@
   <p>NACHKLANG &#183; Behutsam begleitet &#183; Kommt 2026 f&#252;r iOS &#183; Android folgt</p>
   <p style="margin-top: 8px;">
     Fragen? Schreiben Sie uns:
-    <a href="/cdn-cgi/l/email-protection#dab3b4bcb59ab4bbb9b2b1b6bbb4bdf4bbaaaa"><span class="__cf_email__" data-cfemail="f59c9b939ab59b94969d9e99949b92db948585">[email&#160;protected
+    <a href="mailto:info@nachklang.app">info@nachklang.app</a>
+  </p>
+  <p style="margin-top: 14px; font-size: 0.72rem; opacity: 0.45;">
+    &#169; 2026 Benjamin Borowski &#183; nachklang.app &#183; Alle Rechte vorbehalten
+  </p>
+</footer>
+
+
+<script>
+  // Fallback: make everything visible immediately, then enhance with animation
+  document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+
+  // Progressive enhancement: animate elements as they scroll into view
+  if ('IntersectionObserver' in window) {
+    document.querySelectorAll('.fade-in').forEach(el => el.classList.remove('visible'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  }
+</script>
+
+</body>
+</html>
