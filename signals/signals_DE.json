@@ -1,0 +1,184 @@
+{
+  "version": "1.0",
+  "country": "DE",
+  "signals": [
+    {
+      "id": "de_grundsteuer",
+      "label": "Grundsteuer",
+      "keywords": ["GRUNDSTEUER", "GRST", "GRUNDST"],
+      "category": "immobilie",
+      "hints": ["immobilie", "makler"],
+      "actions": [
+        {
+          "type": "check_asset",
+          "asset": "immobilie",
+          "description": "Immobilie im Nachlass prüfen"
+        },
+        {
+          "type": "notify",
+          "description": "Makler oder Hausverwalter informieren"
+        }
+      ],
+      "notes": "Grundsteuer deutet auf Grundbesitz hin. Immobilie im Nachlass erfassen und ggf. Makler einschalten."
+    },
+    {
+      "id": "de_kfz_steuer",
+      "label": "KFZ-Steuer",
+      "keywords": ["KFZ-STEUER", "KRAFTFAHRZEUGSTEUER", "KFZ STEUER", "KFZST"],
+      "category": "fahrzeug",
+      "hints": ["auto", "fahrzeug", "kfz"],
+      "actions": [
+        {
+          "type": "check_asset",
+          "asset": "fahrzeug",
+          "description": "Fahrzeug im Nachlass prüfen"
+        },
+        {
+          "type": "notify",
+          "description": "Zulassungsstelle über Todesfall informieren, KFZ ummelden oder abmelden"
+        }
+      ],
+      "notes": "KFZ-Steuer weist auf ein zugelassenes Fahrzeug hin. Fahrzeugpapiere sichten und Zulassungsstelle informieren."
+    },
+    {
+      "id": "de_rundfunkbeitrag",
+      "label": "GEZ / Rundfunkbeitrag",
+      "keywords": ["GEZ", "RUNDFUNKBEITRAG", "ARD ZDF", "BEITRAGSSERVICE", "ARD-ZDF-DEUTSCHLANDRADIO"],
+      "category": "wohnung",
+      "hints": ["wohnung", "mietvertrag", "haushalt"],
+      "termination": {
+        "possible": true,
+        "reason": "Tod des Beitragspflichtigen",
+        "special_right": false,
+        "basis": "Rundfunkbeitragsstaatsvertrag §4 Abs. 2",
+        "deadline_days": null,
+        "note": "Abmeldung rückwirkend zum Todestag möglich. Formular online unter beitragsservice.de."
+      },
+      "actions": [
+        {
+          "type": "generate_letter",
+          "template": "rundfunkbeitrag_abmeldung_DE"
+        }
+      ],
+      "notes": "Rundfunkbeitrag endet mit dem Tod des Beitragspflichtigen. Abmeldung beim Beitragsservice einreichen."
+    },
+    {
+      "id": "de_hausverwaltung_weg",
+      "label": "Hausverwaltung / WEG",
+      "keywords": ["HAUSVERWALTUNG", "WEG", "WOHNUNGSEIGENTÜMERGEMEINSCHAFT", "HAUSGELD", "WOHNGELD EIGENTÜMER"],
+      "category": "immobilie",
+      "hints": ["eigentumswohnung", "wohnungseigentum"],
+      "actions": [
+        {
+          "type": "check_asset",
+          "asset": "eigentumswohnung",
+          "description": "Eigentumswohnung im Nachlass erfassen"
+        },
+        {
+          "type": "notify",
+          "description": "Hausverwaltung über Todesfall informieren und Erbnachweis vorlegen"
+        }
+      ],
+      "notes": "Regelmäßige Zahlungen an Hausverwaltung oder WEG deuten auf Eigentumswohnung hin. Erbschein oder Erbnachweis für die Hausverwaltung beschaffen."
+    },
+    {
+      "id": "de_genossenschaft",
+      "label": "Genossenschaft",
+      "keywords": ["GENOSSENSCHAFT", "GENOSSENSCHAFTSANTEILE", "GESCHÄFTSGUTHABEN", "WOHNUNGSGENOSSENSCHAFT"],
+      "category": "genossenschaft",
+      "hints": ["genossenschaftsanteile", "auszahlung"],
+      "actions": [
+        {
+          "type": "check_asset",
+          "asset": "genossenschaftsanteile",
+          "description": "Genossenschaftsanteile im Nachlass prüfen"
+        },
+        {
+          "type": "notify",
+          "description": "Genossenschaft kontaktieren und Auszahlung des Geschäftsguthabens beantragen"
+        }
+      ],
+      "notes": "Genossenschaftsanteile sind vererblich. Das Geschäftsguthaben wird den Erben ausgezahlt. Satzung der Genossenschaft beachten."
+    },
+    {
+      "id": "de_pflegeheim",
+      "label": "Pflegeheim",
+      "keywords": ["PFLEGEHEIM", "PFLEGEEINRICHTUNG", "SENIORENHEIM", "ALTENHEIM", "SENIORENRESIDENZ", "PFLEGEWOHNEN"],
+      "category": "pflege",
+      "hints": ["heimvertrag", "pflegevertrag"],
+      "termination": {
+        "possible": true,
+        "reason": "Tod des Bewohners",
+        "special_right": true,
+        "basis": "§ 16 WBVG (Wohn- und Betreuungsvertragsgesetz)",
+        "deadline_days": 14,
+        "note": "Heimvertrag endet automatisch mit dem Tod. Kündigung innerhalb von 14 Tagen empfohlen. Restguthaben und persönliche Gegenstände einfordern."
+      },
+      "actions": [
+        {
+          "type": "generate_letter",
+          "template": "heimvertrag_kuendigung_DE"
+        }
+      ],
+      "notes": "Heimvertrag endet gemäß WBVG mit dem Tod des Bewohners. Abrechnung des Heimkontos und Abholung persönlicher Gegenstände koordinieren."
+    },
+    {
+      "id": "de_rentenversicherung_eingehend",
+      "label": "Rentenversicherung (eingehend)",
+      "keywords": ["DEUTSCHE RENTENVERSICHERUNG", "DRV", "RENTENZAHLUNG", "ALTERSRENTE", "ERWERBSMINDERUNGSRENTE"],
+      "category": "rente",
+      "hints": ["rente", "rueckzahlung"],
+      "direction": "incoming",
+      "actions": [
+        {
+          "type": "notify",
+          "description": "Deutsche Rentenversicherung umgehend über Todesfall informieren"
+        },
+        {
+          "type": "deadline",
+          "description": "Zu Unrecht erhaltene Rentenzahlungen nach Todestag unverzüglich zurücküberweisen",
+          "urgency": "high"
+        }
+      ],
+      "notes": "Rentenzahlungen, die nach dem Todestag eingehen, müssen zurückgezahlt werden. Die Rentenversicherung muss sofort informiert werden, um Rückforderungen zu vermeiden. Frist: unverzüglich."
+    },
+    {
+      "id": "de_riester_ruerup",
+      "label": "Riester / Rürup",
+      "keywords": ["RIESTER", "RÜRUP", "BASISRENTE", "ZULAGENANTRAG", "ALTERSVORSORGEZULAGE", "ZFA"],
+      "category": "altersvorsorge",
+      "hints": ["riester", "ruerup", "erben"],
+      "actions": [
+        {
+          "type": "check_asset",
+          "asset": "altersvorsorgevertrag",
+          "description": "Riester- oder Rürup-Vertrag im Nachlass prüfen"
+        },
+        {
+          "type": "notify",
+          "description": "Anbieter über Todesfall informieren und Erbberechtigte klären"
+        }
+      ],
+      "notes": "Riester-Guthaben ist eingeschränkt vererblich (nur an kindergeldberechtigte Kinder oder Ehepartner mit eigenem Riester-Vertrag förderunschädlich). Rürup-Renten sind grundsätzlich nicht vererblich, es sei denn, eine Rentengarantiezeit wurde vereinbart. Steuerberater hinzuziehen."
+    },
+    {
+      "id": "de_lebensversicherung",
+      "label": "Lebensversicherung",
+      "keywords": ["LEBENSVERSICHERUNG", "LV BEITRAG", "STERBEGELDVERSICHERUNG", "RISIKOLEBENSVERSICHERUNG", "KAPITALLEBENSVERSICHERUNG"],
+      "category": "versicherung",
+      "hints": ["lebensversicherung", "auszahlung"],
+      "actions": [
+        {
+          "type": "check_asset",
+          "asset": "lebensversicherung",
+          "description": "Lebensversicherung auf Todesfall prüfen und Auszahlung beantragen"
+        },
+        {
+          "type": "notify",
+          "description": "Versicherung kontaktieren, Sterbeurkunde und Erbnachweis einreichen"
+        }
+      ],
+      "notes": "Lebensversicherungen können einen Bezugsberechtigten außerhalb des Nachlasses haben. Vertragsdokumente und Policennummer heraussuchen. Versicherung benötigt Sterbeurkunde und ggf. Erbschein."
+    }
+  ]
+}

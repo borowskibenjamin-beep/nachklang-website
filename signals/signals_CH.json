@@ -1,0 +1,137 @@
+{
+  "version": "1.0",
+  "country": "CH",
+  "signals": [
+    {
+      "id": "ch_serafe",
+      "label": "Serafe (Radio- und Fernsehgebühr)",
+      "keywords": ["SERAFE", "RUNDFUNKGEBÜHR", "RADIO TV GEBÜHR", "SRG", "BILLAG"],
+      "category": "wohnung",
+      "hints": ["wohnung", "mietvertrag", "haushalt"],
+      "termination": {
+        "possible": true,
+        "reason": "Auflösung des Haushalts durch Tod",
+        "special_right": false,
+        "basis": "Radio- und Fernsehgesetz (RTVG) Art. 69b",
+        "deadline_days": null,
+        "note": "Die Serafe-Abgabe ist haushaltsbezogen, nicht personenbezogen. Abmeldung bei Auflösung des Haushalts (z. B. Wohnungsauflösung). Rückerstattung anteilig möglich. Formular unter serafe.ch einreichen."
+      },
+      "actions": [
+        {
+          "type": "generate_letter",
+          "template": "serafe_abmeldung_CH"
+        }
+      ],
+      "notes": "Im Gegensatz zu Deutschland (GEZ) und Österreich (ORF) ist die Serafe-Abgabe haushaltsbezogen. Sie endet erst mit der Auflösung des Haushalts, nicht automatisch mit dem Tod. Wird die Wohnung von anderen Personen weitergeführt, bleibt die Abgabepflicht bestehen."
+    },
+    {
+      "id": "ch_ahv_iv_eingehend",
+      "label": "AHV / IV (eingehend)",
+      "keywords": ["AHV", "IV RENTE", "AUSGLEICHSKASSE", "AHV-RENTE", "ALTERSRENTE AHV", "INVALIDENVERSICHERUNG", "AHV IV"],
+      "category": "sozialversicherung",
+      "hints": ["ahv", "rente", "rueckzahlung"],
+      "direction": "incoming",
+      "actions": [
+        {
+          "type": "notify",
+          "description": "Zuständige Ausgleichskasse sofort über den Todesfall informieren",
+          "urgency": "high"
+        },
+        {
+          "type": "deadline",
+          "description": "Zu Unrecht nach Todestag erhaltene AHV/IV-Leistungen unverzüglich zurücküberweisen",
+          "urgency": "high"
+        }
+      ],
+      "notes": "AHV- und IV-Renten enden mit dem Todestag. Zahlungen, die nach dem Tod eingehen (i. d. R. am Monatsende), müssen sofort an die zuständige Ausgleichskasse zurückgezahlt werden. Die Ausgleichskasse ist telefonisch oder schriftlich umgehend zu informieren. Hinterbliebene können ggf. Anspruch auf AHV-Hinterlassenenrente (Witwen-/Witwerrente, Waisenrente) haben – separat beantragen."
+    },
+    {
+      "id": "ch_krankenkasse",
+      "label": "Krankenkasse",
+      "keywords": ["KRANKENKASSE", "KRANKENVERSICHERUNG", "CSS", "HELSANA", "SWICA", "CONCORDIA", "SANITAS", "VISANA", "ATUPRI", "GRUNDVERSICHERUNG", "ZUSATZVERSICHERUNG", "KVG PRÄMIE"],
+      "category": "versicherung",
+      "hints": ["krankenkasse", "praemie"],
+      "termination": {
+        "possible": true,
+        "reason": "Tod des Versicherten",
+        "special_right": true,
+        "basis": "Bundesgesetz über die Krankenversicherung (KVG) Art. 10 Abs. 2",
+        "deadline_days": null,
+        "note": "Die obligatorische Grundversicherung (KVG) endet automatisch mit Ende des Todesmonats. Krankenkasse schriftlich informieren und Sterbeurkunde einreichen. Zu viel bezahlte Prämien werden anteilig rückerstattet. Zusatzversicherungen (VVG) gesondert prüfen – dort können abweichende Fristen gelten."
+      },
+      "actions": [
+        {
+          "type": "generate_letter",
+          "template": "krankenkasse_kuendigung_CH"
+        }
+      ],
+      "notes": "Grundversicherung endet per Ende Todesmonat. Bei Zusatzversicherungen (z. B. Spital, Zahn) gelten die Vertragsbedingungen des VVG – Kündigung ggf. separat und fristgerecht einreichen. Offene Kostengutsprachen und laufende Behandlungen abklären."
+    },
+    {
+      "id": "ch_pensionskasse_bvg",
+      "label": "Pensionskasse / BVG",
+      "keywords": ["PENSIONSKASSE", "BVG", "BERUFLICHE VORSORGE", "PK BEITRAG", "2. SÄULE", "FREIZÜGIGKEITSGUTHABEN", "VORSORGEGUTHABEN"],
+      "category": "altersvorsorge",
+      "hints": ["pensionskasse", "bvg", "todesfallleistung"],
+      "actions": [
+        {
+          "type": "check_asset",
+          "asset": "pensionskassenguthaben",
+          "description": "Zuständige Pensionskasse des Verstorbenen ermitteln"
+        },
+        {
+          "type": "notify",
+          "description": "Pensionskasse aktiv kontaktieren und Todesfallleistung beantragen",
+          "urgency": "high"
+        }
+      ],
+      "notes": "Todesfallleistungen der Pensionskasse (2. Säule) werden NICHT automatisch ausbezahlt – Anspruch muss aktiv geltend gemacht werden. Anspruchsberechtigt sind in erster Linie der überlebende Ehepartner/eingetragene Partner, Kinder, sowie ggf. unterstützte Personen. Die Pensionskasse des letzten Arbeitgebers ermitteln; bei mehreren früheren Arbeitgebern ggf. auch frühere Pensionskassen anfragen. Freizügigkeitsguthaben bei Freizügigkeitseinrichtungen (z. B. Banken) separat prüfen."
+    },
+    {
+      "id": "ch_saeule_3a",
+      "label": "Säule 3a / Gebundene Vorsorge",
+      "keywords": ["SÄULE 3A", "3. SÄULE", "VORSORGE 3A", "GEBUNDENE VORSORGE", "VORSORGEKONTO 3A", "SÄULE 3", "VORSORGESTIFTUNG"],
+      "category": "altersvorsorge",
+      "hints": ["saeule3a", "auszahlung", "erben"],
+      "actions": [
+        {
+          "type": "check_asset",
+          "asset": "saeule3a_guthaben",
+          "description": "Säule-3a-Konto oder -Police bei Bank oder Versicherung ermitteln"
+        },
+        {
+          "type": "deadline",
+          "description": "Auszahlung des Säule-3a-Guthabens innerhalb von 5 Jahren nach Todestag beantragen",
+          "urgency": "medium",
+          "deadline_years": 5
+        }
+      ],
+      "notes": "Das Säule-3a-Guthaben fällt in den Nachlass und muss von den Erben aktiv beantragt werden. Frist: 5 Jahre ab Todestag (Verjährung). Das Guthaben unterliegt der separaten Kapitalleistungssteuer (günstiger als ordentliche Einkommenssteuer) – Steuerberater beiziehen. Bei Säule-3a-Policen (Lebensversicherung) zusätzlich Bezugsberechtigte prüfen – diese können ausserhalb des Nachlasses begünstigt sein."
+    },
+    {
+      "id": "ch_steuerverwaltung",
+      "label": "Steuerverwaltung / Finanzamt",
+      "keywords": ["STEUERVERWALTUNG", "KANTONALES STEUERAMT", "DIREKTE BUNDESSTEUER", "EINKOMMENSSTEUER", "STEUERRÜCKERSTATTUNG", "STEUERGUTSCHRIFT", "VERRECHNUNGSSTEUER", "EIDG STEUERVERWALTUNG", "ESTV"],
+      "category": "steuer",
+      "hints": ["steuerverwaltung", "steuererklaerung", "pflicht"],
+      "actions": [
+        {
+          "type": "check_asset",
+          "asset": "steuerakte",
+          "description": "Letzte Steuererklärung und offene Steuerveranlagungen prüfen"
+        },
+        {
+          "type": "notify",
+          "description": "Kantonale Steuerverwaltung über Todesfall informieren",
+          "urgency": "medium"
+        },
+        {
+          "type": "deadline",
+          "description": "Steuererklärung für das Todesjahr (anteilig) durch Erbengemeinschaft einreichen – kantonale Fristen beachten",
+          "urgency": "medium"
+        }
+      ],
+      "notes": "Die Steuererklärung für das Todesjahr muss von der Erbengemeinschaft eingereicht werden (Pflicht). Die Frist richtet sich nach dem Kanton und beträgt meist 3–6 Monate nach Todesfall. Nicht eingelöste Steuerrückerstattungen fallen in die Verlassenschaft. Erbschaftssteuer ist kantonal geregelt (kein Bundesgesetz) – je nach Kanton und Verwandtschaftsgrad unterschiedlich. Verrechnungssteuer-Rückerstattungen (Wertschriften) separat prüfen."
+    }
+  ]
+}

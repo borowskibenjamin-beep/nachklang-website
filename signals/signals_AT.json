@@ -1,0 +1,141 @@
+{
+  "version": "1.0",
+  "country": "AT",
+  "signals": [
+    {
+      "id": "at_orf_beitrag",
+      "label": "ORF-Beitrag / GIS",
+      "keywords": ["ORF BEITRAG", "GIS", "GIS GEBÜHREN", "RUNDFUNKGEBÜHR", "ORF-BEITRAG", "GISBEITRAGSSERVICE"],
+      "category": "wohnung",
+      "hints": ["wohnung", "mietvertrag", "haushalt"],
+      "termination": {
+        "possible": true,
+        "reason": "Tod des Beitragspflichtigen",
+        "special_right": false,
+        "basis": "ORF-Beitrags-Gesetz (ORF-BeiG) § 3",
+        "deadline_days": null,
+        "note": "Abmeldung rückwirkend zum Todestag möglich. Formular beim ORF-Beitragsservice einreichen. Sterbeurkunde beilegen."
+      },
+      "actions": [
+        {
+          "type": "generate_letter",
+          "template": "orf_beitrag_abmeldung_AT"
+        }
+      ],
+      "notes": "Der ORF-Beitrag ist personenbezogen und endet mit dem Tod. Rückwirkende Abmeldung und Rückerstattung bereits geleisteter Beträge ab Todestag beantragen."
+    },
+    {
+      "id": "at_svs_sva",
+      "label": "SVS / SVA (Selbstständige)",
+      "keywords": ["SVS", "SVA", "SOZIALVERSICHERUNG DER SELBSTSTÄNDIGEN", "SVS BEITRAG", "GEWERBLICHE SOZIALVERSICHERUNG", "SOZIALVERSICHERUNGSANSTALT"],
+      "category": "selbststaendigkeit",
+      "hints": ["selbststaendig", "gewerbe", "unternehmen"],
+      "actions": [
+        {
+          "type": "check_asset",
+          "asset": "gewerbe",
+          "description": "Gewerbeberechtigung und Unternehmensform prüfen"
+        },
+        {
+          "type": "notify",
+          "description": "SVS über Todesfall informieren, Gewerbeanmeldung bei der WKO abmelden, Finanzamt informieren",
+          "urgency": "high"
+        },
+        {
+          "type": "deadline",
+          "description": "Gewerbeabmeldung bei der WKO binnen angemessener Frist nach Todestag",
+          "urgency": "high"
+        }
+      ],
+      "notes": "SVS-Beiträge weisen auf eine selbstständige Tätigkeit hin. Die Gewerbeberechtigung erlischt nicht automatisch – sie muss aktiv bei der Wirtschaftskammer (WKO) abgemeldet werden. Laufende Beiträge enden mit der Abmeldung. Steuerberater und ggf. Notar hinzuziehen."
+    },
+    {
+      "id": "at_pensionsversicherungsanstalt_eingehend",
+      "label": "Pensionsversicherungsanstalt (eingehend)",
+      "keywords": ["PENSIONSVERSICHERUNGSANSTALT", "PVA", "ALTERSPENSION", "INVALIDITÄTSPENSION", "WITWENPENSION", "WAISENPENSION", "PENSIONSZAHLUNG"],
+      "category": "pension",
+      "hints": ["pension", "rueckzahlung"],
+      "direction": "incoming",
+      "actions": [
+        {
+          "type": "notify",
+          "description": "Pensionsversicherungsanstalt (PVA) unverzüglich über den Todesfall informieren",
+          "urgency": "high"
+        },
+        {
+          "type": "deadline",
+          "description": "Zu Unrecht nach Todestag erhaltene Pensionszahlungen unverzüglich zurücküberweisen",
+          "urgency": "high"
+        }
+      ],
+      "notes": "Pensionszahlungen, die nach dem Todestag eingehen, müssen an die PVA zurückgezahlt werden. Die PVA ist per Telefon (05 03 03) oder schriftlich sofort zu informieren. Rückforderungen können auch Angehörige treffen, die Zugriff auf das Konto haben."
+    },
+    {
+      "id": "at_pflegeheim",
+      "label": "Pflegeheim",
+      "keywords": ["PFLEGEHEIM", "PFLEGEEINRICHTUNG", "SENIORENHEIM", "ALTENHEIM", "PFLEGEWOHNHEIM", "SENIORENZENTRUM", "SOZIALZENTRUM"],
+      "category": "pflege",
+      "hints": ["heimvertrag", "pflegevertrag"],
+      "termination": {
+        "possible": true,
+        "reason": "Tod des Bewohners",
+        "special_right": true,
+        "basis": "Heimvertragsrecht AT (§§ 27b–27i KSchG)",
+        "deadline_days": 31,
+        "note": "Kündigung des Heimvertrags mit einer Frist von einem Monat zum Monatsende. Schriftliche Kündigung mit Sterbeurkunde einreichen. Abrechnung des Bewohnerkontos und Rückgabe persönlicher Gegenstände einfordern."
+      },
+      "actions": [
+        {
+          "type": "generate_letter",
+          "template": "heimvertrag_kuendigung_AT"
+        }
+      ],
+      "notes": "In Österreich gilt für Heimverträge eine Kündigungsfrist von einem Monat zum Monatsende (§ 27g KSchG). Heimkostenzuschuss der Sozialhilfe ggf. abmelden. Pflegegeld-Einstellung beim Sozialministeriumservice veranlassen."
+    },
+    {
+      "id": "at_wohnbaufoerderung",
+      "label": "Wohnbauförderung",
+      "keywords": ["WOHNBAUFÖRDERUNG", "WOHNBAUFOERDERUNG", "WBFÖRDERDARLEHEN", "WOHNBAUDARLEHEN", "LANDESFONDS WOHNEN", "WOHNBAUFONDS"],
+      "category": "immobilie",
+      "hints": ["wohnbaufoerderung", "behoerde", "immobilie"],
+      "actions": [
+        {
+          "type": "notify",
+          "description": "Zuständige Landesbehörde (je nach Bundesland) über Todesfall informieren",
+          "urgency": "medium"
+        },
+        {
+          "type": "check_asset",
+          "asset": "immobilie",
+          "description": "Geförderte Immobilie im Nachlass prüfen, Auflagen der Förderung sichten"
+        }
+      ],
+      "notes": "Wohnbauförderung ist Ländersache in Österreich. Bei Tod des Fördernehmers müssen die zuständige Landesstelle sowie ggf. die finanzierende Bank informiert werden. Förderauflagen (z. B. Eigennutzungspflicht) können auf Erben übergehen oder zur Rückforderung führen. Bundesland beachten: Wien (MA 50), NÖ, OÖ, Steiermark, etc."
+    },
+    {
+      "id": "at_finanzamt_gutschrift",
+      "label": "Finanzamt Gutschrift",
+      "keywords": ["FINANZAMT", "FINANZAMTSGUTSCHRIFT", "STEUERRÜCKERSTATTUNG", "EINKOMMENSTEUER GUTSCHRIFT", "FA GUTSCHRIFT", "RÜCKZAHLUNG FINANZAMT"],
+      "category": "steuer",
+      "hints": ["finanzamt", "steuererklarung", "gutschrift"],
+      "direction": "incoming",
+      "actions": [
+        {
+          "type": "check_asset",
+          "asset": "steuerakte",
+          "description": "Letzte Steuererklärung des Verstorbenen prüfen"
+        },
+        {
+          "type": "notify",
+          "description": "Finanzamt über Todesfall informieren und Steuernummer des Verstorbenen mitteilen"
+        },
+        {
+          "type": "deadline",
+          "description": "Letzte Einkommensteuererklärung (Verlassenschaftserklärung) für das Todesjahr einreichen",
+          "urgency": "medium"
+        }
+      ],
+      "notes": "Eine Gutschrift vom Finanzamt kann auf eine offene Steuerrückerstattung hinweisen. Für das Todesjahr muss eine anteilige Steuererklärung (Verlassenschaftserklärung) eingereicht werden. Steuerberater oder Notar hinzuziehen. Gutschriften, die nach dem Tod eingehen, fallen in die Verlassenschaft."
+    }
+  ]
+}

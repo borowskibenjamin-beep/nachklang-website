@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+
+# Claude Code (lokale Einstellungen)
+**/.claude/settings.local.json
+
+# Rork-Referenz (eigenes Git-Repository)
+rork-swift-referenz/
+
+# Node / Expo (rork-swift-referenz)
+node_modules/
+.expo/
+dist/
