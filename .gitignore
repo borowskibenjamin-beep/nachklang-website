@@ -12,6 +12,7 @@ build/
 
 # Rork-Referenz (eigenes Git-Repository)
 rork-swift-referenz/
+rork-screens/
 
 # Node / Expo (rork-swift-referenz)
 node_modules/
