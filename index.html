@@ -500,8 +500,7 @@
   <p class="section-sub" style="margin: 0 auto 36px;">
     Keine Werbung, kein Newsletter. Nur eine einzige E-Mail, wenn NACHKLANG im App Store erscheint.
   </p>
-  <form class="signup-form" action="https://formspree.io/f/mykbyrbp" method="POST">
-    <input type="hidden" name="_next" value="https://nachklang.app/danke.html" />
+  <form class="signup-form" id="waitlist-form">
     <div class="form-row">
       <input class="form-input" type="email" name="email" placeholder="Ihre E-Mail-Adresse" required />
       <button class="form-btn" type="submit">Informiert bleiben</button>
@@ -549,6 +548,29 @@
 
 
 <script>
+  document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button');
+    btn.textContent = '...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/mykbyrbp', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(this)
+      });
+      if (res.ok) {
+        window.location.href = '/danke.html';
+      } else {
+        btn.textContent = 'Informiert bleiben';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Informiert bleiben';
+      btn.disabled = false;
+    }
+  });
+
   // Fallback: make everything visible immediately, then enhance with animation
   document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
 
