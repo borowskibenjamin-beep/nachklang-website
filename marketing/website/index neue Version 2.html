@@ -153,6 +153,18 @@
       box-shadow: 0 12px 48px rgba(26,26,46,0.12); aspect-ratio: 16/9;
     }
     .video-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+    .video-facade {
+      position: relative; width: 100%; aspect-ratio: 16/9;
+      border-radius: 16px; overflow: hidden; cursor: pointer;
+      box-shadow: 0 12px 48px rgba(26,26,46,0.12);
+    }
+    .video-facade img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .video-facade .play-btn {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      background: rgba(26,26,46,0.35); transition: background 0.2s;
+    }
+    .video-facade:hover .play-btn { background: rgba(26,26,46,0.50); }
+    .video-facade .play-btn svg { width: 72px; height: 72px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)); }
 
     /* WHAT WE FIND */
     .find-section { background: var(--white); }
@@ -305,10 +317,6 @@
         <div class="problem-desc">laufende Versicherungen, Verträge und Abos bleiben aktiv – und belasten den Nachlass.</div>
       </div>
       <div class="problem-card">
-        <div class="problem-num">400&#8239;€</div>
-        <div class="problem-desc">ungenutztes Guthaben bei Anbietern, das ohne Kündigung verfällt. Pro Trauerfall.</div>
-      </div>
-      <div class="problem-card">
         <div class="problem-num">1,16&#8239;Mio.</div>
         <div class="problem-desc">Sterbefälle pro Jahr in Deutschland, Österreich und der Schweiz.</div>
       </div>
@@ -358,13 +366,14 @@
     <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 28px; font-weight: 300;">
       2 Minuten · kein Ton nötig
     </p>
-    <div class="video-wrap fade-in" style="max-width: 680px; margin: 0 auto;">
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/ej2__VDYrC8"
-        title="NACHKLANG – App Demo"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+    <div class="video-facade fade-in" style="max-width: 680px; margin: 0 auto;" onclick="this.innerHTML='<iframe src=\'https://www.youtube-nocookie.com/embed/ej2__VDYrC8?autoplay=1\' title=\'NACHKLANG – App Demo\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen style=\'width:100%;height:100%;border:none;display:block\'></iframe>'">
+      <img src="https://img.youtube.com/vi/ej2__VDYrC8/maxresdefault.jpg" alt="NACHKLANG App Demo – Video abspielen" loading="lazy" />
+      <div class="play-btn">
+        <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="36" cy="36" r="36" fill="white" fill-opacity="0.92"/>
+          <polygon points="29,22 55,36 29,50" fill="#1a1a2e"/>
+        </svg>
+      </div>
     </div>
   </div>
 </section>
@@ -376,7 +385,7 @@
     <div class="section-label">Was NACHKLANG findet</div>
     <h2 class="section-title">Alle Vertragsarten – ein Überblick</h2>
     <p class="section-sub">
-      Von der Lebensversicherung bis zum Telefonvertrag – NACHKLANG kennt über 200 Anbieter und weiß, was zu tun ist.
+      Von der Lebensversicherung bis zum Telefonvertrag – NACHKLANG erkennt alle relevanten Vertragsarten und weiß, was zu tun ist.
     </p>
     <div class="contracts-grid fade-in">
       <div class="contract-item contract-highlight">
@@ -491,7 +500,7 @@
   <p class="section-sub" style="margin: 0 auto 36px;">
     Keine Werbung, kein Newsletter. Nur eine einzige E-Mail, wenn NACHKLANG im App Store erscheint.
   </p>
-  <form class="signup-form" action="https://formspree.io/f/mykbyrbp" method="POST">
+  <form class="signup-form" id="waitlist-form">
     <div class="form-row">
       <input class="form-input" type="email" name="email" placeholder="Ihre E-Mail-Adresse" required />
       <button class="form-btn" type="submit">Informiert bleiben</button>
@@ -533,12 +542,35 @@
     <a href="mailto:info@nachklang.app">info@nachklang.app</a>
   </p>
   <p style="margin-top: 14px; font-size: 0.72rem; opacity: 0.45;">
-    © 2026 Benjamin Borowski · nachklang.app · Alle Rechte vorbehalten
+    © 2026 NACHKLANG · nachklang.app · Alle Rechte vorbehalten
   </p>
 </footer>
 
 
 <script>
+  document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button');
+    btn.textContent = '...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/mykbyrbp', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(this)
+      });
+      if (res.ok) {
+        window.location.href = '/danke.html';
+      } else {
+        btn.textContent = 'Informiert bleiben';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Informiert bleiben';
+      btn.disabled = false;
+    }
+  });
+
   // Fallback: make everything visible immediately, then enhance with animation
   document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
 
