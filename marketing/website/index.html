@@ -258,6 +258,31 @@ text-decoration:none;margin-top:.5rem;
 display:inline-block;
 }
 .footer-mail:hover{text-decoration:underline}
+.footer-links{margin-top:.75rem}
+.footer-links a{
+font-size:.8rem;color:var(--text-light);
+text-decoration:none;margin:0 .5rem;
+transition:color .2s;
+}
+.footer-links a:hover{color:var(--gold)}
+
+/* ---- RATGEBER TEASER ---- */
+.ratgeber-teaser{
+text-align:center;
+padding:.5rem 1.5rem 2.5rem;
+}
+.ratgeber-teaser a{
+display:inline-flex;align-items:center;gap:.6rem;
+color:var(--gold);font-size:.95rem;font-weight:500;
+text-decoration:none;
+border:1px solid rgba(201,146,42,.3);
+border-radius:8px;padding:.7rem 1.4rem;
+transition:background .2s,border-color .2s;
+}
+.ratgeber-teaser a:hover{
+background:rgba(201,146,42,.06);
+border-color:rgba(201,146,42,.6);
+}
 
 /* ---- RESPONSIVE ---- */
 @media(max-width:768px){
@@ -337,6 +362,15 @@ Bald im App Store
 </div>
 </div>
 
+<!-- RATGEBER TEASER -->
+<div class="ratgeber-teaser fade-in">
+<a href="/ratgeber/erste-schritte/">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+Erste Schritte nach einem Todesfall – Kostenloser Ratgeber
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+</a>
+</div>
+
 <!-- VIDEO -->
 <section class="video-section fade-in">
 <div class="section-label">So funktioniert's</div>
@@ -366,6 +400,10 @@ Bald im App Store
 <div class="footer-brand">NACHKLANG</div>
 <div class="footer-sub">Behutsam begleitet · Kommt 2026 für iOS</div>
 <a href="mailto:info@nachklang.app" class="footer-mail">info@nachklang.app</a>
+<div class="footer-links">
+<a href="/ratgeber/erste-schritte/">Ratgeber</a>
+<a href="/datenschutz.html">Datenschutz &amp; Impressum</a>
+</div>
 </footer>
 
 <script>
