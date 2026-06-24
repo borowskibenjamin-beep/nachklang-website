@@ -383,7 +383,7 @@ e.preventDefault();
 const data = new FormData(form);
 try{
 const r = await fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}});
-if(r.ok){form.innerHTML='<p style="color:var(--gold);font-size:1.05rem;font-weight:500;">✓ Sie stehen auf der Liste. Wir melden uns.</p>';}
+if(r.ok){window.location.href='/danke.html';}
 }catch(err){}
 });
 }
