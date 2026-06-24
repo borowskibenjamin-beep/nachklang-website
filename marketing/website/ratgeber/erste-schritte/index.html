@@ -474,8 +474,46 @@ Den Verstorbenen beim Einwohnermeldeamt abmelden – in vielen Gemeinden überni
 </div>
 </div>
 
-<!-- CTA SECTION (Task 6) -->
-<!-- FOOTER (Task 6) -->
+<!-- CTA SECTION -->
+<div class="cta-section">
+<div class="section-label">Nachklang · Kommt August 2026</div>
+<h2>Verträge &amp; Finanzen automatisch erledigen</h2>
+<p>Nachklang erkennt alle Verträge, generiert Kündigungsbriefe und erinnert Sie an Fristen – direkt auf Ihrem iPhone. Alle Daten bleiben auf Ihrem Gerät.</p>
+<form class="signup-form" action="https://formspree.io/f/DEINE_FORM_ID" method="POST">
+<input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+<button type="submit">Jetzt auf die Warteliste</button>
+</form>
+<p class="signup-privacy">Kein Spam. Nur eine E-Mail wenn die App bereit ist.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-candle">🕯️</div>
+<div class="footer-brand">NACHKLANG</div>
+<div class="footer-sub">Behutsam begleitet · Kommt 2026 für iOS</div>
+<a href="mailto:info@nachklang.app" class="footer-mail">info@nachklang.app</a>
+<div class="footer-links">
+<a href="../../datenschutz.html">Datenschutz</a>
+<a href="../../datenschutz.html#impressum">Impressum</a>
+<a href="../../">Zur Startseite</a>
+</div>
+</footer>
+
+<script>
+const form = document.querySelector('.signup-form');
+if(form){
+form.addEventListener('submit', async function(e){
+e.preventDefault();
+const data = new FormData(form);
+try{
+const r = await fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}});
+if(r.ok){
+form.innerHTML='<p style="color:var(--gold);font-size:1.05rem;font-weight:500;">✓ Sie stehen auf der Liste. Wir melden uns.</p>';
+}
+} catch(err){}
+});
+}
+</script>
 
 </body>
 </html>
