@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beta testen – NACHKLANG</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --beige:  #f9f6f1;
+      --navy:   #1a1a2e;
+      --gold:   #c9922a;
+      --text:   #2c2c3a;
+      --muted:  #6b6b7a;
+      --white:  #ffffff;
+      --border: rgba(26,26,46,0.10);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--beige);
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: var(--beige);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 5%;
+      display: flex;
+      align-items: center;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-dot {
+      width: 10px; height: 10px; background: var(--gold); border-radius: 50%;
+      animation: glow 3s ease-in-out infinite;
+    }
+    @keyframes glow {
+      0%, 100% { opacity: .6; box-shadow: 0 0 4px rgba(201,146,42,.3); }
+      50%       { opacity: 1;  box-shadow: 0 0 12px rgba(201,146,42,.5); }
+    }
+    .logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.08em; text-transform: uppercase;
+    }
+
+    main {
+      flex: 1;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 72px 5% 80px;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 500; line-height: 1.2;
+      color: var(--navy); margin-bottom: 24px;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 48px;
+    }
+
+    .divider {
+      width: 40px; height: 1px;
+      background: var(--gold);
+      margin: 0 0 40px;
+      opacity: 0.4;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .test-list {
+      list-style: none;
+      margin-bottom: 48px;
+    }
+    .test-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-weight: 300;
+      color: var(--text);
+    }
+    .test-list li:first-child { border-top: 1px solid var(--border); }
+    .test-list li::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    .cta-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 36px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cta-box p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-weight: 300;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 32px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: var(--gold); }
+
+    .note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 16px;
+    }
+
+    .contact {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+    .contact a {
+      color: var(--navy);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .contact a:hover { color: var(--gold); border-color: var(--gold); }
+
+    footer {
+      text-align: center;
+      padding: 24px 5%;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">
+    <div class="logo-dot"></div>
+    <span class="logo-name">Nachklang</span>
+  </a>
+</header>
+
+<main>
+  <div class="eyebrow">Beta-Programm</div>
+  <h1>Teste Nachklang als einer der Ersten</h1>
+  <p class="intro">
+    Nachklang hilft Hinterbliebenen, nach einem Todesfall Verträge zu identifizieren
+    und Kündigungsbriefe zu erstellen – direkt auf dem iPhone, ohne Datenweitergabe.
+    Wir suchen Menschen, die die App vor dem offiziellen Launch ausprobieren und
+    uns ehrliches Feedback geben.
+  </p>
+
+  <div class="divider"></div>
+
+  <h2>Was wir von dir brauchen</h2>
+  <ul class="test-list">
+    <li>Onboarding durchlaufen und Land auswählen</li>
+    <li>Einen Vertrag des Verstorbenen erfassen</li>
+    <li>Einen Kündigungsbrief generieren und exportieren</li>
+    <li>Uns sagen: Ist die Sprache verständlich? Findet man sich ohne Erklärung zurecht?</li>
+  </ul>
+
+  <div class="cta-box">
+    <p>
+      Die Beta läuft über Apple TestFlight – kostenlos,
+      ohne Verpflichtung, jederzeit kündbar.
+    </p>
+    <a href="https://testflight.apple.com/join/dK6br5Ge" class="btn">Jetzt Beta testen</a>
+    <p class="note">Benötigt iPhone mit iOS 16 oder neuer</p>
+  </div>
+
+  <p class="contact">
+    Fragen? Schreib uns: <a href="mailto:info@nachklang.app">info@nachklang.app</a>
+  </p>
+</main>
+
+<footer>
+  &copy; 2026 NACHKLANG &nbsp;·&nbsp;
+  <a href="/datenschutz.html" style="color: inherit;">Datenschutz</a>
+</footer>
+
+</body>
+</html>
