@@ -76,4 +76,46 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://nachklang.app/ratgeber/orf-beitrag-abmelden-todesfall/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nachklang.app/ratgeber/serafe-abmelden-todesfall/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nachklang.app/ratgeber/sozialversicherung-todesfall-oesterreich/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nachklang.app/ratgeber/behoerden-nach-todesfall/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://nachklang.app/ratgeber/strom-gas-internet-kuendigen-todesfall/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nachklang.app/ratgeber/kfz-nach-todesfall/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
