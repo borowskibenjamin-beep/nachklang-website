@@ -42,7 +42,14 @@
       align-items: center;
     }
     .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .logo-dot { width: 10px; height: 10px; background: var(--gold); border-radius: 50%; }
+    .logo-dot {
+      width: 10px; height: 10px; background: var(--gold); border-radius: 50%;
+      animation: glow 3s ease-in-out infinite;
+    }
+    @keyframes glow {
+      0%, 100% { opacity: .6; box-shadow: 0 0 4px rgba(201,146,42,.3); }
+      50%       { opacity: 1;  box-shadow: 0 0 12px rgba(201,146,42,.5); }
+    }
     .logo-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.35rem; font-weight: 600;
@@ -209,8 +216,8 @@
       Die Beta läuft über Apple TestFlight – kostenlos,
       ohne Verpflichtung, jederzeit kündbar.
     </p>
-    <a href="TESTFLIGHT_LINK_HIER_EINTRAGEN" class="btn">Jetzt Beta testen</a>
-    <p class="note">Benötigt iPhone mit iOS 17 oder neuer</p>
+    <a href="https://testflight.apple.com/join/dK6br5Ge" class="btn">Jetzt Beta testen</a>
+    <p class="note">Benötigt iPhone mit iOS 16 oder neuer</p>
   </div>
 
   <p class="contact">
