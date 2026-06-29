@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "country": "CH",
   "signals": [
     {
@@ -14,15 +14,12 @@
         "special_right": false,
         "basis": "Radio- und Fernsehgesetz (RTVG) Art. 69b",
         "deadline_days": null,
-        "note": "Die Serafe-Abgabe ist haushaltsbezogen, nicht personenbezogen. Abmeldung bei Auflösung des Haushalts (z. B. Wohnungsauflösung). Rückerstattung anteilig möglich. Formular unter serafe.ch einreichen."
+        "note": "Die Serafe-Abgabe ist haushaltsbezogen. Abmeldung bei Auflösung des Haushalts. Rückerstattung anteilig möglich unter serafe.ch."
       },
       "actions": [
-        {
-          "type": "generate_letter",
-          "template": "serafe_abmeldung_CH"
-        }
+        { "type": "generate_letter", "template": "serafe_abmeldung_CH" }
       ],
-      "notes": "Im Gegensatz zu Deutschland (GEZ) und Österreich (ORF) ist die Serafe-Abgabe haushaltsbezogen. Sie endet erst mit der Auflösung des Haushalts, nicht automatisch mit dem Tod. Wird die Wohnung von anderen Personen weitergeführt, bleibt die Abgabepflicht bestehen."
+      "notes": "Im Gegensatz zu DE (GEZ) und AT (ORF) ist die Serafe-Abgabe haushaltsbezogen. Sie endet erst mit der Auflösung des Haushalts, nicht automatisch mit dem Tod."
     },
     {
       "id": "ch_ahv_iv_eingehend",
@@ -32,18 +29,10 @@
       "hints": ["ahv", "rente", "rueckzahlung"],
       "direction": "incoming",
       "actions": [
-        {
-          "type": "notify",
-          "description": "Zuständige Ausgleichskasse sofort über den Todesfall informieren",
-          "urgency": "high"
-        },
-        {
-          "type": "deadline",
-          "description": "Zu Unrecht nach Todestag erhaltene AHV/IV-Leistungen unverzüglich zurücküberweisen",
-          "urgency": "high"
-        }
+        { "type": "notify", "description": "Zuständige Ausgleichskasse sofort über den Todesfall informieren", "urgency": "high" },
+        { "type": "deadline", "description": "Zu Unrecht nach Todestag erhaltene AHV/IV-Leistungen unverzüglich zurücküberweisen", "urgency": "high" }
       ],
-      "notes": "AHV- und IV-Renten enden mit dem Todestag. Zahlungen, die nach dem Tod eingehen (i. d. R. am Monatsende), müssen sofort an die zuständige Ausgleichskasse zurückgezahlt werden. Die Ausgleichskasse ist telefonisch oder schriftlich umgehend zu informieren. Hinterbliebene können ggf. Anspruch auf AHV-Hinterlassenenrente (Witwen-/Witwerrente, Waisenrente) haben – separat beantragen."
+      "notes": "AHV- und IV-Renten enden mit dem Todestag. Zahlungen nach dem Tod sofort an die Ausgleichskasse zurückzahlen. Anspruch auf AHV-Hinterlassenenrente separat prüfen."
     },
     {
       "id": "ch_krankenkasse",
@@ -57,15 +46,12 @@
         "special_right": true,
         "basis": "Bundesgesetz über die Krankenversicherung (KVG) Art. 10 Abs. 2",
         "deadline_days": null,
-        "note": "Die obligatorische Grundversicherung (KVG) endet automatisch mit Ende des Todesmonats. Krankenkasse schriftlich informieren und Sterbeurkunde einreichen. Zu viel bezahlte Prämien werden anteilig rückerstattet. Zusatzversicherungen (VVG) gesondert prüfen – dort können abweichende Fristen gelten."
+        "note": "Die obligatorische Grundversicherung (KVG) endet automatisch mit Ende des Todesmonats. Zu viel bezahlte Prämien werden anteilig rückerstattet. Zusatzversicherungen (VVG) gesondert kündigen."
       },
       "actions": [
-        {
-          "type": "generate_letter",
-          "template": "krankenkasse_kuendigung_CH"
-        }
+        { "type": "generate_letter", "template": "krankenkasse_kuendigung_CH" }
       ],
-      "notes": "Grundversicherung endet per Ende Todesmonat. Bei Zusatzversicherungen (z. B. Spital, Zahn) gelten die Vertragsbedingungen des VVG – Kündigung ggf. separat und fristgerecht einreichen. Offene Kostengutsprachen und laufende Behandlungen abklären."
+      "notes": "Grundversicherung endet per Ende Todesmonat. Zusatzversicherungen (Spital, Zahn) nach VVG separat kündigen – dort gelten Vertragsbedingungen."
     },
     {
       "id": "ch_pensionskasse_bvg",
@@ -74,18 +60,10 @@
       "category": "altersvorsorge",
       "hints": ["pensionskasse", "bvg", "todesfallleistung"],
       "actions": [
-        {
-          "type": "check_asset",
-          "asset": "pensionskassenguthaben",
-          "description": "Zuständige Pensionskasse des Verstorbenen ermitteln"
-        },
-        {
-          "type": "notify",
-          "description": "Pensionskasse aktiv kontaktieren und Todesfallleistung beantragen",
-          "urgency": "high"
-        }
+        { "type": "check_asset", "asset": "pensionskassenguthaben", "description": "Zuständige Pensionskasse des Verstorbenen ermitteln" },
+        { "type": "notify", "description": "Pensionskasse aktiv kontaktieren und Todesfallleistung beantragen", "urgency": "high" }
       ],
-      "notes": "Todesfallleistungen der Pensionskasse (2. Säule) werden NICHT automatisch ausbezahlt – Anspruch muss aktiv geltend gemacht werden. Anspruchsberechtigt sind in erster Linie der überlebende Ehepartner/eingetragene Partner, Kinder, sowie ggf. unterstützte Personen. Die Pensionskasse des letzten Arbeitgebers ermitteln; bei mehreren früheren Arbeitgebern ggf. auch frühere Pensionskassen anfragen. Freizügigkeitsguthaben bei Freizügigkeitseinrichtungen (z. B. Banken) separat prüfen."
+      "notes": "Todesfallleistungen der 2. Säule werden NICHT automatisch ausbezahlt – aktiv geltend machen. Pensionskasse des letzten Arbeitgebers ermitteln. Freizügigkeitsguthaben bei Freizügigkeitseinrichtungen separat prüfen."
     },
     {
       "id": "ch_saeule_3a",
@@ -94,19 +72,10 @@
       "category": "altersvorsorge",
       "hints": ["saeule3a", "auszahlung", "erben"],
       "actions": [
-        {
-          "type": "check_asset",
-          "asset": "saeule3a_guthaben",
-          "description": "Säule-3a-Konto oder -Police bei Bank oder Versicherung ermitteln"
-        },
-        {
-          "type": "deadline",
-          "description": "Auszahlung des Säule-3a-Guthabens innerhalb von 5 Jahren nach Todestag beantragen",
-          "urgency": "medium",
-          "deadline_years": 5
-        }
+        { "type": "check_asset", "asset": "saeule3a_guthaben", "description": "Säule-3a-Konto oder -Police bei Bank oder Versicherung ermitteln" },
+        { "type": "deadline", "description": "Auszahlung des Säule-3a-Guthabens innerhalb von 5 Jahren nach Todestag beantragen", "urgency": "medium", "deadline_years": 5 }
       ],
-      "notes": "Das Säule-3a-Guthaben fällt in den Nachlass und muss von den Erben aktiv beantragt werden. Frist: 5 Jahre ab Todestag (Verjährung). Das Guthaben unterliegt der separaten Kapitalleistungssteuer (günstiger als ordentliche Einkommenssteuer) – Steuerberater beiziehen. Bei Säule-3a-Policen (Lebensversicherung) zusätzlich Bezugsberechtigte prüfen – diese können ausserhalb des Nachlasses begünstigt sein."
+      "notes": "Säule-3a-Guthaben fällt in den Nachlass und muss aktiv beantragt werden (Verjährung 5 Jahre). Unterliegt separater Kapitalleistungssteuer. Bei Policen: Bezugsberechtigte prüfen."
     },
     {
       "id": "ch_steuerverwaltung",
@@ -115,23 +84,156 @@
       "category": "steuer",
       "hints": ["steuerverwaltung", "steuererklaerung", "pflicht"],
       "actions": [
-        {
-          "type": "check_asset",
-          "asset": "steuerakte",
-          "description": "Letzte Steuererklärung und offene Steuerveranlagungen prüfen"
-        },
-        {
-          "type": "notify",
-          "description": "Kantonale Steuerverwaltung über Todesfall informieren",
-          "urgency": "medium"
-        },
-        {
-          "type": "deadline",
-          "description": "Steuererklärung für das Todesjahr (anteilig) durch Erbengemeinschaft einreichen – kantonale Fristen beachten",
-          "urgency": "medium"
-        }
+        { "type": "check_asset", "asset": "steuerakte", "description": "Letzte Steuererklärung und offene Steuerveranlagungen prüfen" },
+        { "type": "notify", "description": "Kantonale Steuerverwaltung über Todesfall informieren", "urgency": "medium" },
+        { "type": "deadline", "description": "Steuererklärung für das Todesjahr durch Erbengemeinschaft einreichen – kantonale Fristen beachten", "urgency": "medium" }
       ],
-      "notes": "Die Steuererklärung für das Todesjahr muss von der Erbengemeinschaft eingereicht werden (Pflicht). Die Frist richtet sich nach dem Kanton und beträgt meist 3–6 Monate nach Todesfall. Nicht eingelöste Steuerrückerstattungen fallen in die Verlassenschaft. Erbschaftssteuer ist kantonal geregelt (kein Bundesgesetz) – je nach Kanton und Verwandtschaftsgrad unterschiedlich. Verrechnungssteuer-Rückerstattungen (Wertschriften) separat prüfen."
+      "notes": "Steuererklärung für das Todesjahr muss von der Erbengemeinschaft eingereicht werden. Kantonale Fristen beachten (meist 3–6 Monate). Erbschaftssteuer ist kantonal geregelt."
+    },
+    {
+      "id": "ch_energie_strom_gas",
+      "label": "Strom / Gas / Energie",
+      "keywords": ["EWZ", "CKW", "BKW", "EKZ", "ROMANDE ENERGIE", "IWB", "EWAG", "RÄTIA ENERGIE", "STROM", "GAS", "ENERGIE", "FERNWÄRME", "GASVERSORGUNG", "STROMVERSORGUNG", "ERDGAS", "STADTWERKE CH", "SIG GENEVE", "SERVICES INDUSTRIELS"],
+      "category": "energie",
+      "hints": ["energie", "strom"],
+      "termination": {
+        "possible": true,
+        "reason": "Tod des Vertragspartners",
+        "special_right": false,
+        "basis": "OR Art. 266 – ausserordentliche Kündigung",
+        "deadline_days": null,
+        "note": "Ausserordentliche Kündigung mit Sterbeurkunde. Zählerstand zum Todestag notieren. Anbieter sind bei Todesfall in der Praxis kulant."
+      },
+      "actions": [
+        { "type": "generate_letter", "template": "energie_kuendigung_CH" }
+      ],
+      "notes": "Energielieferverträge enden nicht automatisch mit dem Tod. Zählerstand notieren und Anbieter mit Sterbeurkunde kontaktieren. Strom- und Gasversorger oft identisch mit Gemeinde."
+    },
+    {
+      "id": "ch_internet_festnetz",
+      "label": "Internet / Festnetz",
+      "keywords": ["SWISSCOM", "SUNRISE", "SALT", "UPC CH", "QUICKLINE", "CABLECOM", "LIBERTYCABLE", "INTERNET BEITRAG", "BREITBAND", "GLASFASER", "IWAY", "GREEN CH", "FIBER7"],
+      "category": "telekommunikation",
+      "hints": ["internet", "festnetz"],
+      "termination": {
+        "possible": true,
+        "reason": "Tod des Vertragspartners",
+        "special_right": false,
+        "basis": "OR Art. 266 – ausserordentliche Kündigung",
+        "deadline_days": null,
+        "note": "Ausserordentliche Kündigung mit Sterbeurkunde. Leihgeräte (Router) müssen ggf. zurückgegeben werden."
+      },
+      "actions": [
+        { "type": "generate_letter", "template": "internet_kuendigung_CH" }
+      ],
+      "notes": "Telekommunikationsverträge enden nicht automatisch. Ausserordentliche Kündigung mit Sterbeurkunde ist anerkannt. Leihgeräte zurückgeben."
+    },
+    {
+      "id": "ch_mobilfunk",
+      "label": "Mobilfunk / Handy",
+      "keywords": ["SWISSCOM MOBILE", "SUNRISE MOBILE", "SALT MOBILE", "ALDI SUISSE TALK", "M-BUDGET MOBILE", "MOBILFUNK", "HANDYRECHNUNG", "HANDYVERTRAG", "MOBILVERTRAG", "TALKTALK", "LYCAMOBILE CH", "YALLO"],
+      "category": "mobilfunk",
+      "hints": ["mobilfunk", "handy"],
+      "termination": {
+        "possible": true,
+        "reason": "Tod des Vertragspartners",
+        "special_right": false,
+        "basis": "OR Art. 266 – ausserordentliche Kündigung",
+        "deadline_days": null,
+        "note": "Ausserordentliche Kündigung mit Sterbeurkunde. SIM-Karte vernichten. Wertguthaben bei Prepaid-SIM anfragen."
+      },
+      "actions": [
+        { "type": "generate_letter", "template": "mobilfunk_kuendigung_CH" }
+      ],
+      "notes": "Mobilfunkvertrag endet nicht automatisch. SIM-Karte vernichten und Anbieter mit Sterbeurkunde kündigen."
+    },
+    {
+      "id": "ch_mietvertrag",
+      "label": "Miete / Mietvertrag",
+      "keywords": ["MIETE", "KALTMIETE", "WARMMIETE", "MONATSMIETE", "NETTOMIETE", "ALLGEMEINE BAUGENOSSENSCHAFT", "ABZ", "WOGENO", "FAMILIENHEIM", "VERWALTUNG", "LIEGENSCHAFTSVERWALTUNG", "MIET"],
+      "category": "mietvertrag",
+      "hints": ["mietvertrag", "wohnung"],
+      "termination": {
+        "possible": true,
+        "reason": "Tod des Mieters",
+        "special_right": true,
+        "basis": "OR Art. 273b – ausserordentliche Kündigung durch Erben",
+        "deadline_days": null,
+        "note": "Erben können den Mietvertrag mit 3-monatiger Frist auf einen gesetzlichen Termin (Ende eines Monats) kündigen (OR Art. 266d/273b). Gleichzeitig haben Mitbewohner ein Eintrittsrecht."
+      },
+      "actions": [
+        { "type": "generate_letter", "template": "mietvertrag_kuendigung_CH" }
+      ],
+      "notes": "Mietvertrag geht auf Erben über. Ausserordentliche Kündigung mit 3 Monaten auf den nächsten gesetzlichen Termin (OR Art. 266d). Kaution nach Übergabe zurückfordern."
+    },
+    {
+      "id": "ch_streaming_abo",
+      "label": "Streaming / Abonnement",
+      "keywords": ["NETFLIX", "SPOTIFY", "AMAZON PRIME", "DISNEY", "DAZN", "YOUTUBE PREMIUM", "AUDIBLE", "APPLE", "APPLE.COM/BILL", "ITUNES", "PRIME VIDEO", "JOYN", "KINDLE", "ZATTOO", "BLUE TV"],
+      "category": "abonnement",
+      "hints": ["streaming", "abo"],
+      "termination": {
+        "possible": true,
+        "reason": "Tod des Kontoinhabers",
+        "special_right": false,
+        "basis": "OR Art. 266 – ausserordentliche Kündigung",
+        "deadline_days": null,
+        "note": "Kündigung schriftlich oder über Kundendienst. Zugangsdaten vom Gerät des Verstorbenen sichern."
+      },
+      "actions": [
+        { "type": "generate_letter", "template": "streaming_kuendigung_CH" }
+      ],
+      "notes": "Streaming-Abonnements laufen weiter bis zur aktiven Kündigung. Schriftliche Kündigung mit Sterbeurkunde oder direkt über Kundendienst."
+    },
+    {
+      "id": "ch_girokonto",
+      "label": "Bankkonto / Privatkonto",
+      "keywords": ["KONTOFÜHRUNGSGEBÜHR", "KONTOFÜHRUNG", "BANKGEBÜHR", "KONTOGEBÜHR", "UBS", "CREDIT SUISSE", "POSTFINANCE", "RAIFFEISEN CH", "ZKIB", "ZKB", "KANTONALBANK", "NEON", "YAPEAL", "CSX", "DEPOTGEBÜHR", "WERTSCHRIFTENDEPOT"],
+      "category": "bankkonto",
+      "hints": ["konto", "bank"],
+      "actions": [
+        { "type": "check_asset", "asset": "bankkonto", "description": "Alle Konten und Depots des Verstorbenen ermitteln" },
+        { "type": "notify", "description": "Bank über Todesfall informieren und Nachlassabteilung kontaktieren", "urgency": "high" }
+      ],
+      "notes": "Bank sofort informieren. In der Schweiz benötigen Erben einen Erbschein oder einen öffentlich beurkundeten Erbenausweis. Konten dürfen bis zur Erbenlegitimation nicht aufgelöst werden."
+    },
+    {
+      "id": "ch_sachversicherung",
+      "label": "Hausrat- / Haftpflichtversicherung",
+      "keywords": ["HAUSRATVERSICHERUNG", "HAFTPFLICHTVERSICHERUNG", "HAUSRAT", "HAFTPFLICHT", "ZURICH CH", "AXA CH", "HELVETIA", "ALLIANZ CH", "MOBILIAR", "VAUDOISE", "GENERALI CH", "ZUGER KANTONALBANK VERS", "ORION", "PAXCARE", "CONCORDIA VERS"],
+      "category": "versicherung",
+      "hints": ["versicherung", "hausrat"],
+      "termination": {
+        "possible": true,
+        "reason": "Tod des Versicherungsnehmers",
+        "special_right": false,
+        "basis": "VVG Art. 28 – ausserordentliche Kündigung durch Erben",
+        "deadline_days": null,
+        "note": "Sachversicherungen gehen auf Erben über. Kündigung oder Übertragung prüfen. Hausratversicherung bis zur Wohnungsauflösung sinnvoll weiterführen."
+      },
+      "actions": [
+        { "type": "generate_letter", "template": "sachversicherung_kuendigung_CH" }
+      ],
+      "notes": "Sachversicherungen enden nicht automatisch. Bis zur Wohnungsauflösung weiterführen, dann kündigen oder übertragen."
+    },
+    {
+      "id": "ch_mitgliedschaft",
+      "label": "Mitgliedschaft / Verein",
+      "keywords": ["TCS", "TOURING CLUB", "ACS", "MITGLIEDSBEITRAG", "VEREINSBEITRAG", "FITNESSSTUDIO", "SPORTSTUDIO", "MCFIT CH", "FITNESSPARK", "VEREIN", "CLUB BEITRAG", "JAHRESBEITRAG", "MITGLIEDSGEBÜHR", "PRO INFIRMIS"],
+      "category": "mitgliedschaft",
+      "hints": ["mitgliedschaft", "verein"],
+      "termination": {
+        "possible": true,
+        "reason": "Tod des Mitglieds",
+        "special_right": false,
+        "basis": "ZGB Art. 70 – Mitgliedschaft erlischt mit dem Tod",
+        "deadline_days": null,
+        "note": "Mitgliedschaft endet i.d.R. mit dem Tod. Schriftliche Bestätigung einholen und laufende Lastschriften stoppen."
+      },
+      "actions": [
+        { "type": "generate_letter", "template": "mitgliedschaft_kuendigung_CH" }
+      ],
+      "notes": "Vereinsmitgliedschaften erlöschen mit dem Tod (ZGB Art. 70). Trotzdem schriftliche Kündigung empfohlen, um Lastschriften zu stoppen. TCS: Sterbeurkunde genügt."
     }
   ]
 }
