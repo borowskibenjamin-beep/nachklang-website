@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{H1}} – Ratgeber | Nachklang</title>
+<meta name="description" content="{{META_DESCRIPTION – max ~160 Zeichen, konkretes Versprechen}}">
+<link rel="canonical" href="https://nachklang.app/ratgeber/{{SLUG}}/">
+<meta property="og:title" content="{{H1}}">
+<meta property="og:description" content="{{META_DESCRIPTION}}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nachklang.app/ratgeber/{{SLUG}}/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{H1}}",
+  "description": "{{META_DESCRIPTION}}",
+  "author": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
+  "publisher": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
+  "dateModified": "{{YYYY-MM-DD}}",
+  "datePublished": "{{YYYY-MM-DD}}",
+  "inLanguage": "de"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/*
+  CSS 1:1 aus marketing/website/ratgeber/erste-schritte/index.html übernehmen
+  (Variablen --beige/--navy/--gold, .site-header, .hero, .pdf-banner, .section-block,
+  .step, .tip-box, .behoerden-list, .ratgeber-grid, .cta-section, footer, @media).
+  NICHT neu erfinden – Klassennamen müssen exakt gleich bleiben, damit die Optik
+  über alle Ratgeber-Seiten konsistent ist.
+*/
+</style>
+</head>
+<body>
+<!-- HEADER -->
+<header class="site-header">
+<a href="../../" class="back-link">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+nachklang.app
+</a>
+<a href="../../" class="logo-wrap" style="text-decoration:none">
+<span class="logo-dot"></span>
+<span class="logo-text">Nachklang</span>
+</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+<div class="article-label">Ratgeber</div>
+<h1>{{H1}}</h1>
+<p class="hero-sub">{{UNTERTITEL – ein Satz, empathisch}}</p>
+<p class="hero-meta">Lesezeit: ca. {{N}} Minuten &middot; Zuletzt aktualisiert: {{Monat Jahr}}</p>
+</div>
+
+<div class="content">
+<!-- PDF BANNER (optional – nur wenn eine Checkliste zum Thema existiert, sonst Block weglassen) -->
+<div class="pdf-banner">
+<p><strong>{{Kurzversprechen}}:</strong> Kostenlose Checkliste – direkt herunterladen, kein E-Mail nötig.</p>
+<a href="checkliste-{{SLUG}}.pdf" download class="btn-pdf">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+Checkliste herunterladen (PDF)
+</a>
+</div>
+
+<!-- ABSCHNITT 1..n: je ein .section-block mit .section-label-small + h2, darin .step-Elemente -->
+<div class="section-block">
+<div class="section-label-small">Abschnitt 1</div>
+<h2>{{Abschnittstitel}}</h2>
+
+<div class="step">
+<div class="step-number">1</div>
+<div class="step-body">
+<h3>{{Schritt-Titel}}</h3>
+<p>{{Erklärung – konkret, ruhig, keine Fachbegriffe ohne Erklärung}}</p>
+<!-- Optional: <div class="tip-box"><strong>{{Frage}}</strong> {{Antwort}}</div> -->
+</div>
+</div>
+
+</div>
+
+<!-- RATGEBER KARTEN: Verweise auf andere/zukünftige Ratgeber-Seiten -->
+<div class="section-block">
+<div class="section-label-small">Nächste Schritte im Detail</div>
+<h2>Einzelne Themen als Ratgeber</h2>
+<div class="ratgeber-grid">
+<a href="../{{ziel-slug}}/" class="ratgeber-card" style="text-decoration:none;display:block">
+<h3>{{Kartentitel}}</h3>
+<p>{{Kurzbeschreibung}}</p>
+</a>
+</div>
+</div>
+</div>
+
+<!-- CTA SECTION (identisch auf allen Ratgeber-Seiten) -->
+<div class="cta-section">
+<div class="section-label">Nachklang · Kommt August 2026</div>
+<h2>Verträge &amp; Finanzen automatisch erledigen</h2>
+<p>Nachklang erkennt alle Verträge, generiert Kündigungsbriefe und erinnert Sie an Fristen – direkt auf Ihrem iPhone. Alle Daten bleiben auf Ihrem Gerät.</p>
+<form class="signup-form" action="https://formspree.io/f/mykbyrbp" method="POST">
+<input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+<button type="submit">Jetzt auf die Warteliste</button>
+</form>
+<p class="signup-privacy">Kein Spam. Nur eine E-Mail wenn die App bereit ist.</p>
+</div>
+
+<!-- FOOTER (identisch auf allen Ratgeber-Seiten) -->
+<footer>
+<div class="footer-candle">🕯️</div>
+<div class="footer-brand">NACHKLANG</div>
+<div class="footer-sub">Behutsam begleitet · Kommt 2026 für iOS</div>
+<a href="mailto:info@nachklang.app" class="footer-mail">info@nachklang.app</a>
+<div class="footer-links">
+<a href="../../datenschutz.html">Datenschutz</a>
+<a href="../../datenschutz.html#impressum">Impressum</a>
+<a href="../../">Zur Startseite</a>
+</div>
+</footer>
+
+<script>
+const form = document.querySelector('.signup-form');
+if(form){
+form.addEventListener('submit', async function(e){
+e.preventDefault();
+const data = new FormData(form);
+try{
+const r = await fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}});
+if(r.ok){
+window.location.href='/danke.html';
+}
+} catch(err){}
+});
+}
+</script>
+
+</body>
+</html>
