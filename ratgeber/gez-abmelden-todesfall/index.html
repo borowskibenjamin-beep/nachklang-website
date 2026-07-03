@@ -72,6 +72,8 @@ max-width:860px;margin:0 auto;
 .vorlage-box p{margin-bottom:.75rem}
 .vorlage-box p:last-child{margin-bottom:0}
 .vorlage-placeholder{color:var(--gold);font-style:italic}
+.btn-pdf{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:white;padding:.65rem 1.3rem;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s;font-family:'Source Sans 3',sans-serif;margin-top:1rem}
+.btn-pdf:hover{background:var(--gold-light);transform:translateY(-1px)}
 .ratgeber-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem;}
 .ratgeber-card{background:white;border-radius:12px;padding:1.25rem;border:1px solid rgba(201,146,42,.15);text-decoration:none;display:block;transition:border-color .2s,transform .2s;}
 .ratgeber-card:hover{border-color:var(--gold);transform:translateY(-2px)}
@@ -204,6 +206,10 @@ Kontoinhaber: <span class="vorlage-placeholder">[Name]</span></p>
 <p><span class="vorlage-placeholder">[Ihre Unterschrift]</span><br>
 <span class="vorlage-placeholder">[Ihr Name]</span></p>
 <p><em>Anlage: Kopie der Sterbeurkunde</em></p>
+<a href="vorlage-gez-abmeldung.pdf" download class="btn-pdf">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+Musterbrief als PDF herunterladen
+</a>
 </div>
 </div>
 
