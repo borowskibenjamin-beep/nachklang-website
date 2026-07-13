@@ -18,9 +18,37 @@
   "description": "Wer hat Anspruch auf Witwenrente, wie hoch ist sie, was wird angerechnet und wie beantragen Sie sie – für Deutschland, Österreich und die Schweiz.",
   "author": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
   "publisher": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
-  "dateModified": "2026-06-30",
+  "dateModified": "2026-07-13",
   "datePublished": "2026-06-30",
   "inLanguage": "de"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Ab wann bekomme ich die große statt der kleinen Witwenrente?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ab einem Alter von mindestens 46 Jahren und 6 Monaten (Stand 2026), bei Erziehung eines waisenrentenberechtigten Kindes oder bei eigener Erwerbsminderung – unabhängig vom Alter."}
+    },
+    {
+      "@type": "Question",
+      "name": "Wird meine eigene Rente komplett auf die Witwenrente angerechnet?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nein. Nur der Betrag oberhalb des monatlichen Freibetrags von 1.122,53 Euro (ab Juli 2026) wird zu 40 % angerechnet, nicht das gesamte Einkommen."}
+    },
+    {
+      "@type": "Question",
+      "name": "Muss ich die Witwenrente gesondert beantragen oder wird sie automatisch gezahlt?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Sie muss aktiv bei der Deutschen Rentenversicherung beantragt werden – eine automatische Zahlung ohne Antrag gibt es nicht."}
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen Sterbevierteljahr und Witwenrente?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Das Sterbevierteljahr ist ein einmaliger Vorschuss für die ersten drei Monate nach dem Tod, den Sie innerhalb von 30 Tagen beantragen müssen. Die Witwenrente ist die danach folgende, dauerhafte oder befristete monatliche Zahlung."}
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,6 +104,13 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--beige);color:var(--
 .freibetrag-box .fb-number{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--gold);white-space:nowrap;}
 .freibetrag-box .fb-text{font-size:.9rem;color:rgba(255,255,255,.8);line-height:1.5;}
 .freibetrag-box .fb-text strong{color:white;}
+.faq-list{margin-top:.5rem}
+.faq-item{background:white;border-radius:8px;border:1px solid rgba(201,146,42,.15);padding:1rem 1.25rem;margin-bottom:.75rem;}
+.faq-item summary{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--navy);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";color:var(--gold);font-size:1.3rem;font-weight:400;flex-shrink:0;transition:transform .2s;}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{font-size:.9rem;color:var(--text);margin-top:.75rem;line-height:1.7;}
 .ratgeber-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem;}
 .ratgeber-card{background:white;border-radius:12px;padding:1.25rem;border:1px solid rgba(201,146,42,.15);text-decoration:none;display:block;transition:border-color .2s,transform .2s;}
 .ratgeber-card:hover{border-color:var(--gold);transform:translateY(-2px)}
@@ -122,7 +157,7 @@ nachklang.app
 <div class="article-label">Ratgeber</div>
 <h1>Witwenrente und Witwerrente 2026 – Anspruch, Höhe und Antrag</h1>
 <p class="hero-sub">Hinterbliebene Ehepartner haben in Deutschland Anspruch auf eine eigene Rente – unabhängig davon, ob die verstorbene Person eine Frau oder ein Mann war. Wir erklären, wer sie bekommt, wie hoch sie ist und was bei eigenem Einkommen zu beachten ist.</p>
-<p class="hero-meta">Lesezeit: ca. 7 Minuten &middot; Zuletzt aktualisiert: Juni 2026 &middot; Schwerpunkt Deutschland, mit Hinweisen für AT und CH</p>
+<p class="hero-meta">Lesezeit: ca. 7 Minuten &middot; Zuletzt aktualisiert: Juli 2026 &middot; Schwerpunkt Deutschland, mit Hinweisen für AT und CH</p>
 </div>
 
 <div class="content">
@@ -292,6 +327,30 @@ nachklang.app
 </div>
 </div>
 
+</div>
+
+<!-- FAQ -->
+<div class="section-block">
+<div class="section-label-small">Häufige Fragen</div>
+<h2>Häufige Fragen zur Witwenrente</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Ab wann bekomme ich die große statt der kleinen Witwenrente?</summary>
+<p>Ab einem Alter von mindestens 46 Jahren und 6 Monaten (Stand 2026), bei Erziehung eines waisenrentenberechtigten Kindes oder bei eigener Erwerbsminderung – unabhängig vom Alter.</p>
+</details>
+<details class="faq-item">
+<summary>Wird meine eigene Rente komplett auf die Witwenrente angerechnet?</summary>
+<p>Nein. Nur der Betrag oberhalb des monatlichen Freibetrags von 1.122,53 Euro (ab Juli 2026) wird zu 40 % angerechnet, nicht das gesamte Einkommen.</p>
+</details>
+<details class="faq-item">
+<summary>Muss ich die Witwenrente gesondert beantragen oder wird sie automatisch gezahlt?</summary>
+<p>Sie muss aktiv bei der Deutschen Rentenversicherung beantragt werden – eine automatische Zahlung ohne Antrag gibt es nicht.</p>
+</details>
+<details class="faq-item">
+<summary>Was ist der Unterschied zwischen Sterbevierteljahr und Witwenrente?</summary>
+<p>Das Sterbevierteljahr ist ein einmaliger Vorschuss für die ersten drei Monate nach dem Tod, den Sie innerhalb von 30 Tagen beantragen müssen. Die Witwenrente ist die danach folgende, dauerhafte oder befristete monatliche Zahlung.</p>
+</details>
+</div>
 </div>
 
 <!-- WEITERE RATGEBER -->

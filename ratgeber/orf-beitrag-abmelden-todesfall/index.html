@@ -18,9 +18,37 @@
   "description": "Ablauf, Unterlagen und Musterbrief für die Abmeldung des ORF-Beitrags nach einem Todesfall in Österreich.",
   "author": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
   "publisher": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
-  "dateModified": "2026-06-29",
+  "dateModified": "2026-07-13",
   "datePublished": "2026-06-29",
   "inLanguage": "de-AT"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Muss ich den ORF-Beitrag sofort nach dem Todesfall abmelden?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nein, es gibt keine Frist – aber solange keine Abmeldung erfolgt, wird der Beitrag weiter eingezogen. Die GIS erfährt nicht automatisch vom Tod einer Person."}
+    },
+    {
+      "@type": "Question",
+      "name": "Brauche ich für die Abmeldung eine Verlassenschaftsbestätigung oder reicht die Sterbeurkunde?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Die Sterbeurkunde als Nachweis des Todes genügt für die Abmeldung. Eine Verlassenschaftsbestätigung (das österreichische Pendant zum Erbschein) ist dafür nicht notwendig."}
+    },
+    {
+      "@type": "Question",
+      "name": "Bekomme ich zu viel bezahlte Beiträge automatisch zurück?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nein, die Rückerstattung muss aktiv im Abmeldeschreiben beantragt werden, inklusive einer Bankverbindung für die Rücküberweisung."}
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich telefonisch abmelden?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nein, die GIS verlangt eine schriftliche Abmeldung – online, per Post oder Fax mit Kopie der Sterbeurkunde. Eine telefonische Abmeldung allein reicht nicht aus."}
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,6 +94,13 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--beige);color:var(--
 .vorlage-placeholder{color:var(--gold);font-style:italic}
 .btn-pdf{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:white;padding:.65rem 1.3rem;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s;font-family:'Source Sans 3',sans-serif;margin-top:1rem}
 .btn-pdf:hover{background:var(--gold-light);transform:translateY(-1px)}
+.faq-list{margin-top:.5rem}
+.faq-item{background:white;border-radius:8px;border:1px solid rgba(201,146,42,.15);padding:1rem 1.25rem;margin-bottom:.75rem;}
+.faq-item summary{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--navy);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";color:var(--gold);font-size:1.3rem;font-weight:400;flex-shrink:0;transition:transform .2s;}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{font-size:.9rem;color:var(--text);margin-top:.75rem;line-height:1.7;}
 .ratgeber-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem;}
 .ratgeber-card{background:white;border-radius:12px;padding:1.25rem;border:1px solid rgba(201,146,42,.15);text-decoration:none;display:block;transition:border-color .2s,transform .2s;}
 .ratgeber-card:hover{border-color:var(--gold);transform:translateY(-2px)}
@@ -111,7 +146,7 @@ nachklang.app
 <div class="article-label">Ratgeber · 🇦🇹 Österreich</div>
 <h1>ORF-Beitrag abmelden nach einem Todesfall</h1>
 <p class="hero-sub">Der ORF-Beitrag läuft auch nach dem Tod weiter – bis jemand aktiv abmeldet. Wir zeigen, wie Hinterbliebene in Österreich den Beitrag abmelden und bereits bezahlte Beträge zurückfordern.</p>
-<p class="hero-meta">Lesezeit: ca. 4 Minuten &middot; Zuletzt aktualisiert: Juni 2026 &middot; Nur für Österreich</p>
+<p class="hero-meta">Lesezeit: ca. 4 Minuten &middot; Zuletzt aktualisiert: Juli 2026 &middot; Nur für Österreich</p>
 </div>
 
 <div class="content">
@@ -225,6 +260,30 @@ Musterbrief als PDF herunterladen
 </a>
 </div>
 
+</div>
+
+<!-- FAQ -->
+<div class="section-block">
+<div class="section-label-small">Häufige Fragen</div>
+<h2>Häufige Fragen zum ORF-Beitrag</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Muss ich den ORF-Beitrag sofort nach dem Todesfall abmelden?</summary>
+<p>Nein, es gibt keine Frist – aber solange keine Abmeldung erfolgt, wird der Beitrag weiter eingezogen. Die GIS erfährt nicht automatisch vom Tod einer Person.</p>
+</details>
+<details class="faq-item">
+<summary>Brauche ich für die Abmeldung eine Verlassenschaftsbestätigung oder reicht die Sterbeurkunde?</summary>
+<p>Die Sterbeurkunde als Nachweis des Todes genügt für die Abmeldung. Eine Verlassenschaftsbestätigung (das österreichische Pendant zum Erbschein) ist dafür nicht notwendig.</p>
+</details>
+<details class="faq-item">
+<summary>Bekomme ich zu viel bezahlte Beiträge automatisch zurück?</summary>
+<p>Nein, die Rückerstattung muss aktiv im Abmeldeschreiben beantragt werden, inklusive einer Bankverbindung für die Rücküberweisung.</p>
+</details>
+<details class="faq-item">
+<summary>Kann ich telefonisch abmelden?</summary>
+<p>Nein, die GIS verlangt eine schriftliche Abmeldung – online, per Post oder Fax mit Kopie der Sterbeurkunde. Eine telefonische Abmeldung allein reicht nicht aus.</p>
+</details>
+</div>
 </div>
 
 <!-- WEITERE RATGEBER -->

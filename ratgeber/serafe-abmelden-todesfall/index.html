@@ -18,9 +18,37 @@
   "description": "Ablauf, Unterlagen und Musterbrief für die Abmeldung der Serafe-Haushaltsabgabe nach einem Todesfall in der Schweiz.",
   "author": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
   "publisher": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
-  "dateModified": "2026-06-29",
+  "dateModified": "2026-07-13",
   "datePublished": "2026-06-29",
   "inLanguage": "de-CH"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Muss ich Serafe sofort nach dem Todesfall informieren?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nur wenn der Haushalt aufgelöst wird. Bleibt jemand in der Wohnung wohnen, ist keine Abmeldung nötig, allenfalls später eine Ummeldung."}
+    },
+    {
+      "@type": "Question",
+      "name": "Bekommt Serafe automatisch Bescheid vom Einwohnermeldeamt?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nein, eine aktive Abmeldung durch die Hinterbliebenen ist erforderlich, wenn der Haushalt aufgelöst wird."}
+    },
+    {
+      "@type": "Question",
+      "name": "Wie viel wird bei Auflösung des Haushalts zurückerstattet?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Der anteilige Betrag für die nicht mehr genutzten Monate des bereits bezahlten Jahresbeitrags, berechnet und überwiesen von Serafe."}
+    },
+    {
+      "@type": "Question",
+      "name": "Reicht die Sterbeurkunde als Nachweis für die Abmeldung?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja, eine Kopie der Sterbeurkunde genügt zusammen mit der Referenznummer. Ein zusätzlicher Erbnachweis ist nicht erforderlich."}
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,6 +98,13 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--beige);color:var(--
 .vorlage-placeholder{color:var(--gold);font-style:italic}
 .btn-pdf{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:white;padding:.65rem 1.3rem;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s;font-family:'Source Sans 3',sans-serif;margin-top:1rem}
 .btn-pdf:hover{background:var(--gold-light);transform:translateY(-1px)}
+.faq-list{margin-top:.5rem}
+.faq-item{background:white;border-radius:8px;border:1px solid rgba(201,146,42,.15);padding:1rem 1.25rem;margin-bottom:.75rem;}
+.faq-item summary{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--navy);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";color:var(--gold);font-size:1.3rem;font-weight:400;flex-shrink:0;transition:transform .2s;}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{font-size:.9rem;color:var(--text);margin-top:.75rem;line-height:1.7;}
 .ratgeber-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem;}
 .ratgeber-card{background:white;border-radius:12px;padding:1.25rem;border:1px solid rgba(201,146,42,.15);text-decoration:none;display:block;transition:border-color .2s,transform .2s;}
 .ratgeber-card:hover{border-color:var(--gold);transform:translateY(-2px)}
@@ -116,7 +151,7 @@ nachklang.app
 <div class="article-label">Ratgeber · 🇨🇭 Schweiz</div>
 <h1>Serafe abmelden nach einem Todesfall</h1>
 <p class="hero-sub">Die Serafe-Haushaltsabgabe läuft nach dem Tod weiter – bis jemand aktiv abmeldet. Wir erklären, wann die Abgabe endet, wie Sie abmelden und ob bereits bezahlte Beiträge zurückerstattet werden.</p>
-<p class="hero-meta">Lesezeit: ca. 4 Minuten &middot; Zuletzt aktualisiert: Juni 2026 &middot; Nur für die Schweiz</p>
+<p class="hero-meta">Lesezeit: ca. 4 Minuten &middot; Zuletzt aktualisiert: Juli 2026 &middot; Nur für die Schweiz</p>
 </div>
 
 <div class="content">
@@ -228,6 +263,30 @@ Musterbrief als PDF herunterladen
 </a>
 </div>
 
+</div>
+
+<!-- FAQ -->
+<div class="section-block">
+<div class="section-label-small">Häufige Fragen</div>
+<h2>Häufige Fragen zur Serafe-Abmeldung</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Muss ich Serafe sofort nach dem Todesfall informieren?</summary>
+<p>Nur wenn der Haushalt aufgelöst wird. Bleibt jemand in der Wohnung wohnen, ist keine Abmeldung nötig, allenfalls später eine Ummeldung.</p>
+</details>
+<details class="faq-item">
+<summary>Bekommt Serafe automatisch Bescheid vom Einwohnermeldeamt?</summary>
+<p>Nein, eine aktive Abmeldung durch die Hinterbliebenen ist erforderlich, wenn der Haushalt aufgelöst wird.</p>
+</details>
+<details class="faq-item">
+<summary>Wie viel wird bei Auflösung des Haushalts zurückerstattet?</summary>
+<p>Der anteilige Betrag für die nicht mehr genutzten Monate des bereits bezahlten Jahresbeitrags, berechnet und überwiesen von Serafe.</p>
+</details>
+<details class="faq-item">
+<summary>Reicht die Sterbeurkunde als Nachweis für die Abmeldung?</summary>
+<p>Ja, eine Kopie der Sterbeurkunde genügt zusammen mit der Referenznummer. Ein zusätzlicher Erbnachweis ist nicht erforderlich.</p>
+</details>
+</div>
 </div>
 
 <!-- WEITERE RATGEBER -->

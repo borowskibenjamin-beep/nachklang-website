@@ -18,9 +18,42 @@
   "description": "Kfz-Steuer, Kfz-Versicherung und Zulassung nach einem Todesfall in Deutschland – was automatisch endet und was aktiv geregelt werden muss.",
   "author": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
   "publisher": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
-  "dateModified": "2026-06-29",
+  "dateModified": "2026-07-13",
   "datePublished": "2026-06-29",
   "inLanguage": "de"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Muss ich das Auto sofort ummelden?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nein, für die Ummeldung selbst gibt es keine gesetzliche Sofortfrist. Bis zur Ummeldung oder Abmeldung bleibt das Fahrzeug weiter zugelassen und versichert. Eine Frist gilt nur, wenn Sie die Kfz-Versicherung per Sonderkündigungsrecht beenden wollen: dafür haben Sie 1 Monat ab Kenntnis vom Vertrag (§ 115 VVG)."}
+    },
+    {
+      "@type": "Question",
+      "name": "Wer haftet, wenn mit dem Auto des Verstorbenen ein Unfall passiert, bevor es umgemeldet ist?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Der Haftpflichtschutz der bestehenden Versicherung bleibt bestehen, solange sie nicht gekündigt oder das Fahrzeug abgemeldet wurde. Als Erbe sind Sie aber verpflichtet, den Versicherer über den Todesfall zu informieren – tun Sie das nicht, riskieren Sie im Schadensfall Probleme bei der Regulierung."}
+    },
+    {
+      "@type": "Question",
+      "name": "Brauche ich einen Erbschein für die Ummeldung?",
+      "acceptedAnswer": {"@type": "Answer", "text": "In der Regel ja. Die Zulassungsstelle verlangt für die Ummeldung auf Ihren Namen einen Erbnachweis – meist einen Erbschein oder ein notariell beglaubigtes Testament. Wann genau welcher Nachweis reicht, erklären wir im Ratgeber zum Erbschein."}
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert, wenn mehrere Erben das Auto gemeinsam erben?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Dann gehört das Fahrzeug der Erbengemeinschaft gemeinsam. Für die Ummeldung auf eine einzelne Person oder den Verkauf ist entweder die Zustimmung aller Miterben oder eine Vollmacht von ihnen nötig – klären Sie das am besten frühzeitig innerhalb der Erbengemeinschaft."}
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich das Auto verkaufen, bevor es umgemeldet ist?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja, ein Verkauf ist mit entsprechendem Erbnachweis grundsätzlich möglich, auch ohne vorherige Ummeldung auf Ihren eigenen Namen. In der Praxis ist es aber oft einfacher, das Fahrzeug zuerst auf sich umzumelden – das vermeidet Rückfragen des Käufers oder der Zulassungsstelle."}
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,6 +96,13 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--beige);color:var(--
 .status-card .status-label{font-size:.7rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:.3rem;}
 .status-card strong{display:block;color:var(--navy);font-size:.9rem;margin-bottom:.2rem;}
 .status-card span{color:var(--text-light);font-size:.82rem;line-height:1.4;display:block;}
+.faq-list{margin-top:.5rem}
+.faq-item{background:white;border-radius:8px;border:1px solid rgba(201,146,42,.15);padding:1rem 1.25rem;margin-bottom:.75rem;}
+.faq-item summary{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--navy);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";color:var(--gold);font-size:1.3rem;font-weight:400;flex-shrink:0;transition:transform .2s;}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{font-size:.9rem;color:var(--text);margin-top:.75rem;line-height:1.7;}
 .ratgeber-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem;}
 .ratgeber-card{background:white;border-radius:12px;padding:1.25rem;border:1px solid rgba(201,146,42,.15);text-decoration:none;display:block;transition:border-color .2s,transform .2s;}
 .ratgeber-card:hover{border-color:var(--gold);transform:translateY(-2px)}
@@ -109,7 +149,7 @@ nachklang.app
 <div class="article-label">Ratgeber</div>
 <h1>Auto nach Todesfall – Kfz-Versicherung, Steuer und Ummeldung</h1>
 <p class="hero-sub">Was passiert mit dem Fahrzeug nach einem Todesfall? Kfz-Steuer endet automatisch, die Versicherung hat ein Sonderkündigungsrecht, und die Zulassung muss umgeschrieben werden. Wir erklären jeden Schritt.</p>
-<p class="hero-meta">Lesezeit: ca. 5 Minuten &middot; Zuletzt aktualisiert: Juni 2026 &middot; Deutschland</p>
+<p class="hero-meta">Lesezeit: ca. 5 Minuten &middot; Zuletzt aktualisiert: Juli 2026 &middot; Deutschland</p>
 </div>
 
 <div class="content">
@@ -237,6 +277,34 @@ nachklang.app
 </div>
 </div>
 
+</div>
+
+<!-- FAQ -->
+<div class="section-block">
+<div class="section-label-small">Häufige Fragen</div>
+<h2>Häufige Fragen zum Auto nach Todesfall</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Muss ich das Auto sofort ummelden?</summary>
+<p>Nein, für die Ummeldung selbst gibt es keine gesetzliche Sofortfrist. Bis zur Ummeldung oder Abmeldung bleibt das Fahrzeug weiter zugelassen und versichert. Eine Frist gilt nur, wenn Sie die Kfz-Versicherung per Sonderkündigungsrecht beenden wollen: dafür haben Sie 1 Monat ab Kenntnis vom Vertrag (§ 115 VVG).</p>
+</details>
+<details class="faq-item">
+<summary>Wer haftet, wenn mit dem Auto des Verstorbenen ein Unfall passiert, bevor es umgemeldet ist?</summary>
+<p>Der Haftpflichtschutz der bestehenden Versicherung bleibt bestehen, solange sie nicht gekündigt oder das Fahrzeug abgemeldet wurde. Als Erbe sind Sie aber verpflichtet, den Versicherer über den Todesfall zu informieren – tun Sie das nicht, riskieren Sie im Schadensfall Probleme bei der Regulierung.</p>
+</details>
+<details class="faq-item">
+<summary>Brauche ich einen Erbschein für die Ummeldung?</summary>
+<p>In der Regel ja. Die Zulassungsstelle verlangt für die Ummeldung auf Ihren Namen einen Erbnachweis – meist einen Erbschein oder ein notariell beglaubigtes Testament. Wann genau welcher Nachweis reicht, erklären wir im Ratgeber zum Erbschein.</p>
+</details>
+<details class="faq-item">
+<summary>Was passiert, wenn mehrere Erben das Auto gemeinsam erben?</summary>
+<p>Dann gehört das Fahrzeug der Erbengemeinschaft gemeinsam. Für die Ummeldung auf eine einzelne Person oder den Verkauf ist entweder die Zustimmung aller Miterben oder eine Vollmacht von ihnen nötig – klären Sie das am besten frühzeitig innerhalb der Erbengemeinschaft.</p>
+</details>
+<details class="faq-item">
+<summary>Kann ich das Auto verkaufen, bevor es umgemeldet ist?</summary>
+<p>Ja, ein Verkauf ist mit entsprechendem Erbnachweis grundsätzlich möglich, auch ohne vorherige Ummeldung auf Ihren eigenen Namen. In der Praxis ist es aber oft einfacher, das Fahrzeug zuerst auf sich umzumelden – das vermeidet Rückfragen des Käufers oder der Zulassungsstelle.</p>
+</details>
+</div>
 </div>
 
 <!-- WEITERE RATGEBER -->

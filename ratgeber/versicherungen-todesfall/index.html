@@ -18,9 +18,37 @@
   "description": "Übersicht aller Versicherungstypen: was sofort gemeldet, was gekündigt werden muss und welche Fristen gelten.",
   "author": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
   "publisher": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
-  "dateModified": "2026-06-24",
+  "dateModified": "2026-07-13",
   "datePublished": "2026-06-24",
   "inLanguage": "de"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Muss ich alle Versicherungen des Verstorbenen sofort kündigen?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nein. Nur die Lebensversicherung muss umgehend gemeldet werden, weil sie ein Leistungsfall ist. Die übrigen Versicherungen können Sie in Ruhe abwickeln – sollten sie aber nicht monatelang unbeachtet lassen, da laufende Beiträge sonst weiter den Nachlass belasten."}
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert, wenn ich eine Kfz-Versicherung einfach nicht kündige?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Sie läuft automatisch weiter und die Beiträge werden weiter vom Nachlasskonto abgebucht, bis Sie das Fahrzeug aktiv abmelden oder die Versicherung kündigen. Es lohnt sich, das zeitnah zu erledigen, statt es aufzuschieben."}
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es ein Sonderkündigungsrecht bei Versicherungen im Todesfall?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nein, ein gesetzliches Sonderkündigungsrecht gibt es nur beim Mietvertrag (§ 580 BGB). Bei Versicherungen handeln die meisten Anbieter aus Kulanz und akzeptieren die Kündigung zum nächstmöglichen Termin, ein Rechtsanspruch darauf besteht aber nicht."}
+    },
+    {
+      "@type": "Question",
+      "name": "Gilt das bei allen Versicherern wie Allianz, ERGO, HUK-Coburg oder AXA gleich?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Das grundsätzliche Verfahren ist bei allen Anbietern ähnlich: Sterbeurkunde einreichen, Vertrag wird beendet oder umgestellt. Einzelheiten wie Formulare oder Bearbeitungszeit können sich unterscheiden – im Zweifel direkt beim jeweiligen Versicherer nachfragen."}
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,6 +97,13 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--beige);color:var(--
 .vorlage-placeholder{color:var(--gold);font-style:italic}
 .btn-pdf{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:white;padding:.65rem 1.3rem;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s;font-family:'Source Sans 3',sans-serif;margin-top:1rem}
 .btn-pdf:hover{background:var(--gold-light);transform:translateY(-1px)}
+.faq-list{margin-top:.5rem}
+.faq-item{background:white;border-radius:8px;border:1px solid rgba(201,146,42,.15);padding:1rem 1.25rem;margin-bottom:.75rem;}
+.faq-item summary{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--navy);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";color:var(--gold);font-size:1.3rem;font-weight:400;flex-shrink:0;transition:transform .2s;}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{font-size:.9rem;color:var(--text);margin-top:.75rem;line-height:1.7;}
 .ratgeber-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem;}
 .ratgeber-card{background:white;border-radius:12px;padding:1.25rem;border:1px solid rgba(201,146,42,.15);text-decoration:none;display:block;transition:border-color .2s,transform .2s;}
 .ratgeber-card:hover{border-color:var(--gold);transform:translateY(-2px)}
@@ -113,7 +148,7 @@ nachklang.app
 <div class="article-label">Ratgeber</div>
 <h1>Versicherungen nach einem Todesfall – was melden, was kündigen</h1>
 <p class="hero-sub">Manche Versicherungen müssen sofort gemeldet werden, andere enden automatisch. Hier finden Sie alle Versicherungstypen im Überblick – mit klaren Handlungsempfehlungen.</p>
-<p class="hero-meta">Lesezeit: ca. 5 Minuten &middot; Zuletzt aktualisiert: Juni 2026</p>
+<p class="hero-meta">Lesezeit: ca. 5 Minuten &middot; Zuletzt aktualisiert: Juli 2026</p>
 </div>
 
 <div class="content">
@@ -229,6 +264,30 @@ Musterbrief als PDF herunterladen
 
 <div class="tip-box" style="margin-top:1rem">
 <strong>Immer Einschreiben nutzen:</strong> Versenden Sie Kündigungen und Meldungen an Versicherungen per Einschreiben mit Rückschein. So ist der Zugang nachweisbar.
+</div>
+</div>
+
+<!-- FAQ -->
+<div class="section-block">
+<div class="section-label-small">Häufige Fragen</div>
+<h2>Häufige Fragen zu Versicherungen im Todesfall</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Muss ich alle Versicherungen des Verstorbenen sofort kündigen?</summary>
+<p>Nein. Nur die Lebensversicherung muss umgehend gemeldet werden, weil sie ein Leistungsfall ist. Die übrigen Versicherungen können Sie in Ruhe abwickeln – sollten sie aber nicht monatelang unbeachtet lassen, da laufende Beiträge sonst weiter den Nachlass belasten.</p>
+</details>
+<details class="faq-item">
+<summary>Was passiert, wenn ich eine Kfz-Versicherung einfach nicht kündige?</summary>
+<p>Sie läuft automatisch weiter und die Beiträge werden weiter vom Nachlasskonto abgebucht, bis Sie das Fahrzeug aktiv abmelden oder die Versicherung kündigen. Es lohnt sich, das zeitnah zu erledigen, statt es aufzuschieben.</p>
+</details>
+<details class="faq-item">
+<summary>Gibt es ein Sonderkündigungsrecht bei Versicherungen im Todesfall?</summary>
+<p>Nein, ein gesetzliches Sonderkündigungsrecht gibt es nur beim Mietvertrag (§ 580 BGB). Bei Versicherungen handeln die meisten Anbieter aus Kulanz und akzeptieren die Kündigung zum nächstmöglichen Termin, ein Rechtsanspruch darauf besteht aber nicht.</p>
+</details>
+<details class="faq-item">
+<summary>Gilt das bei allen Versicherern wie Allianz, ERGO, HUK-Coburg oder AXA gleich?</summary>
+<p>Das grundsätzliche Verfahren ist bei allen Anbietern ähnlich: Sterbeurkunde einreichen, Vertrag wird beendet oder umgestellt. Einzelheiten wie Formulare oder Bearbeitungszeit können sich unterscheiden – im Zweifel direkt beim jeweiligen Versicherer nachfragen.</p>
+</details>
 </div>
 </div>
 

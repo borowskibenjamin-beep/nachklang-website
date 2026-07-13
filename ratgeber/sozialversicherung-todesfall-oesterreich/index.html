@@ -18,9 +18,37 @@
   "description": "Pension abmelden, Hinterbliebenenpension beantragen, Krankenversicherung regeln – Schritt für Schritt für Hinterbliebene in Österreich.",
   "author": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
   "publisher": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
-  "dateModified": "2026-06-29",
+  "dateModified": "2026-07-13",
   "datePublished": "2026-06-29",
   "inLanguage": "de-AT"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Muss ich die ÖGK zusätzlich informieren, wenn das Standesamt den Tod meldet?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja, sicherheitshalber. Standesämter melden Todesfälle zwar automatisch an die Sozialversicherungsträger, es kann aber zu Zeitverzögerungen kommen – verlassen Sie sich nicht allein darauf."}
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lange habe ich Zeit, mich nach Wegfall der Mitversicherung neu bei der Krankenversicherung anzumelden?",
+      "acceptedAnswer": {"@type": "Answer", "text": "6 Wochen. Danach entsteht eine Versicherungslücke, die später nur mit Aufwand geschlossen werden kann."}
+    },
+    {
+      "@type": "Question",
+      "name": "Wer ist zuständig, wenn der Verstorbene selbstständig war?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Die SVS (Sozialversicherung der Selbstständigen), nicht die PVA. Nach der Gewerbeabmeldung können offene SVS-Ansprüche abschließend geregelt werden."}
+    },
+    {
+      "@type": "Question",
+      "name": "Muss ich die Witwenpension separat bei der SVS oder BVAEB beantragen?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja, je nach Versicherungsträger des Verstorbenen: bei Selbstständigen bei der SVS, bei öffentlich Bediensteten bei der BVAEB, sonst bei der PVA."}
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,6 +90,13 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--beige);color:var(--
 .institution-card{background:white;border-radius:8px;padding:.9rem 1rem;border:1px solid rgba(201,146,42,.12);}
 .institution-card strong{display:block;color:var(--navy);font-size:.9rem;margin-bottom:.2rem;}
 .institution-card span{color:var(--text-light);font-size:.82rem;line-height:1.4;display:block;}
+.faq-list{margin-top:.5rem}
+.faq-item{background:white;border-radius:8px;border:1px solid rgba(201,146,42,.15);padding:1rem 1.25rem;margin-bottom:.75rem;}
+.faq-item summary{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--navy);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";color:var(--gold);font-size:1.3rem;font-weight:400;flex-shrink:0;transition:transform .2s;}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{font-size:.9rem;color:var(--text);margin-top:.75rem;line-height:1.7;}
 .ratgeber-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem;}
 .ratgeber-card{background:white;border-radius:12px;padding:1.25rem;border:1px solid rgba(201,146,42,.15);text-decoration:none;display:block;transition:border-color .2s,transform .2s;}
 .ratgeber-card:hover{border-color:var(--gold);transform:translateY(-2px)}
@@ -108,7 +143,7 @@ nachklang.app
 <div class="article-label">Ratgeber · 🇦🇹 Österreich</div>
 <h1>Sozialversicherung nach Todesfall in Österreich</h1>
 <p class="hero-sub">Pension abmelden, Hinterbliebenenpension beantragen, Krankenversicherung klären: Was nach einem Todesfall in Österreich mit PVA, ÖGK und SVS zu tun ist – und warum schnelles Handeln bares Geld spart.</p>
-<p class="hero-meta">Lesezeit: ca. 6 Minuten &middot; Zuletzt aktualisiert: Juni 2026 &middot; Nur für Österreich</p>
+<p class="hero-meta">Lesezeit: ca. 6 Minuten &middot; Zuletzt aktualisiert: Juli 2026 &middot; Nur für Österreich</p>
 </div>
 
 <div class="content">
@@ -231,6 +266,30 @@ nachklang.app
 </div>
 </div>
 
+</div>
+
+<!-- FAQ -->
+<div class="section-block">
+<div class="section-label-small">Häufige Fragen</div>
+<h2>Häufige Fragen zur Sozialversicherung nach Todesfall (AT)</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Muss ich die ÖGK zusätzlich informieren, wenn das Standesamt den Tod meldet?</summary>
+<p>Ja, sicherheitshalber. Standesämter melden Todesfälle zwar automatisch an die Sozialversicherungsträger, es kann aber zu Zeitverzögerungen kommen – verlassen Sie sich nicht allein darauf.</p>
+</details>
+<details class="faq-item">
+<summary>Wie lange habe ich Zeit, mich nach Wegfall der Mitversicherung neu bei der Krankenversicherung anzumelden?</summary>
+<p>6 Wochen. Danach entsteht eine Versicherungslücke, die später nur mit Aufwand geschlossen werden kann.</p>
+</details>
+<details class="faq-item">
+<summary>Wer ist zuständig, wenn der Verstorbene selbstständig war?</summary>
+<p>Die SVS (Sozialversicherung der Selbstständigen), nicht die PVA. Nach der Gewerbeabmeldung können offene SVS-Ansprüche abschließend geregelt werden.</p>
+</details>
+<details class="faq-item">
+<summary>Muss ich die Witwenpension separat bei der SVS oder BVAEB beantragen?</summary>
+<p>Ja, je nach Versicherungsträger des Verstorbenen: bei Selbstständigen bei der SVS, bei öffentlich Bediensteten bei der BVAEB, sonst bei der PVA.</p>
+</details>
+</div>
 </div>
 
 <!-- WEITERE RATGEBER -->

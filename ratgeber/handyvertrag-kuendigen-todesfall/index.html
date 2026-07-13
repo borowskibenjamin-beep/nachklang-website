@@ -18,9 +18,37 @@
   "description": "Ablauf, Unterlagen und Musterbrief zur Kündigung eines Mobilfunkvertrags nach einem Todesfall.",
   "author": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
   "publisher": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
-  "dateModified": "2026-06-24",
+  "dateModified": "2026-07-13",
   "datePublished": "2026-06-24",
   "inLanguage": "de"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wer muss den Handyvertrag nach einem Todesfall kündigen?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Der Erbe bzw. Hinterbliebene. Er tritt automatisch in den Vertrag ein und ist berechtigt, beim Anbieter eine Kulanzkündigung zu beantragen."}
+    },
+    {
+      "@type": "Question",
+      "name": "Kann der Anbieter die Sonderkündigung ablehnen?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja, ein Rechtsanspruch besteht nicht. Lehnt der Anbieter ab, bleiben als Optionen: Wechsel auf den günstigsten Tarif bis Vertragsende, Einschalten einer Verbraucherzentrale, oder ordentliche Kündigung zum nächstmöglichen Termin."}
+    },
+    {
+      "@type": "Question",
+      "name": "Muss ich die Handyrechnung bis zur Kündigung weiterzahlen?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja. Die monatlichen Gebühren laufen als Nachlassverbindlichkeit weiter, bis der Vertrag regulär endet oder erfolgreich gekündigt wurde."}
+    },
+    {
+      "@type": "Question",
+      "name": "Gilt das auch bei Telekom, Vodafone, O2 oder 1&1?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja, bei allen großen Anbietern gilt dasselbe Prinzip: kein gesetzlicher Anspruch auf Sonderkündigung, aber üblicherweise eine Kulanzregelung gegen schriftlichen Antrag mit Kopie der Sterbeurkunde. Ob die Restlaufzeit erlassen wird, liegt im Ermessen des jeweiligen Anbieters."}
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,6 +94,13 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--beige);color:var(--
 .vorlage-placeholder{color:var(--gold);font-style:italic}
 .btn-pdf{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:white;padding:.65rem 1.3rem;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s;font-family:'Source Sans 3',sans-serif;margin-top:1rem}
 .btn-pdf:hover{background:var(--gold-light);transform:translateY(-1px)}
+.faq-list{margin-top:.5rem}
+.faq-item{background:white;border-radius:8px;border:1px solid rgba(201,146,42,.15);padding:1rem 1.25rem;margin-bottom:.75rem;}
+.faq-item summary{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--navy);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";color:var(--gold);font-size:1.3rem;font-weight:400;flex-shrink:0;transition:transform .2s;}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{font-size:.9rem;color:var(--text);margin-top:.75rem;line-height:1.7;}
 .ratgeber-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem;}
 .ratgeber-card{background:white;border-radius:12px;padding:1.25rem;border:1px solid rgba(201,146,42,.15);text-decoration:none;display:block;transition:border-color .2s,transform .2s;}
 .ratgeber-card:hover{border-color:var(--gold);transform:translateY(-2px)}
@@ -111,7 +146,7 @@ nachklang.app
 <div class="article-label">Ratgeber</div>
 <h1>Handyvertrag kündigen nach dem Tod eines Angehörigen</h1>
 <p class="hero-sub">Ein Handy- oder Mobilfunkvertrag läuft nach dem Tod weiter – bis jemand kündigt. Wir erklären Ihre Möglichkeiten und was die großen Anbieter in der Praxis tun.</p>
-<p class="hero-meta">Lesezeit: ca. 4 Minuten &middot; Zuletzt aktualisiert: Juni 2026</p>
+<p class="hero-meta">Lesezeit: ca. 4 Minuten &middot; Zuletzt aktualisiert: Juli 2026</p>
 </div>
 
 <div class="content">
@@ -221,6 +256,30 @@ nachklang.app
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
 Musterbrief als PDF herunterladen
 </a>
+</div>
+</div>
+
+<!-- FAQ -->
+<div class="section-block">
+<div class="section-label-small">Häufige Fragen</div>
+<h2>Häufige Fragen zur Handyvertrags-Kündigung</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Wer muss den Handyvertrag nach einem Todesfall kündigen?</summary>
+<p>Der Erbe bzw. Hinterbliebene. Er tritt automatisch in den Vertrag ein und ist berechtigt, beim Anbieter eine Kulanzkündigung zu beantragen.</p>
+</details>
+<details class="faq-item">
+<summary>Kann der Anbieter die Sonderkündigung ablehnen?</summary>
+<p>Ja, ein Rechtsanspruch besteht nicht. Lehnt der Anbieter ab, bleiben als Optionen: Wechsel auf den günstigsten Tarif bis Vertragsende, Einschalten einer Verbraucherzentrale, oder ordentliche Kündigung zum nächstmöglichen Termin.</p>
+</details>
+<details class="faq-item">
+<summary>Muss ich die Handyrechnung bis zur Kündigung weiterzahlen?</summary>
+<p>Ja. Die monatlichen Gebühren laufen als Nachlassverbindlichkeit weiter, bis der Vertrag regulär endet oder erfolgreich gekündigt wurde.</p>
+</details>
+<details class="faq-item">
+<summary>Gilt das auch bei Telekom, Vodafone, O2 oder 1&amp;1?</summary>
+<p>Ja, bei allen großen Anbietern gilt dasselbe Prinzip: kein gesetzlicher Anspruch auf Sonderkündigung, aber üblicherweise eine Kulanzregelung gegen schriftlichen Antrag mit Kopie der Sterbeurkunde. Ob die Restlaufzeit erlassen wird, liegt im Ermessen des jeweiligen Anbieters.</p>
+</details>
 </div>
 </div>
 

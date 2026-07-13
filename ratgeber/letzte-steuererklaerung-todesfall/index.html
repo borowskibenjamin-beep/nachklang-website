@@ -18,9 +18,32 @@
   "description": "Muss ich für den Verstorbenen noch eine Steuererklärung abgeben? Frist, Zusammenveranlagung im Todesjahr und wer als Erbe unterschreiben muss.",
   "author": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
   "publisher": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
-  "dateModified": "2026-07-02",
+  "dateModified": "2026-07-13",
   "datePublished": "2026-07-02",
   "inLanguage": "de"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie lange habe ich Zeit für die letzte Steuererklärung?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Es gilt die reguläre Frist bis zum 31. Juli des Folgejahres. Eine formlose Fristverlängerung wird beim Finanzamt aber meist unkompliziert gewährt, wenn Sie auf Ihre Situation als Erbe hinweisen."}
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zur Erbschaftssteuererklärung?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Die Einkommensteuererklärung betrifft die laufenden Einkünfte des Verstorbenen bis zum Todestag. Die Erbschaftssteuererklärung betrifft dagegen das geerbte Vermögen selbst – beide laufen getrennt mit eigenen Fristen."}
+    },
+    {
+      "@type": "Question",
+      "name": "Wer haftet, wenn noch Steuerschulden offen sind?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Alle Erben gemeinsam als Gesamtschuldner. Das Finanzamt kann sich im Zweifel an jeden einzelnen Erben wenden, unabhängig vom internen Erbanteil."}
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -162,6 +185,30 @@ display:grid;grid-template-columns:1.5rem 1fr;gap:.5rem;
 content:"✓";color:var(--gold);font-weight:700;
 }
 .behoerden-list li strong{color:var(--navy)}
+
+/* FAQ */
+.faq-list{margin-top:.5rem}
+.faq-item{
+background:white;border-radius:8px;
+border:1px solid rgba(201,146,42,.15);
+padding:1rem 1.25rem;margin-bottom:.75rem;
+}
+.faq-item summary{
+font-family:'Cormorant Garamond',serif;
+font-size:1.1rem;font-weight:600;color:var(--navy);
+cursor:pointer;list-style:none;
+display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+content:"+";color:var(--gold);font-size:1.3rem;font-weight:400;
+flex-shrink:0;transition:transform .2s;
+}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{
+font-size:.9rem;color:var(--text);
+margin-top:.75rem;line-height:1.7;
+}
 
 /* RATGEBER CARDS */
 .ratgeber-grid{
@@ -442,6 +489,26 @@ Als Nachweis für das Finanzamt, dass Sie als Erbe für den Verstorbenen handeln
 </ul>
 
 <p style="font-size:.95rem;color:var(--text);margin-top:1.5rem;">Fehlt eine Unterlage, ist das kein Grund zur Sorge: Wie bei Schritt 8 beschrieben, lassen sich die meisten Dokumente nachträglich bei Arbeitgeber, Rentenversicherung oder direkt beim Finanzamt anfordern. Nehmen Sie sich für die Steuererklärung ruhig Zeit – anders als bei der Mietkündigung oder der Sterbeurkunde gibt es hier keine Frist, die in den ersten Wochen nach dem Todesfall drängt. Wichtiger ist, dass Sie die Unterlagen vollständig zusammentragen, bevor Sie mit dem Ausfüllen beginnen, damit Sie nicht mehrfach nacharbeiten müssen.</p>
+</div>
+
+<!-- FAQ -->
+<div class="section-block">
+<div class="section-label-small">Häufige Fragen</div>
+<h2>Häufige Fragen zur letzten Steuererklärung</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Wie lange habe ich Zeit für die letzte Steuererklärung?</summary>
+<p>Es gilt die reguläre Frist bis zum 31. Juli des Folgejahres. Eine formlose Fristverlängerung wird beim Finanzamt aber meist unkompliziert gewährt, wenn Sie auf Ihre Situation als Erbe hinweisen.</p>
+</details>
+<details class="faq-item">
+<summary>Was ist der Unterschied zur Erbschaftssteuererklärung?</summary>
+<p>Die Einkommensteuererklärung betrifft die laufenden Einkünfte des Verstorbenen bis zum Todestag. Die Erbschaftssteuererklärung betrifft dagegen das geerbte Vermögen selbst – beide laufen getrennt mit eigenen Fristen.</p>
+</details>
+<details class="faq-item">
+<summary>Wer haftet, wenn noch Steuerschulden offen sind?</summary>
+<p>Alle Erben gemeinsam als Gesamtschuldner. Das Finanzamt kann sich im Zweifel an jeden einzelnen Erben wenden, unabhängig vom internen Erbanteil.</p>
+</details>
+</div>
 </div>
 
 <!-- RATGEBER KARTEN -->

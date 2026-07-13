@@ -18,9 +18,37 @@
   "description": "Wie viel bleibt bei einer Erbschaft steuerfrei? Freibeträge nach Verwandtschaftsgrad, Steuerklassen und das Familienheim.",
   "author": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
   "publisher": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
-  "dateModified": "2026-07-02",
+  "dateModified": "2026-07-13",
   "datePublished": "2026-07-02",
   "inLanguage": "de"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Muss ich die Erbschaftssteuer selbst berechnen und anmelden?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Einen gesonderten Antrag auf den Freibetrag brauchen Sie nicht zu stellen – das Finanzamt berücksichtigt ihn automatisch. Sie müssen den Erbfall aber innerhalb von drei Monaten nach Kenntnis dem Finanzamt anzeigen (§ 30 ErbStG), unabhängig davon, ob am Ende Steuer anfällt."}
+    },
+    {
+      "@type": "Question",
+      "name": "Zahlen Ehepartner Steuern, wenn sie die gemeinsame Wohnung erben?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nein, wenn der Ehepartner die Immobilie mindestens zehn Jahre lang weiterhin selbst bewohnt, bleibt sie unabhängig vom Wert vollständig steuerfrei. Für Kinder gilt die Befreiung nur bis 200 Quadratmeter Wohnfläche."}
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es in Österreich noch eine Erbschaftssteuer?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nein, sie wurde 2008 vollständig abgeschafft. Bei geerbten Immobilien fällt dort allerdings weiterhin eine Grunderwerbsteuer an, unabhängig vom Verwandtschaftsgrad."}
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich den persönlichen Freibetrag mehrfach nutzen?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja, der Freibetrag steht Ihnen bei jedem Erbfall und pro erbender Person erneut in voller Höhe zu – etwa wenn Sie nacheinander von beiden Elternteilen erben. Bei Schenkungen zu Lebzeiten kann derselbe Freibetrag zusätzlich alle zehn Jahre erneut ausgeschöpft werden."}
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -162,6 +190,30 @@ display:grid;grid-template-columns:1.5rem 1fr;gap:.5rem;
 content:"✓";color:var(--gold);font-weight:700;
 }
 .behoerden-list li strong{color:var(--navy)}
+
+/* FAQ */
+.faq-list{margin-top:.5rem}
+.faq-item{
+background:white;border-radius:8px;
+border:1px solid rgba(201,146,42,.15);
+padding:1rem 1.25rem;margin-bottom:.75rem;
+}
+.faq-item summary{
+font-family:'Cormorant Garamond',serif;
+font-size:1.1rem;font-weight:600;color:var(--navy);
+cursor:pointer;list-style:none;
+display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+content:"+";color:var(--gold);font-size:1.3rem;font-weight:400;
+flex-shrink:0;transition:transform .2s;
+}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{
+font-size:.9rem;color:var(--text);
+margin-top:.75rem;line-height:1.7;
+}
 
 /* RATGEBER CARDS */
 .ratgeber-grid{
@@ -435,6 +487,30 @@ nachklang.app
 </div>
 
 <p style="font-size:.95rem;color:var(--text);margin-top:1.5rem;">Unterm Strich gilt: Bei Ehepartnern und Kindern bleibt die überwiegende Mehrheit der Erbschaften in Deutschland durch die persönlichen Freibeträge komplett steuerfrei – Erbschaftssteuer wird in der Praxis vor allem bei größeren Vermögen, Immobilien in gefragten Lagen oder eben bei entfernteren Verwandten und nicht verwandten Erben relevant. Ein grober Überblick über die eigene Situation lohnt sich trotzdem früh, damit Sie nicht von einer unerwarteten Steuerforderung überrascht werden.</p>
+</div>
+
+<!-- FAQ -->
+<div class="section-block">
+<div class="section-label-small">Häufige Fragen</div>
+<h2>Häufige Fragen zur Erbschaftssteuer</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Muss ich die Erbschaftssteuer selbst berechnen und anmelden?</summary>
+<p>Einen gesonderten Antrag auf den Freibetrag brauchen Sie nicht zu stellen – das Finanzamt berücksichtigt ihn automatisch. Sie müssen den Erbfall aber innerhalb von drei Monaten nach Kenntnis dem Finanzamt anzeigen (§ 30 ErbStG), unabhängig davon, ob am Ende Steuer anfällt.</p>
+</details>
+<details class="faq-item">
+<summary>Zahlen Ehepartner Steuern, wenn sie die gemeinsame Wohnung erben?</summary>
+<p>Nein, wenn der Ehepartner die Immobilie mindestens zehn Jahre lang weiterhin selbst bewohnt, bleibt sie unabhängig vom Wert vollständig steuerfrei. Für Kinder gilt die Befreiung nur bis 200 Quadratmeter Wohnfläche.</p>
+</details>
+<details class="faq-item">
+<summary>Gibt es in Österreich noch eine Erbschaftssteuer?</summary>
+<p>Nein, sie wurde 2008 vollständig abgeschafft. Bei geerbten Immobilien fällt dort allerdings weiterhin eine Grunderwerbsteuer an, unabhängig vom Verwandtschaftsgrad.</p>
+</details>
+<details class="faq-item">
+<summary>Kann ich den persönlichen Freibetrag mehrfach nutzen?</summary>
+<p>Ja, der Freibetrag steht Ihnen bei jedem Erbfall und pro erbender Person erneut in voller Höhe zu – etwa wenn Sie nacheinander von beiden Elternteilen erben. Bei Schenkungen zu Lebzeiten kann derselbe Freibetrag zusätzlich alle zehn Jahre erneut ausgeschöpft werden.</p>
+</details>
+</div>
 </div>
 
 <!-- RATGEBER KARTEN -->

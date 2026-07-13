@@ -18,9 +18,37 @@
   "description": "Was ein Erbschein ist, wann er wirklich nötig ist, was er kostet und wie lange die Beantragung dauert.",
   "author": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
   "publisher": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
-  "dateModified": "2026-07-02",
+  "dateModified": "2026-07-13",
   "datePublished": "2026-07-02",
   "inLanguage": "de"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kann ich den Erbschein online beantragen?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nein. Der Antrag erfordert eine persönliche eidesstattliche Versicherung, die Sie entweder beim Nachlassgericht selbst oder bei einem Notar abgeben müssen – ein reiner Online-Antrag ist dafür nicht vorgesehen."}
+    },
+    {
+      "@type": "Question",
+      "name": "Ist der Erbschein bundesweit gültig?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja. Ein deutscher Erbschein gilt im gesamten Bundesgebiet, unabhängig davon, welches Amtsgericht ihn ausgestellt hat. Für Vermögen im Ausland kann zusätzlich ein Europäisches Nachlasszeugnis sinnvoll sein."}
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert bei falschen Angaben in der eidesstattlichen Versicherung?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Eine falsche eidesstattliche Versicherung ist strafbar. Lassen Sie sich bei Unsicherheiten über die genaue Erbfolge vorab beraten, bevor Sie die Erklärung abgeben."}
+    },
+    {
+      "@type": "Question",
+      "name": "Muss jeder Miterbe einzeln einen Erbschein beantragen?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nein. Ein gemeinschaftlicher Erbschein kann von einem einzelnen Miterben beantragt werden und gilt danach für die gesamte Erbengemeinschaft. Nur wer allein über seinen Anteil verfügen möchte, braucht zusätzlich einen Teilerbschein."}
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -162,6 +190,30 @@ display:grid;grid-template-columns:1.5rem 1fr;gap:.5rem;
 content:"✓";color:var(--gold);font-weight:700;
 }
 .behoerden-list li strong{color:var(--navy)}
+
+/* FAQ */
+.faq-list{margin-top:.5rem}
+.faq-item{
+background:white;border-radius:8px;
+border:1px solid rgba(201,146,42,.15);
+padding:1rem 1.25rem;margin-bottom:.75rem;
+}
+.faq-item summary{
+font-family:'Cormorant Garamond',serif;
+font-size:1.1rem;font-weight:600;color:var(--navy);
+cursor:pointer;list-style:none;
+display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+content:"+";color:var(--gold);font-size:1.3rem;font-weight:400;
+flex-shrink:0;transition:transform .2s;
+}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{
+font-size:.9rem;color:var(--text);
+margin-top:.75rem;line-height:1.7;
+}
 
 /* RATGEBER CARDS */
 .ratgeber-grid{
@@ -450,6 +502,30 @@ Namen und Kontaktdaten anderer Erbberechtigter, falls eine Erbengemeinschaft bes
 </ul>
 
 <p style="font-size:.95rem;color:var(--text);margin-top:1.5rem;">Ein unvollständiger Antrag ist einer der häufigsten Gründe, warum sich die Bearbeitung beim Nachlassgericht unnötig verzögert. Rufen Sie im Zweifel vorab beim Nachlassgericht an und fragen Sie nach der genauen Liste der benötigten Unterlagen für Ihren Fall – die Anforderungen können je nach Amtsgericht leicht variieren.</p>
+</div>
+
+<!-- FAQ -->
+<div class="section-block">
+<div class="section-label-small">Häufige Fragen</div>
+<h2>Häufige Fragen zum Erbschein</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Kann ich den Erbschein online beantragen?</summary>
+<p>Nein. Der Antrag erfordert eine persönliche eidesstattliche Versicherung, die Sie entweder beim Nachlassgericht selbst oder bei einem Notar abgeben müssen – ein reiner Online-Antrag ist dafür nicht vorgesehen.</p>
+</details>
+<details class="faq-item">
+<summary>Ist der Erbschein bundesweit gültig?</summary>
+<p>Ja. Ein deutscher Erbschein gilt im gesamten Bundesgebiet, unabhängig davon, welches Amtsgericht ihn ausgestellt hat. Für Vermögen im Ausland kann zusätzlich ein Europäisches Nachlasszeugnis sinnvoll sein.</p>
+</details>
+<details class="faq-item">
+<summary>Was passiert bei falschen Angaben in der eidesstattlichen Versicherung?</summary>
+<p>Eine falsche eidesstattliche Versicherung ist strafbar. Lassen Sie sich bei Unsicherheiten über die genaue Erbfolge vorab beraten, bevor Sie die Erklärung abgeben.</p>
+</details>
+<details class="faq-item">
+<summary>Muss jeder Miterbe einzeln einen Erbschein beantragen?</summary>
+<p>Nein. Ein gemeinschaftlicher Erbschein kann von einem einzelnen Miterben beantragt werden und gilt danach für die gesamte Erbengemeinschaft. Nur wer allein über seinen Anteil verfügen möchte, braucht zusätzlich einen Teilerbschein.</p>
+</details>
+</div>
 </div>
 
 <!-- RATGEBER KARTEN -->

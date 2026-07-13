@@ -18,9 +18,37 @@
   "description": "Sperrung des Depots, Nachweis der Verfügungsberechtigung, Bewertungsstichtag und Erbengemeinschaften: der Ratgeber für Erben mit Wertpapierdepot im Nachlass.",
   "author": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
   "publisher": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
-  "dateModified": "2026-07-02",
+  "dateModified": "2026-07-13",
   "datePublished": "2026-07-02",
   "inLanguage": "de"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Verliere ich Geld, wenn Aktien während der Depotsperre fallen?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Der Depotwert selbst verändert sich mit dem Markt weiter, nur eingreifen können Sie zunächst nicht. Deshalb lohnt es sich, die Verfügungsberechtigung so früh wie möglich nachzuweisen, statt abzuwarten."}
+    },
+    {
+      "@type": "Question",
+      "name": "Muss ich geerbte Aktien und Fonds verkaufen?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nein. Das Depot kann unverändert auf die Erben umgeschrieben werden, ohne dass verkauft werden muss – das ist steuerlich oft vorteilhafter, weil dabei keine sofortige Kapitalertragsteuer anfällt."}
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert mit dem Freistellungsauftrag des Verstorbenen?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Er erlischt mit dem Tod. Jeder Erbe muss für das übernommene Depot einen eigenen, neuen Freistellungsauftrag einrichten, sonst wird auf Kapitalerträge sofort die volle Kapitalertragsteuer abgeführt."}
+    },
+    {
+      "@type": "Question",
+      "name": "Ist der Nachweis bei ausländischen Brokern schwieriger?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja, oft wird eine beglaubigte und teils mit Apostille versehene Übersetzung des Erbscheins verlangt. Planen Sie dafür deutlich mehr Zeit ein als bei einer inländischen Bank – mehrere Monate sind keine Seltenheit."}
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -162,6 +190,30 @@ display:grid;grid-template-columns:1.5rem 1fr;gap:.5rem;
 content:"✓";color:var(--gold);font-weight:700;
 }
 .behoerden-list li strong{color:var(--navy)}
+
+/* FAQ */
+.faq-list{margin-top:.5rem}
+.faq-item{
+background:white;border-radius:8px;
+border:1px solid rgba(201,146,42,.15);
+padding:1rem 1.25rem;margin-bottom:.75rem;
+}
+.faq-item summary{
+font-family:'Cormorant Garamond',serif;
+font-size:1.1rem;font-weight:600;color:var(--navy);
+cursor:pointer;list-style:none;
+display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+content:"+";color:var(--gold);font-size:1.3rem;font-weight:400;
+flex-shrink:0;transition:transform .2s;
+}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{
+font-size:.9rem;color:var(--text);
+margin-top:.75rem;line-height:1.7;
+}
 
 /* RATGEBER CARDS */
 .ratgeber-grid{
@@ -448,6 +500,30 @@ Jeder Erbe hat seinen eigenen Sparerpauschbetrag für das Depot hinterlegt.
 </ul>
 
 <p style="font-size:.95rem;color:var(--text);margin-top:1.5rem;">Anders als bei vielen anderen Nachlassthemen tickt bei einem Depot tatsächlich eine Uhr, die man nicht ignorieren sollte: Der Markt macht keine Pause, während Erbschein oder Vollmachtsnachweis bearbeitet werden. Wer weiß, dass Wertpapiere im Nachlass sind, sollte die Verfügungsberechtigung deshalb mit höherer Priorität klären als bei rein administrativen Themen wie Vertragskündigungen, bei denen ein paar Tage selten einen finanziellen Unterschied machen.</p>
+</div>
+
+<!-- FAQ -->
+<div class="section-block">
+<div class="section-label-small">Häufige Fragen</div>
+<h2>Häufige Fragen zum Depot im Nachlass</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Verliere ich Geld, wenn Aktien während der Depotsperre fallen?</summary>
+<p>Der Depotwert selbst verändert sich mit dem Markt weiter, nur eingreifen können Sie zunächst nicht. Deshalb lohnt es sich, die Verfügungsberechtigung so früh wie möglich nachzuweisen, statt abzuwarten.</p>
+</details>
+<details class="faq-item">
+<summary>Muss ich geerbte Aktien und Fonds verkaufen?</summary>
+<p>Nein. Das Depot kann unverändert auf die Erben umgeschrieben werden, ohne dass verkauft werden muss – das ist steuerlich oft vorteilhafter, weil dabei keine sofortige Kapitalertragsteuer anfällt.</p>
+</details>
+<details class="faq-item">
+<summary>Was passiert mit dem Freistellungsauftrag des Verstorbenen?</summary>
+<p>Er erlischt mit dem Tod. Jeder Erbe muss für das übernommene Depot einen eigenen, neuen Freistellungsauftrag einrichten, sonst wird auf Kapitalerträge sofort die volle Kapitalertragsteuer abgeführt.</p>
+</details>
+<details class="faq-item">
+<summary>Ist der Nachweis bei ausländischen Brokern schwieriger?</summary>
+<p>Ja, oft wird eine beglaubigte und teils mit Apostille versehene Übersetzung des Erbscheins verlangt. Planen Sie dafür deutlich mehr Zeit ein als bei einer inländischen Bank – mehrere Monate sind keine Seltenheit.</p>
+</details>
+</div>
 </div>
 
 <!-- RATGEBER KARTEN -->

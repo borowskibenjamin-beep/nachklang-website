@@ -18,9 +18,37 @@
   "description": "Sonderkündigungsrecht nach § 580 BGB, Fristen und Musterformulierung für Erben.",
   "author": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
   "publisher": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
-  "dateModified": "2026-06-24",
+  "dateModified": "2026-07-13",
   "datePublished": "2026-06-24",
   "inLanguage": "de"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kann der Vermieter nach einem Todesfall sofort kündigen?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nein. Auch der Vermieter hat nach § 580 BGB nur das gleiche außerordentliche Kündigungsrecht wie die Erben – mit derselben gesetzlichen Frist von drei Monaten zum Monatsende. Eine fristlose Kündigung ist damit nicht möglich."}
+    },
+    {
+      "@type": "Question",
+      "name": "Wer muss die Kündigung schreiben, wenn es mehrere Erben gibt?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Grundsätzlich müssen alle Erben die Kündigung gemeinsam aussprechen, da sie gemeinsam in den Mietvertrag eintreten. Alternativ kann ein Erbe die anderen schriftlich bevollmächtigen, in ihrem Namen zu kündigen."}
+    },
+    {
+      "@type": "Question",
+      "name": "Muss die Miete bis zum Ende der Kündigungsfrist bezahlt werden?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja. Die Miete zählt als Nachlassverbindlichkeit und muss bis zum Ablauf der dreimonatigen Kündigungsfrist weitergezahlt werden – auch wenn niemand mehr in der Wohnung wohnt."}
+    },
+    {
+      "@type": "Question",
+      "name": "Braucht man für die Kündigung eine Sterbeurkunde?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja, sie dient als Nachweis des Todes gegenüber dem Vermieter. Eine Vollmacht ist dagegen nicht nötig, da der Erbe kraft Gesetz automatisch in den Mietvertrag eintritt."}
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -141,6 +169,28 @@ text-transform:uppercase;font-weight:600;margin-bottom:1rem;
 .vorlage-placeholder{color:var(--gold);font-style:italic}
 .btn-pdf{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:white;padding:.65rem 1.3rem;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s;font-family:'Source Sans 3',sans-serif;margin-top:1rem}
 .btn-pdf:hover{background:var(--gold-light);transform:translateY(-1px)}
+.faq-list{margin-top:.5rem}
+.faq-item{
+background:white;border-radius:8px;
+border:1px solid rgba(201,146,42,.15);
+padding:1rem 1.25rem;margin-bottom:.75rem;
+}
+.faq-item summary{
+font-family:'Cormorant Garamond',serif;
+font-size:1.1rem;font-weight:600;color:var(--navy);
+cursor:pointer;list-style:none;
+display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+content:"+";color:var(--gold);font-size:1.3rem;font-weight:400;
+flex-shrink:0;transition:transform .2s;
+}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{
+font-size:.9rem;color:var(--text);
+margin-top:.75rem;line-height:1.7;
+}
 .ratgeber-grid{
 display:grid;grid-template-columns:repeat(2,1fr);
 gap:1rem;margin-top:1.5rem;
@@ -221,7 +271,7 @@ nachklang.app
 <div class="article-label">Ratgeber</div>
 <h1>Mietvertrag kündigen nach dem Tod eines Angehörigen</h1>
 <p class="hero-sub">Als Erbe haben Sie das Recht, den Mietvertrag außerordentlich zu kündigen – auch wenn noch Laufzeit übrig ist. Hier erfahren Sie wie.</p>
-<p class="hero-meta">Lesezeit: ca. 4 Minuten &middot; Zuletzt aktualisiert: Juni 2026</p>
+<p class="hero-meta">Lesezeit: ca. 4 Minuten &middot; Zuletzt aktualisiert: Juli 2026</p>
 </div>
 
 <div class="content">
@@ -329,6 +379,30 @@ Musterbrief als PDF herunterladen
 
 <div class="tip-box" style="margin-top:1rem">
 <strong>Wichtig:</strong> Versenden Sie den Brief per <strong>Einschreiben mit Rückschein</strong>. So ist der Zugang beim Vermieter nachweisbar – das schützt Sie bei Streitigkeiten über die Kündigungsfrist.
+</div>
+</div>
+
+<!-- FAQ -->
+<div class="section-block">
+<div class="section-label-small">Häufige Fragen</div>
+<h2>Häufige Fragen zur Mietvertrags-Kündigung</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Kann der Vermieter nach einem Todesfall sofort kündigen?</summary>
+<p>Nein. Auch der Vermieter hat nach § 580 BGB nur das gleiche außerordentliche Kündigungsrecht wie die Erben – mit derselben gesetzlichen Frist von drei Monaten zum Monatsende. Eine fristlose Kündigung ist damit nicht möglich.</p>
+</details>
+<details class="faq-item">
+<summary>Wer muss die Kündigung schreiben, wenn es mehrere Erben gibt?</summary>
+<p>Grundsätzlich müssen alle Erben die Kündigung gemeinsam aussprechen, da sie gemeinsam in den Mietvertrag eintreten. Alternativ kann ein Erbe die anderen schriftlich bevollmächtigen, in ihrem Namen zu kündigen.</p>
+</details>
+<details class="faq-item">
+<summary>Muss die Miete bis zum Ende der Kündigungsfrist bezahlt werden?</summary>
+<p>Ja. Die Miete zählt als Nachlassverbindlichkeit und muss bis zum Ablauf der dreimonatigen Kündigungsfrist weitergezahlt werden – auch wenn niemand mehr in der Wohnung wohnt.</p>
+</details>
+<details class="faq-item">
+<summary>Braucht man für die Kündigung eine Sterbeurkunde?</summary>
+<p>Ja, sie dient als Nachweis des Todes gegenüber dem Vermieter. Eine Vollmacht ist dagegen nicht nötig, da der Erbe kraft Gesetz automatisch in den Mietvertrag eintritt.</p>
+</details>
 </div>
 </div>
 

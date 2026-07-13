@@ -18,9 +18,37 @@
   "description": "Schritt-für-Schritt-Anleitung zur Abmeldung beim Beitragsservice nach einem Todesfall.",
   "author": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
   "publisher": {"@type": "Organization", "name": "Nachklang", "url": "https://nachklang.app"},
-  "dateModified": "2026-06-24",
+  "dateModified": "2026-07-13",
   "datePublished": "2026-06-24",
   "inLanguage": "de"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Brauche ich einen Erbschein, um den Rundfunkbeitrag abzumelden?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nein. Die Sterbeurkunde genügt als Nachweis gegenüber dem Beitragsservice, ein Erbschein ist für diesen Schritt nicht nötig."}
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert, wenn ich die Abmeldung vergesse?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Der Beitrag wird weiter vom Konto abgebucht, bis die Abmeldung beim Beitragsservice eingeht. Bereits nach dem Todestag gezahlte Beiträge werden bei Alleinlebenden aber anteilig zurückerstattet."}
+    },
+    {
+      "@type": "Question",
+      "name": "Muss ich als Erbe die Abmeldung selbst vornehmen, auch wenn ich nicht am Wohnort des Verstorbenen lebe?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja, die Zuständigkeit liegt beim Erben unabhängig vom eigenen Wohnort – solange niemand anderes im Haushalt des Verstorbenen gemeldet bleibt."}
+    },
+    {
+      "@type": "Question",
+      "name": "Wie schnell bekomme ich zu viel gezahlte Beiträge zurück?",
+      "acceptedAnswer": {"@type": "Answer", "text": "In der Regel innerhalb weniger Wochen, sobald der Beitragsservice die Abmeldung und Ihre Bankverbindung für die Rückerstattung bearbeitet hat."}
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,6 +102,13 @@ max-width:860px;margin:0 auto;
 .vorlage-placeholder{color:var(--gold);font-style:italic}
 .btn-pdf{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:white;padding:.65rem 1.3rem;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s;font-family:'Source Sans 3',sans-serif;margin-top:1rem}
 .btn-pdf:hover{background:var(--gold-light);transform:translateY(-1px)}
+.faq-list{margin-top:.5rem}
+.faq-item{background:white;border-radius:8px;border:1px solid rgba(201,146,42,.15);padding:1rem 1.25rem;margin-bottom:.75rem;}
+.faq-item summary{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--navy);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";color:var(--gold);font-size:1.3rem;font-weight:400;flex-shrink:0;transition:transform .2s;}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{font-size:.9rem;color:var(--text);margin-top:.75rem;line-height:1.7;}
 .ratgeber-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem;}
 .ratgeber-card{background:white;border-radius:12px;padding:1.25rem;border:1px solid rgba(201,146,42,.15);text-decoration:none;display:block;transition:border-color .2s,transform .2s;}
 .ratgeber-card:hover{border-color:var(--gold);transform:translateY(-2px)}
@@ -118,7 +153,7 @@ nachklang.app
 <div class="article-label">Ratgeber</div>
 <h1>Rundfunkbeitrag (GEZ) abmelden nach einem Todesfall</h1>
 <p class="hero-sub">Die Beitragspflicht endet mit dem Tod – aber die Abmeldung muss aktiv beantragt werden. Wir erklären wie das geht und wie Sie bereits gezahlte Beiträge zurückfordern.</p>
-<p class="hero-meta">Lesezeit: ca. 3 Minuten &middot; Zuletzt aktualisiert: Juni 2026</p>
+<p class="hero-meta">Lesezeit: ca. 3 Minuten &middot; Zuletzt aktualisiert: Juli 2026</p>
 </div>
 
 <div class="content">
@@ -210,6 +245,30 @@ Kontoinhaber: <span class="vorlage-placeholder">[Name]</span></p>
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
 Musterbrief als PDF herunterladen
 </a>
+</div>
+</div>
+
+<!-- FAQ -->
+<div class="section-block">
+<div class="section-label-small">Häufige Fragen</div>
+<h2>Häufige Fragen zur GEZ-Abmeldung</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Brauche ich einen Erbschein, um den Rundfunkbeitrag abzumelden?</summary>
+<p>Nein. Die Sterbeurkunde genügt als Nachweis gegenüber dem Beitragsservice, ein Erbschein ist für diesen Schritt nicht nötig.</p>
+</details>
+<details class="faq-item">
+<summary>Was passiert, wenn ich die Abmeldung vergesse?</summary>
+<p>Der Beitrag wird weiter vom Konto abgebucht, bis die Abmeldung beim Beitragsservice eingeht. Bereits nach dem Todestag gezahlte Beiträge werden bei Alleinlebenden aber anteilig zurückerstattet.</p>
+</details>
+<details class="faq-item">
+<summary>Muss ich als Erbe die Abmeldung selbst vornehmen, auch wenn ich nicht am Wohnort des Verstorbenen lebe?</summary>
+<p>Ja, die Zuständigkeit liegt beim Erben unabhängig vom eigenen Wohnort – solange niemand anderes im Haushalt des Verstorbenen gemeldet bleibt.</p>
+</details>
+<details class="faq-item">
+<summary>Wie schnell bekomme ich zu viel gezahlte Beiträge zurück?</summary>
+<p>In der Regel innerhalb weniger Wochen, sobald der Beitragsservice die Abmeldung und Ihre Bankverbindung für die Rückerstattung bearbeitet hat.</p>
+</details>
 </div>
 </div>
 
