@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nachklang · Prossimamente in Italia</title>
-  <meta name="description" content="Nachklang aiuta le famiglie a gestire le pratiche dopo la scomparsa di una persona cara. Prossimamente in Italia." />
+  <title>Nachklang · Coming soon to the US</title>
+  <meta name="description" content="Nachklang helps families settle a loved one's accounts and subscriptions after a death. Coming soon to the US." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="alternate" hreflang="de" href="https://nachklang.app/" />
   <link rel="alternate" hreflang="en-gb" href="https://nachklang.app/uk/" />
   <link rel="alternate" hreflang="en-us" href="https://nachklang.app/us/" />
@@ -12,8 +14,6 @@
   <link rel="alternate" hreflang="es" href="https://nachklang.app/es/" />
   <link rel="alternate" hreflang="it" href="https://nachklang.app/it/" />
   <link rel="alternate" hreflang="x-default" href="https://nachklang.app/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
@@ -77,39 +77,38 @@
 </head>
 <body>
 
-<!-- Contenuto generato – si raccomanda una revisione madrelingua prima della pubblicazione -->
 <header>
   <a href="../" class="logo">
     <span class="logo-dot"></span>
     <div>
       <div class="logo-name">Nachklang</div>
-      <div class="logo-tagline">Accompagnati con cura</div>
+      <div class="logo-tagline">Guided with care</div>
     </div>
   </a>
 </header>
 
 <main>
   <div class="box">
-    <div class="eyebrow">Prossimamente</div>
-    <h1>Nachklang arriva presto in Italia</h1>
+    <div class="eyebrow">Coming soon</div>
+    <h1>Nachklang is coming to the US</h1>
     <p>
-      Nachklang aiuta le famiglie a trovare e disdire abbonamenti, assicurazioni
-      e bollette ricorrenti di una persona cara scomparsa — in modo semplice,
-      direttamente dal telefono. Stiamo preparando la versione italiana.
+      Nachklang helps families find and cancel a loved one's subscriptions, insurance
+      policies, and recurring bills — simply, right from your phone. We're preparing
+      the US version now.
     </p>
     <form class="signup-form" id="waitlist-form">
-      <input type="hidden" name="market" value="IT" />
+      <input type="hidden" name="market" value="US" />
       <div class="form-row">
-        <input class="form-input" type="email" name="email" placeholder="La tua email" required />
-        <button class="form-btn" type="submit">Avvisami</button>
+        <input class="form-input" type="email" name="email" placeholder="Your email address" required />
+        <button class="form-btn" type="submit">Keep me posted</button>
       </div>
-      <p class="form-note">Un solo messaggio al lancio · Niente spam</p>
+      <p class="form-note">One message at launch · No spam · Unsubscribe anytime</p>
     </form>
   </div>
 </main>
 
 <footer>
-  <p>Nachklang è uno strumento di organizzazione, non una consulenza legale.</p>
+  <p>Nachklang is a document preparation and organization tool, not legal advice.</p>
   <p style="margin-top: 8px;">
     <a href="mailto:info@nachklang.app">info@nachklang.app</a> ·
     <a href="../">nachklang.app</a>
@@ -131,7 +130,7 @@
         body: new FormData(this)
       });
       if (res.ok) {
-        btn.textContent = 'Grazie!';
+        btn.textContent = 'Thank you!';
       } else {
         btn.textContent = originalText;
         btn.disabled = false;
