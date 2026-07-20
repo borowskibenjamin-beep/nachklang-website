@@ -55,11 +55,11 @@ border:1px solid rgba(201,146,42,.15);
 text-decoration:none;display:flex;flex-direction:column;
 padding:1.5rem;
 }
-.article-card.soon{opacity:.85}
+.article-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,26,46,.07);}
 .card-tag{font-size:.7rem;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;font-weight:600;margin-bottom:.6rem;}
 .article-card h2{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--navy);margin-bottom:.5rem;line-height:1.3;}
 .article-card p{font-size:.875rem;color:var(--text-light);line-height:1.6;flex:1;}
-.soon-badge{display:inline-flex;align-items:center;gap:.3rem;font-size:.75rem;color:var(--text-light);font-weight:500;margin-top:1rem;letter-spacing:.05em;text-transform:uppercase;}
+.card-link{display:inline-flex;align-items:center;gap:.3rem;font-size:.82rem;color:var(--gold);font-weight:600;margin-top:1rem;}
 .notice-box{
 background:white;border:1px solid rgba(201,146,42,.25);border-left:3px solid var(--gold);
 border-radius:12px;padding:1.25rem 1.5rem;margin-top:2.5rem;
@@ -110,41 +110,41 @@ Nachklang
 <div class="hero">
 <div class="page-label">Guides</div>
 <h1>What to do when someone dies</h1>
-<p class="hero-sub">Free step-by-step guides for families and executors in the UK – from ordering death certificates to cancelling every recurring account. We're writing them right now.</p>
+<p class="hero-sub">Free step-by-step guides for families and executors in the UK – from ordering death certificates to cancelling every recurring account.</p>
 </div>
 
 <div class="content">
 
-<span class="section-label">Coming soon</span>
+<span class="section-label">Guides</span>
 <div class="card-grid">
-  <div class="article-card soon">
+  <a href="first-two-weeks/" class="article-card">
     <div class="card-tag">First steps</div>
     <h2>The first two weeks: a checklist</h2>
     <p>What needs to happen right away, what can wait – from the death certificate to notifying HMRC and the DWP. One calm overview.</p>
-    <span class="soon-badge">Coming soon</span>
-  </div>
-  <div class="article-card soon">
+    <span class="card-link">Read the guide →</span>
+  </a>
+  <a href="grant-of-probate-explained/" class="article-card">
     <div class="card-tag">Proof of authority</div>
     <h2>Grant of Probate and Confirmation, explained</h2>
     <p>What they are, how to apply through the Probate Registry or Sheriff Court, and when companies will ask to see them before closing an account.</p>
-    <span class="soon-badge">Coming soon</span>
-  </div>
-  <div class="article-card soon">
+    <span class="card-link">Read the guide →</span>
+  </a>
+  <a href="small-estates/" class="article-card">
     <div class="card-tag">Small estates</div>
     <h2>When you don't need a full grant</h2>
     <p>Many banks and institutions release smaller balances without a Grant of Probate – and why the discretionary limits differ between England &amp; Wales, Scotland, and Northern Ireland.</p>
-    <span class="soon-badge">Coming soon</span>
-  </div>
-  <div class="article-card soon">
+    <span class="card-link">Read the guide →</span>
+  </a>
+  <a href="digital-estate/" class="article-card">
     <div class="card-tag">Digital estate</div>
     <h2>Cancelling subscriptions &amp; online accounts</h2>
     <p>Streaming, cloud storage, social media, app subscriptions: how to find them all and shut them down properly.</p>
-    <span class="soon-badge">Coming soon</span>
-  </div>
+    <span class="card-link">Read the guide →</span>
+  </a>
 </div>
 
 <div class="notice-box">
-  These guides are being carefully researched and written. They will provide general information for families and executors – not legal advice. Want to know when they're ready? Join the list below.
+  These guides provide general information for families and executors – not legal advice. For advice about your specific situation, consult a solicitor. Want to hear when Nachklang itself is ready? Join the list below.
 </div>
 
 </div>
