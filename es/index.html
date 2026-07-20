@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nachklang · Próximamente en España</title>
-  <meta name="description" content="Nachklang ayuda a las familias a resolver los trámites tras el fallecimiento de un ser querido. Próximamente en España." />
+  <title>NACHKLANG · Guiado con cuidado</title>
+  <meta name="description" content="Nachklang le ayuda a encontrar y dar de baja suscripciones, seguros y facturas de un ser querido fallecido – de forma confidencial, directamente desde su teléfono. Nada se sube a internet. Nunca. Próximamente en España." />
   <link rel="alternate" hreflang="de" href="https://nachklang.app/" />
   <link rel="alternate" hreflang="en-gb" href="https://nachklang.app/uk/" />
   <link rel="alternate" hreflang="en-us" href="https://nachklang.app/us/" />
@@ -18,110 +18,527 @@
 
   <style>
     :root {
-      --beige: #f9f6f1; --navy: #1a1a2e; --gold: #c9922a;
-      --text: #2c2c3a; --muted: #6b6b7a; --white: #ffffff;
-      --border: rgba(26,26,46,0.10);
+      --beige:      #f9f6f1;
+      --navy:       #1a1a2e;
+      --gold:       #c9922a;
+      --gold-light: #e8b84b;
+      --text:       #2c2c3a;
+      --muted:      #6b6b7a;
+      --white:      #ffffff;
+      --border:     rgba(26,26,46,0.10);
     }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: 'Source Sans 3', sans-serif;
-      background: var(--beige); color: var(--text);
-      font-size: 17px; line-height: 1.65;
+      background: var(--beige);
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
-      min-height: 100vh; display: flex; flex-direction: column;
     }
+
+    /* HEADER */
     header {
-      background: var(--beige); border-bottom: 1px solid var(--border);
-      padding: 18px 5%; display: flex; align-items: center;
+      background: var(--beige);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .logo-dot { width: 10px; height: 10px; background: var(--gold); border-radius: 50%; }
     .logo-name {
-      font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 600;
       color: var(--navy); letter-spacing: 0.08em; text-transform: uppercase;
     }
     .logo-tagline { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.04em; }
-    main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 64px 5%; }
-    .box { max-width: 560px; text-align: center; }
-    .eyebrow {
-      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 16px;
+    .header-badge {
+      background: var(--navy); color: var(--white);
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em;
+      padding: 6px 14px; border-radius: 20px;
     }
-    h1 {
-      font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 500; line-height: 1.25; color: var(--navy); margin-bottom: 20px;
+
+    /* HERO */
+    .hero { max-width: 820px; margin: 0 auto; padding: 72px 5% 56px; text-align: center; }
+    .hero-eyebrow {
+      display: inline-block; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px;
     }
-    p { color: var(--muted); font-weight: 300; font-size: 1.05rem; line-height: 1.75; margin-bottom: 28px; }
-    .signup-form { max-width: 420px; margin: 0 auto; }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 500; line-height: 1.2; color: var(--navy); margin-bottom: 22px;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero-sub {
+      font-size: 1.1rem; color: var(--muted);
+      max-width: 560px; margin: 0 auto 36px; font-weight: 300; line-height: 1.75;
+    }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 20px; padding: 6px 14px;
+      font-size: 0.82rem; font-weight: 500; color: var(--text);
+    }
+
+    /* SECTIONS */
+    .section { padding: 64px 5%; }
+    .section-inner { max-width: 900px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 500; color: var(--navy); line-height: 1.25; margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1rem; color: var(--muted); font-weight: 300; max-width: 560px; line-height: 1.75;
+    }
+
+    /* PROBLEM */
+    .problem { background: var(--navy); color: var(--white); }
+    .problem .section-label { color: var(--gold-light); }
+    .problem .section-title { color: var(--white); }
+    .problem .section-sub   { color: rgba(255,255,255,0.65); }
+    .problem-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px; margin-top: 44px;
+    }
+    .problem-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px; padding: 28px 24px;
+    }
+    .problem-num {
+      font-family: 'Cormorant Garamond', serif; font-size: 2.6rem;
+      font-weight: 300; color: var(--gold-light); line-height: 1; margin-bottom: 8px;
+    }
+    .problem-desc { font-size: 0.9rem; color: rgba(255,255,255,0.70); line-height: 1.6; font-weight: 300; }
+
+    /* STEPS */
+    .steps-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px;
+    }
+    @media (max-width: 640px) { .steps-grid { grid-template-columns: 1fr; } }
+    .step-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px 24px; position: relative;
+    }
+    .step-number {
+      font-family: 'Cormorant Garamond', serif; font-size: 3.8rem;
+      font-weight: 300; color: var(--gold); line-height: 1;
+      margin-bottom: 16px; letter-spacing: -0.02em;
+    }
+    .step-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.25rem;
+      font-weight: 600; color: var(--navy); margin-bottom: 8px;
+    }
+    .step-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
+    .step-arrow {
+      position: absolute; right: -16px; top: 50%; transform: translateY(-50%);
+      width: 32px; height: 32px; background: var(--gold); color: var(--white);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; z-index: 1;
+    }
+    @media (max-width: 640px) { .step-arrow { display: none; } }
+
+    /* WHAT WE FIND */
+    .find-section { background: var(--white); }
+    .contracts-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px; margin-top: 40px;
+    }
+    .contract-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: var(--beige); border-radius: 12px; padding: 18px 20px;
+    }
+    .contract-highlight { border: 1.5px solid var(--gold); background: rgba(201,146,42,0.05); }
+    .contract-bar { width: 3px; min-height: 44px; background: var(--gold); border-radius: 2px; flex-shrink: 0; margin-top: 2px; }
+    .contract-bar-muted { background: var(--muted) !important; }
+    .contract-title { font-weight: 600; font-size: 0.95rem; color: var(--navy); margin-bottom: 3px; }
+    .contract-examples { font-size: 0.82rem; color: var(--muted); font-weight: 300; }
+
+    /* FEATURES */
+    .features-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 20px; margin-top: 44px;
+    }
+    .feature-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 30px 24px; }
+    .feature-card.primary { background: var(--navy); border-color: var(--navy); }
+    .feature-card.primary .feature-title { color: var(--white); }
+    .feature-card.primary .feature-desc  { color: rgba(255,255,255,0.65); }
+    .feature-card.primary .feature-marker { color: var(--gold-light); }
+    .feature-marker {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.6rem;
+      color: var(--gold); font-weight: 300; margin-bottom: 12px; line-height: 1;
+    }
+    .feature-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+      font-weight: 600; color: var(--navy); margin-bottom: 8px;
+    }
+    .feature-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
+
+    /* TRUST */
+    .trust-section { background: var(--navy); text-align: center; }
+    .trust-section .section-title { color: var(--white); }
+    .trust-section .section-sub { color: rgba(255,255,255,0.60); max-width: 460px; margin: 0 auto 40px; }
+    .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+    .trust-item { border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 24px 20px; text-align: center; }
+    .trust-label { font-size: 0.83rem; color: rgba(255,255,255,0.70); line-height: 1.5; font-weight: 300; }
+    .trust-label strong { display: block; color: var(--white); font-size: 0.9rem; font-weight: 600; margin-bottom: 5px; }
+
+    /* SIGNUP */
+    .signup-section { text-align: center; padding: 72px 5%; }
+    .signup-section .section-title { margin-bottom: 10px; }
+    .signup-form { max-width: 460px; margin: 0 auto; }
     .form-row { display: flex; gap: 10px; }
-    @media (max-width: 480px) { .form-row { flex-direction: column; } }
+    @media (max-width: 520px) { .form-row { flex-direction: column; } }
     .form-input {
-      flex: 1; padding: 13px 18px; border: 1.5px solid var(--border); border-radius: 10px;
-      font-size: 0.95rem; font-family: 'Source Sans 3', sans-serif; color: var(--text);
-      background: var(--white); outline: none; transition: border-color 0.2s;
+      flex: 1; padding: 13px 18px; border: 1.5px solid var(--border);
+      border-radius: 10px; font-size: 0.95rem; font-family: 'Source Sans 3', sans-serif;
+      color: var(--text); background: var(--white); outline: none; transition: border-color 0.2s;
     }
     .form-input:focus { border-color: var(--gold); }
     .form-btn {
-      padding: 13px 24px; background: var(--navy); color: var(--white); border: none;
-      border-radius: 10px; font-size: 0.95rem; font-weight: 600;
+      padding: 13px 24px; background: var(--navy); color: var(--white);
+      border: none; border-radius: 10px; font-size: 0.95rem; font-weight: 600;
       font-family: 'Source Sans 3', sans-serif; cursor: pointer; white-space: nowrap; transition: background 0.2s;
     }
     .form-btn:hover { background: #2a2a45; }
     .form-note { font-size: 0.78rem; color: var(--muted); margin-top: 12px; }
-    footer {
-      text-align: center; padding: 24px 5%; font-size: 0.78rem; color: var(--muted);
-      border-top: 1px solid var(--border);
+
+    /* FUNERARIAS */
+    .partner-section { background: var(--beige); }
+    .partner-box {
+      background: var(--white); border: 1px solid var(--border); border-radius: 20px;
+      padding: 44px 40px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
     }
-    footer a { color: inherit; }
+    @media (max-width: 640px) { .partner-box { grid-template-columns: 1fr; padding: 32px 24px; } }
+    .partner-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .partner-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--navy); margin-bottom: 10px; }
+    .partner-desc { font-size: 0.9rem; color: var(--muted); font-weight: 300; line-height: 1.65; }
+    .partner-cta {
+      display: inline-block; padding: 12px 26px; background: var(--navy); color: var(--white);
+      border-radius: 10px; font-size: 0.88rem; font-weight: 600; text-decoration: none;
+      white-space: nowrap; transition: background 0.2s;
+    }
+    .partner-cta:hover { background: #2a2a45; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,0.88);
+      text-align: center; padding: 40px 5%; font-size: 0.82rem;
+    }
+    footer a { color: rgba(255,255,255,0.96); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+
+    /* ANIMATIONS */
+    .fade-in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+      .fade-in.visible { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body>
 
-<!-- Contenido generado – se recomienda revisión por hablante nativo antes de publicar -->
+<!-- Contenido generado – se recomienda revisión por hablante nativo/legal antes del lanzamiento oficial -->
+
+<!-- HEADER -->
 <header>
-  <a href="../" class="logo">
+  <a href="#" class="logo">
     <span class="logo-dot"></span>
     <div>
       <div class="logo-name">Nachklang</div>
       <div class="logo-tagline">Guiado con cuidado</div>
     </div>
   </a>
+  <span class="header-badge">Próximamente disponible</span>
 </header>
 
-<main>
-  <div class="box">
-    <div class="eyebrow">Próximamente</div>
-    <h1>Nachklang llega pronto a España</h1>
-    <p>
-      Nachklang ayuda a las familias a encontrar y cancelar las suscripciones, seguros
-      y facturas recurrentes de un ser querido fallecido — de forma sencilla,
-      directamente desde tu teléfono. Estamos preparando la versión en español.
-    </p>
-    <form class="signup-form" id="waitlist-form">
-      <input type="hidden" name="market" value="ES" />
-      <div class="form-row">
-        <input class="form-input" type="email" name="email" placeholder="Tu correo electrónico" required />
-        <button class="form-btn" type="submit">Avisarme</button>
-      </div>
-      <p class="form-note">Un solo mensaje en el lanzamiento · Sin spam</p>
-    </form>
-  </div>
-</main>
 
-<footer>
-  <p>Nachklang es una herramienta de organización, no asesoramiento legal.</p>
-  <p style="margin-top: 8px;">
-    <a href="mailto:info@nachklang.app">info@nachklang.app</a> ·
-    <a href="../">nachklang.app</a>
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-eyebrow">Para familias y herederos en España</span>
+  <h1>
+    Cuando un ser querido fallece,<br>
+    la <em>burocracia</em> no se detiene.
+  </h1>
+  <p class="hero-sub">
+    Nachklang le ayuda a encontrar y dar de baja suscripciones, seguros y facturas
+    a su nombre – paso a paso, directamente desde su teléfono.
   </p>
-  <p style="margin-top: 8px;">&copy; 2026 NACHKLANG</p>
+  <div class="hero-badges">
+    <span class="badge">100&#8239;% en el dispositivo · nada se sube a internet</span>
+    <span class="badge">Próximamente en España</span>
+    <span class="badge">Pensado para la sucesión española</span>
+    <span class="badge">Cartas listas en 60&#8239;seg</span>
+  </div>
+</section>
+
+
+<!-- PROBLEM -->
+<section class="section problem">
+  <div class="section-inner">
+    <div class="section-label">La realidad</div>
+    <h2 class="section-title">Lo que le espera cuando pierde a un ser querido</h2>
+    <p class="section-sub">
+      Tras un fallecimiento, de repente se encuentra frente a decenas de contratos
+      activos – y una pila de cartas que crece cada día.
+    </p>
+    <div class="problem-grid fade-in">
+      <div class="problem-card">
+        <div class="problem-num">20+</div>
+        <div class="problem-desc">entre seguros, contratos y suscripciones siguen activos – y continúan pesando sobre la herencia.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">433&#8239;mil</div>
+        <div class="problem-desc">fallecimientos al año en España (dato provisional INE, 2024) – y otras tantas familias enfrentando la misma burocracia.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">6&#8239;meses</div>
+        <div class="problem-desc">es el plazo para presentar la autoliquidación del Impuesto de Sucesiones – superarlo genera recargos progresivos desde el primer mes de retraso.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Cómo funciona</div>
+    <h2 class="section-title">Todo resuelto en tres pasos</h2>
+    <p class="section-sub">Nada de montones de papel. Nada de horas buscando información en internet. Solo un camino claro y respetuoso.</p>
+    <div class="steps-grid fade-in">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-title">Sube un extracto bancario</div>
+        <div class="step-desc">Sube el último extracto bancario. Nachklang reconoce automáticamente todos los cargos recurrentes – seguros, contratos, suscripciones.</div>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-title">Los contratos se reconocen</div>
+        <div class="step-desc">La app categoriza cada partida: dar de baja de inmediato, transferir a los herederos, comprobar un reembolso – con plazos y la acción recomendada.</div>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-title">Carta lista en 60&#8239;seg</div>
+        <div class="step-desc">Nachklang prepara la carta de baja – ya rellena con nombre y fecha de fallecimiento, además de un recordatorio de los documentos a adjuntar, como el certificado de defunción.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT WE FIND -->
+<section class="section find-section">
+  <div class="section-inner">
+    <div class="section-label">Lo que encuentra Nachklang</div>
+    <h2 class="section-title">Cada tipo de contrato – una sola vista de conjunto</h2>
+    <p class="section-sub">
+      Desde el seguro de vida hasta el contrato de teléfono – Nachklang reconoce cada partida relevante y sabe qué hacer con cada una.
+    </p>
+    <div class="contracts-grid fade-in">
+      <div class="contract-item contract-highlight">
+        <div class="contract-bar"></div>
+        <div>
+          <div class="contract-title">Seguros</div>
+          <div class="contract-examples">Vida, responsabilidad civil, hogar, coche, accidentes</div>
+        </div>
+      </div>
+      <div class="contract-item contract-highlight">
+        <div class="contract-bar"></div>
+        <div>
+          <div class="contract-title">Suministros y telefonía</div>
+          <div class="contract-examples">Luz, gas, agua, internet, teléfono fijo y móvil</div>
+        </div>
+      </div>
+      <div class="contract-item contract-highlight">
+        <div class="contract-bar"></div>
+        <div>
+          <div class="contract-title">Suscripciones</div>
+          <div class="contract-examples">Revistas, periódicos, servicios de streaming, gimnasios, clubes</div>
+        </div>
+      </div>
+      <div class="contract-item">
+        <div class="contract-bar contract-bar-muted"></div>
+        <div>
+          <div class="contract-title">Banco y finanzas</div>
+          <div class="contract-examples">Cuentas corrientes, tarjetas de crédito, préstamos, domiciliaciones</div>
+        </div>
+      </div>
+      <div class="contract-item">
+        <div class="contract-bar contract-bar-muted"></div>
+        <div>
+          <div class="contract-title">Salud</div>
+          <div class="contract-examples">Mutua de salud, servicios de asistencia</div>
+        </div>
+      </div>
+      <div class="contract-item">
+        <div class="contract-bar contract-bar-muted"></div>
+        <div>
+          <div class="contract-title">Otros</div>
+          <div class="contract-examples">Colegios profesionales, asociaciones, cuotas de aparcamiento</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FEATURES -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Lo que obtiene</div>
+    <h2 class="section-title">Más que una baja – un acompañamiento</h2>
+    <div class="features-grid fade-in">
+      <div class="feature-card primary">
+        <div class="feature-marker">—</div>
+        <div class="feature-title">Todo permanece en su dispositivo</div>
+        <div class="feature-desc">Ningún extracto bancario se sube a internet. Todo el análisis ocurre localmente en su teléfono. Sin nube. Sin servidores. Sin fugas de datos.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-marker">—</div>
+        <div class="feature-title">Una guía gratuita, paso a paso</div>
+        <div class="feature-desc">Un recorrido por los primeros días tras el fallecimiento – del certificado de defunción a la sucesión. Sin registros, sin costes.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-marker">—</div>
+        <div class="feature-title">Ningún plazo olvidado</div>
+        <div class="feature-desc">Nachklang le recuerda con tiempo los plazos importantes – desde el Impuesto de Sucesiones hasta la renuncia a la herencia.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-marker">—</div>
+        <div class="feature-title">Atención al contexto español</div>
+        <div class="feature-desc">Código Civil, Agencia Tributaria, trámites del Registro Civil – la app conoce los procedimientos españoles y le indica cuándo necesita un notario o un abogado.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- GUIDE TEASER -->
+<section class="section" style="padding-top:0">
+  <div class="section-inner" style="text-align:center">
+    <a href="guide/" style="display:inline-flex;align-items:center;gap:.6rem;color:var(--gold);font-size:.95rem;font-weight:500;text-decoration:none;border:1px solid rgba(201,146,42,.35);border-radius:8px;padding:.7rem 1.4rem;transition:background .2s">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Guías gratuitas para familiares y herederos →
+    </a>
+  </div>
+</section>
+
+<!-- TRUST / PRIVACY -->
+<section class="section trust-section">
+  <div class="section-inner">
+    <div class="section-label" style="color: var(--gold-light);">Privacidad y confianza</div>
+    <h2 class="section-title">«Sus datos nunca salen de su teléfono.»</h2>
+    <p class="section-sub">No es una promesa de marketing. Así está construida la app.</p>
+    <div class="trust-grid fade-in">
+      <div class="trust-item">
+        <div class="trust-label"><strong>100&#8239;% local</strong>Cada documento permanece en su teléfono</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-label"><strong>Sin nube, sin IA</strong>Sus extractos bancarios nunca se envían a nadie</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-label"><strong>Sin cuenta</strong>Sin registro, sin perfil, sin seguimiento</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-label"><strong>Un tono respetuoso</strong>Un acompañamiento discreto, nunca invasivo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SIGNUP -->
+<section class="signup-section fade-in">
+  <div class="section-label">Estamos construyendo Nachklang en este momento</div>
+  <h2 class="section-title" style="max-width: 540px; margin: 0 auto 10px;">
+    ¿Quiere que le avisemos cuando la app esté lista?
+  </h2>
+  <p class="section-sub" style="margin: 0 auto 36px;">
+    Sin publicidad, sin newsletter. Solo un único correo cuando Nachklang esté disponible.
+  </p>
+  <form class="signup-form" id="waitlist-form">
+    <input type="hidden" name="market" value="ES" />
+    <div class="form-row">
+      <input class="form-input" type="email" name="email" placeholder="Su correo electrónico" required />
+      <button class="form-btn" type="submit">Avíseme</button>
+    </div>
+    <p class="form-note">Un solo mensaje en el lanzamiento · Sin spam · Puede darse de baja en cualquier momento</p>
+  </form>
+</section>
+
+
+<!-- FUNERARIAS -->
+<section class="section partner-section">
+  <div class="section-inner">
+    <div class="partner-box fade-in">
+      <div>
+        <div class="partner-label">Para funerarias</div>
+        <div class="partner-title">Un apoyo concreto que ofrecer a sus familias</div>
+        <div class="partner-desc">
+          Un simple código QR durante la primera conversación – y las familias que
+          atiende reciben de inmediato una orientación clara en la burocracia de
+          las primeras semanas. Sin compromiso para usted, un valor añadido real para ellas.
+        </div>
+      </div>
+      <a href="mailto:info@nachklang.app" class="partner-cta">
+        Propóngano una colaboración →
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: rgba(255,255,255,0.35); margin-bottom: 14px; letter-spacing: 0.08em;">
+    · · ·
+  </p>
+  <p>NACHKLANG · Guiado con cuidado · Próximamente en España</p>
+  <p style="margin-top: 8px;">
+    ¿Preguntas? Escríbanos:
+    <a href="mailto:info@nachklang.app">info@nachklang.app</a>
+  </p>
+  <p style="margin-top: 14px; font-size: 0.72rem; color: rgba(255,255,255,0.75); max-width: 560px; margin-left: auto; margin-right: auto;">
+    Nachklang es una herramienta de organización y preparación de documentos. Ofrece información
+    general, no un asesoramiento legal, y no sustituye la opinión de un notario o de un abogado
+    para su caso concreto.
+  </p>
+  <p style="margin-top: 14px; font-size: 0.72rem; color: rgba(255,255,255,0.70);">
+    © 2026 NACHKLANG · Todos los derechos reservados
+  </p>
+  <p style="margin-top: 10px; font-size: 0.72rem; color: rgba(255,255,255,0.70);">
+    <a href="privacy.html" style="color: inherit; text-decoration: underline;">Política de privacidad</a>
+    &nbsp;·&nbsp;
+    <a href="about.html" style="color: inherit; text-decoration: underline;">Por qué "Nachklang"</a>
+    &nbsp;·&nbsp;
+    <a href="guide/" style="color: inherit; text-decoration: underline;">Guías para familiares y herederos</a>
+  </p>
 </footer>
+
 
 <script>
   document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     const btn = this.querySelector('button');
-    const originalText = btn.textContent;
     btn.textContent = '...';
     btn.disabled = true;
     try {
@@ -131,16 +548,33 @@
         body: new FormData(this)
       });
       if (res.ok) {
-        btn.textContent = '¡Gracias!';
+        window.location.href = 'thank-you.html';
       } else {
-        btn.textContent = originalText;
+        btn.textContent = 'Avíseme';
         btn.disabled = false;
       }
     } catch {
-      btn.textContent = originalText;
+      btn.textContent = 'Avíseme';
       btn.disabled = false;
     }
   });
+
+  // Fallback: make everything visible immediately, then enhance with animation
+  document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+
+  // Progressive enhancement: animate elements as they scroll into view
+  if ('IntersectionObserver' in window) {
+    document.querySelectorAll('.fade-in').forEach(el => el.classList.remove('visible'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  }
 </script>
 
 </body>

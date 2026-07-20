@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de privacidad · NACHKLANG</title>
+  <meta name="description" content="Política de privacidad de la app NACHKLANG – sus datos permanecen en su dispositivo. Nada se sube a internet." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --beige:      #f9f6f1;
+      --navy:       #1a1a2e;
+      --gold:       #c9922a;
+      --text:       #2c2c3a;
+      --muted:      #6b6b7a;
+      --white:      #ffffff;
+      --border:     rgba(26,26,46,0.10);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--beige);
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--beige);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-dot { width: 10px; height: 10px; background: var(--gold); border-radius: 50%; }
+    .logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .logo-tagline { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.04em; }
+    .back-link {
+      font-size: 0.88rem; font-weight: 500; color: var(--muted);
+      text-decoration: none; display: flex; align-items: center; gap: 6px;
+    }
+    .back-link:hover { color: var(--navy); }
+
+    /* MAIN */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 5% 80px;
+    }
+
+    .page-eyebrow {
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 12px;
+    }
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 500; color: var(--navy);
+      line-height: 1.2; margin-bottom: 10px;
+    }
+    .page-meta {
+      font-size: 0.85rem; color: var(--muted); margin-bottom: 48px;
+    }
+
+    /* SECTIONS */
+    .legal-section { margin-bottom: 48px; }
+    .legal-section + .legal-section {
+      border-top: 1px solid var(--border);
+      padding-top: 48px;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600;
+      color: var(--navy); margin-bottom: 14px;
+    }
+    h3 {
+      font-size: 1rem; font-weight: 600;
+      color: var(--navy); margin: 20px 0 8px;
+    }
+    p { margin-bottom: 14px; color: var(--text); font-weight: 300; }
+    p:last-child { margin-bottom: 0; }
+
+    ul { padding-left: 20px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-weight: 300; color: var(--text); }
+
+    a { color: var(--navy); }
+    a:hover { color: var(--gold); }
+
+    .highlight-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+    .highlight-box p { margin-bottom: 0; font-size: 0.95rem; }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+    .contact-label {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.10em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 8px;
+    }
+    .contact-value {
+      font-size: 0.95rem; color: var(--navy);
+      font-weight: 400; line-height: 1.55;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,0.88);
+      text-align: center; padding: 40px 5%; font-size: 0.82rem;
+    }
+    footer a { color: rgba(255,255,255,0.96); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <span class="logo-dot"></span>
+    <div>
+      <div class="logo-name">Nachklang</div>
+      <div class="logo-tagline">Guiado con cuidado</div>
+    </div>
+  </a>
+  <a href="index.html" class="back-link">← Volver a inicio</a>
+</header>
+
+<main>
+
+  <div class="page-eyebrow">Información legal</div>
+  <h1 class="page-title">Política de privacidad</h1>
+  <p class="page-meta">Última actualización: julio de 2026</p>
+
+
+  <!-- PRIVACY -->
+  <div class="legal-section" id="privacy">
+    <h2>Nuestra promesa de privacidad</h2>
+
+    <div class="highlight-box">
+      <p><strong>Lo más importante primero:</strong> Nachklang procesa sus documentos exclusivamente en su dispositivo. Ningún dato personal, financiero o documento se transmite jamás a servidores externos. No existe conexión a la nube, ni cuenta de usuario, ni inteligencia artificial que lea sus datos, ni seguimiento de su comportamiento.</p>
+    </div>
+
+    <h3>1. Responsable del tratamiento</h3>
+    <p>Nachklang está gestionada por Benjamin Borowski (datos de contacto al final de esta página). Esta política cubre tanto la app Nachklang como este sitio web.</p>
+
+    <h3>2. Datos tratados en la app</h3>
+    <p>La app Nachklang procesa los siguientes datos <strong>exclusivamente en su dispositivo</strong>:</p>
+    <ul>
+      <li>Documentos cargados (certificado de defunción, extractos bancarios) – almacenados solo en la memoria local del dispositivo</li>
+      <li>Información contractual reconocida y resultados del análisis</li>
+      <li>Modelos de carta rellenados y sus campos (nombre, dirección, fecha)</li>
+      <li>Datos de progreso (tareas completadas, estado de la checklist)</li>
+    </ul>
+    <p>Ninguno de estos datos sale nunca de su dispositivo. No se produce ninguna transmisión a servidores externos. Puede eliminarlo todo en cualquier momento restableciendo el caso en la app o desinstalando la app.</p>
+
+    <h3>3. Compra dentro de la app</h3>
+    <p>La compra única de la versión completa la gestiona íntegramente Apple (App Store) o Google (Google Play). Para el proceso de pago se aplican exclusivamente sus respectivas políticas de privacidad. Nachklang no recibe ningún dato de pago ni información personal derivada del proceso de compra.</p>
+    <p>Más información: <a href="https://www.apple.com/legal/privacy/es-ww/" target="_blank" rel="noopener">Política de privacidad de Apple</a> y <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener">Política de privacidad de Google</a>.</p>
+
+    <h3>4. Notificaciones</h3>
+    <p>Si activa las notificaciones, los recordatorios de plazos se programan y ejecutan localmente en su dispositivo. Para esta función no se envían datos a servicios externos.</p>
+
+    <h3>5. Este sitio web</h3>
+
+    <p><strong>Alojamiento:</strong> este sitio se ofrece a través de un servicio de alojamiento web. Se recopilan los archivos de registro técnicamente necesarios (dirección IP, fecha, hora, página solicitada, tipo de navegador). Estos datos no se combinan con otros datos y se eliminan en un plazo de 7 días. Base jurídica: art. 6.1.f) RGPD (interés legítimo en la seguridad del servicio).</p>
+
+    <p><strong>Formulario de correo (lista de espera):</strong> si se suscribe a través del formulario de la página de inicio, su dirección de correo electrónico se procesa mediante Formspree (formspree.io). Recibirá exactamente un mensaje en el lanzamiento de la app. Su dirección no se conserva más allá de ese momento y puede revocar su consentimiento en cualquier momento escribiendo a <a href="mailto:info@nachklang.app">info@nachklang.app</a>. Base jurídica: art. 6.1.a) RGPD (consentimiento). Más información: <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Política de privacidad de Formspree</a>.</p>
+
+    <p><strong>Google Fonts:</strong> este sitio carga tipografías desde Google Fonts (fonts.googleapis.com). En este proceso su dirección IP se transmite a Google. Más información: <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener">Política de privacidad de Google</a>. Base jurídica: art. 6.1.f) RGPD.</p>
+
+    <p><strong>Sin cookies, sin analítica:</strong> este sitio no utiliza cookies ni servicios de análisis estadístico o publicitario.</p>
+
+    <h3>6. Sus derechos</h3>
+    <p>De acuerdo con el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), usted tiene derecho a:</p>
+    <ul>
+      <li><strong>Acceso</strong> (art. 15 RGPD) – conocer qué datos conservamos sobre usted</li>
+      <li><strong>Rectificación</strong> (art. 16 RGPD) – corrección de datos inexactos</li>
+      <li><strong>Supresión</strong> (art. 17 RGPD) – "derecho al olvido"</li>
+      <li><strong>Limitación del tratamiento</strong> (art. 18 RGPD)</li>
+      <li><strong>Oposición</strong> (art. 21 RGPD) – al tratamiento basado en interés legítimo</li>
+      <li><strong>Reclamación</strong> ante la Agencia Española de Protección de Datos (AEPD)</li>
+    </ul>
+    <p>Dado que los datos de la app se almacenan exclusivamente en su dispositivo, puede eliminarlos usted mismo en cualquier momento (restableciendo el caso o desinstalando la app). Para ejercer sus derechos, escriba a <a href="mailto:info@nachklang.app">info@nachklang.app</a>, o diríjase a la <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos (AEPD)</a>.</p>
+
+    <h3>7. Modificaciones de esta política</h3>
+    <p>Nos reservamos el derecho de actualizar esta política cuando sea necesario. La versión más reciente está siempre disponible en esta página.</p>
+  </div>
+
+
+  <!-- CONTACTO Y AVISO LEGAL -->
+  <div class="legal-section" id="contact">
+    <h2>Contacto y aviso legal</h2>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-label">Responsable</div>
+        <div class="contact-value">
+          Benjamin Borowski<br>
+          An den Eichen 14<br>
+          82377 Penzberg<br>
+          Alemania
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-label">Contacto</div>
+        <div class="contact-value">
+          <a href="mailto:info@nachklang.app">info@nachklang.app</a>
+        </div>
+      </div>
+    </div>
+
+    <h3>No es asesoramiento legal</h3>
+    <p>Nachklang es una herramienta de organización y preparación de documentos. Los contenidos de este sitio y de la app constituyen información general, elaborada con cuidado, pero <strong>no sustituyen un asesoramiento legal</strong> ni generan ninguna relación profesional con un notario o un abogado. Los trámites para gestionar una sucesión varían según cada caso concreto. Las cartas generadas por la app son modelos: verifique siempre todos los datos con sus documentos originales antes de enviarlas y, para cuestiones relativas a la sucesión (por ejemplo, la renuncia a la herencia), diríjase siempre a un notario o a un abogado.</p>
+
+    <h3>Derechos de autor</h3>
+    <p>Los contenidos publicados en este sitio están protegidos por derechos de autor. No se permite su reproducción o difusión sin autorización expresa.</p>
+  </div>
+
+</main>
+
+<footer>
+  <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: rgba(255,255,255,0.35); margin-bottom: 14px; letter-spacing: 0.08em;">· · ·</p>
+  <p>NACHKLANG · Guiado con cuidado · <a href="index.html">Inicio</a></p>
+  <p style="margin-top: 8px;"><a href="mailto:info@nachklang.app">info@nachklang.app</a></p>
+  <p style="margin-top: 14px; font-size: 0.72rem; color: rgba(255,255,255,0.70);">© 2026 NACHKLANG</p>
+</footer>
+
+</body>
+</html>

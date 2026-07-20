@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warum "Nachklang"? · Die Bedeutung des Namens</title>
+  <meta name="description" content="Was bedeutet das Wort Nachklang, und warum haben wir es als Namen für diese App gewählt?" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --beige:      #f9f6f1;
+      --navy:       #1a1a2e;
+      --gold:       #c9922a;
+      --text:       #2c2c3a;
+      --muted:      #6b6b7a;
+      --white:      #ffffff;
+      --border:     rgba(26,26,46,0.10);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--beige);
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--beige);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-dot { width: 10px; height: 10px; background: var(--gold); border-radius: 50%; }
+    .logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .logo-tagline { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.04em; }
+    .back-link {
+      font-size: 0.88rem; font-weight: 500; color: var(--muted);
+      text-decoration: none; display: flex; align-items: center; gap: 6px;
+    }
+    .back-link:hover { color: var(--navy); }
+
+    /* MAIN */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 5% 80px;
+    }
+
+    .page-eyebrow {
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 12px;
+    }
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 500; color: var(--navy);
+      line-height: 1.2; margin-bottom: 48px;
+    }
+
+    /* SECTIONS */
+    .legal-section { margin-bottom: 48px; }
+    .legal-section + .legal-section {
+      border-top: 1px solid var(--border);
+      padding-top: 48px;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600;
+      color: var(--navy); margin-bottom: 14px;
+    }
+    p { margin-bottom: 14px; color: var(--text); font-weight: 300; }
+    p:last-child { margin-bottom: 0; }
+
+    .highlight-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 0 0 20px;
+    }
+    .highlight-box p { margin-bottom: 0; font-size: 0.95rem; }
+    .highlight-box em { color: var(--gold); font-style: italic; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,0.88);
+      text-align: center; padding: 40px 5%; font-size: 0.82rem;
+    }
+    footer a { color: rgba(255,255,255,0.96); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">
+    <span class="logo-dot"></span>
+    <div>
+      <div class="logo-name">Nachklang</div>
+      <div class="logo-tagline">Behutsam begleitet</div>
+    </div>
+  </a>
+  <a href="/" class="back-link">← Zurück zur Startseite</a>
+</header>
+
+<main>
+
+  <div class="page-eyebrow">Der Name</div>
+  <h1 class="page-title">Warum "Nachklang"?</h1>
+
+  <div class="legal-section" id="das-wort">
+    <h2>Das Wort</h2>
+    <div class="highlight-box">
+      <p><strong>Nachklang</strong> (Subst.) — das, was bleibt, nachdem ein Ton verklungen ist. Der Nachhall.</p>
+    </div>
+    <p>Als deutsche Muttersprachler kennen wir das Wort natürlich längst – aus der Musik, aus der Kirche, aus dem Moment, in dem ein Ton im Raum noch eine Weile nachschwingt, bevor es wieder still wird. Genau dieses Bild hat uns nicht mehr losgelassen, als wir nach einem Namen für diese App gesucht haben.</p>
+    <p>Kein anderes Wort trifft so genau, worum es geht: Nach einem Todesfall bleibt nicht der Mensch selbst – es bleibt das, was er hinterlässt. Verträge, die weiterlaufen. Abos, die weiter abbuchen. Erinnerungen, die noch Fürsorge brauchen. Das ist der Nachklang.</p>
+  </div>
+
+  <div class="legal-section" id="warum-wir-ihn-gewaehlt-haben">
+    <h2>Warum wir ihn gewählt haben</h2>
+    <p>Nach einem Todesfall bleibt nicht der Mensch – es bleibt alles, was er zurücklässt: Verträge, Verpflichtungen, Konten, die weiter abbuchen, Erinnerungen, die noch Fürsorge brauchen. Wir haben uns für "Nachklang" entschieden, weil das Wort zwei Dinge gleichzeitig trägt: Würde (kein nüchterner Name wie "Nachlass-Manager" oder "Abo-Killer") und Präzision (es beschreibt genau die Phase, bei der wir helfen – das, was nach dem eigentlichen Verlust noch zu erledigen ist).</p>
+  </div>
+
+  <div class="legal-section" id="ein-name-ueberall">
+    <h2>Ein Name, überall</h2>
+    <p>Nachklang ist in Deutschland, Österreich und der Schweiz entstanden. Wenn wir die App in weitere Länder bringen, bleibt der Name überall derselbe – in jeder Sprache, auf jedem Store-Eintrag. Ein Name, ein Versprechen, das nicht übersetzt werden muss: dass zumindest dieser Teil mit Sorgfalt erledigt werden kann, egal wo du gerade bist.</p>
+  </div>
+
+</main>
+
+<footer>
+  <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: rgba(255,255,255,0.35); margin-bottom: 14px; letter-spacing: 0.08em;">· · ·</p>
+  <p>NACHKLANG · Behutsam begleitet · <a href="/">Startseite</a></p>
+  <p style="margin-top: 8px;"><a href="mailto:info@nachklang.app">info@nachklang.app</a></p>
+  <p style="margin-top: 14px; font-size: 0.72rem; color: rgba(255,255,255,0.70);">© 2026 NACHKLANG</p>
+  <p style="margin-top: 10px; font-size: 0.72rem; color: rgba(255,255,255,0.70);">
+    <a href="/datenschutz.html" style="color: inherit; text-decoration: underline;">Datenschutz &amp; Impressum</a>
+  </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Por qué "Nachklang"? · El significado del nombre</title>
+  <meta name="description" content="¿Qué significa Nachklang, de dónde viene esta palabra alemana, y por qué la elegimos como nombre para esta app?" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --beige:      #f9f6f1;
+      --navy:       #1a1a2e;
+      --gold:       #c9922a;
+      --text:       #2c2c3a;
+      --muted:      #6b6b7a;
+      --white:      #ffffff;
+      --border:     rgba(26,26,46,0.10);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--beige);
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--beige);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-dot { width: 10px; height: 10px; background: var(--gold); border-radius: 50%; }
+    .logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .logo-tagline { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.04em; }
+    .back-link {
+      font-size: 0.88rem; font-weight: 500; color: var(--muted);
+      text-decoration: none; display: flex; align-items: center; gap: 6px;
+    }
+    .back-link:hover { color: var(--navy); }
+
+    /* MAIN */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 5% 80px;
+    }
+
+    .page-eyebrow {
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 12px;
+    }
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 500; color: var(--navy);
+      line-height: 1.2; margin-bottom: 48px;
+    }
+
+    /* SECTIONS */
+    .legal-section { margin-bottom: 48px; }
+    .legal-section + .legal-section {
+      border-top: 1px solid var(--border);
+      padding-top: 48px;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600;
+      color: var(--navy); margin-bottom: 14px;
+    }
+    p { margin-bottom: 14px; color: var(--text); font-weight: 300; }
+    p:last-child { margin-bottom: 0; }
+
+    .highlight-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 0 0 20px;
+    }
+    .highlight-box p { margin-bottom: 0; font-size: 0.95rem; }
+    .highlight-box em { color: var(--gold); font-style: italic; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,0.88);
+      text-align: center; padding: 40px 5%; font-size: 0.82rem;
+    }
+    footer a { color: rgba(255,255,255,0.96); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <span class="logo-dot"></span>
+    <div>
+      <div class="logo-name">Nachklang</div>
+      <div class="logo-tagline">Guiado con cuidado</div>
+    </div>
+  </a>
+  <a href="index.html" class="back-link">← Volver a inicio</a>
+</header>
+
+<main>
+
+  <div class="page-eyebrow">El nombre</div>
+  <h1 class="page-title">¿Por qué "Nachklang"?</h1>
+
+  <div class="legal-section" id="the-word">
+    <h2>La palabra</h2>
+    <div class="highlight-box">
+      <p><strong>Nachklang</strong> (sust.), alemán — se pronuncia <em>nach-KLANG</em></p>
+    </div>
+    <p>Literalmente: el sonido que queda después de que una nota ha dejado de resonar. La reverberación. Lo que permanece en el aire una vez que el sonido mismo se ha desvanecido.</p>
+    <p>No existe un equivalente exacto en español. Las palabras más cercanas – <em>eco</em>, <em>resonancia</em>, <em>estela</em> – solo recogen en parte este significado: un eco implica una repetición, la resonancia es puramente física, "estela" es demasiado genérico. <em>Nachklang</em> describe de forma específica lo que queda después de que algo ha terminado.</p>
+  </div>
+
+  <div class="legal-section" id="why-we-chose-it">
+    <h2>Por qué lo elegimos</h2>
+    <p>Tras un fallecimiento, lo que queda no es la persona – son todas las cosas que deja: contratos, obligaciones, cuentas que siguen cobrando, recuerdos que aún necesitan cuidado. Elegimos "Nachklang" porque reúne dos cosas a la vez: dignidad (no un nombre aséptico como "Gestión de Herencias" o "Cancela Suscripciones") y precisión (describe exactamente la fase en la que ayudamos – lo que queda por hacer después de la pérdida en sí).</p>
+  </div>
+
+  <div class="legal-section" id="one-name-everywhere">
+    <h2>Un solo nombre, en todas partes</h2>
+    <p>Nachklang nació en Alemania, Austria y Suiza. A medida que la llevamos a otros países, el nombre permanece igual en todas partes – en cada idioma, en cada página de las tiendas. Un solo nombre, una sola promesa: que al menos esta parte pueda afrontarse con cuidado, esté usted donde esté.</p>
+  </div>
+
+</main>
+
+<footer>
+  <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: rgba(255,255,255,0.35); margin-bottom: 14px; letter-spacing: 0.08em;">· · ·</p>
+  <p>NACHKLANG · Guiado con cuidado · <a href="index.html">Inicio</a></p>
+  <p style="margin-top: 8px;"><a href="mailto:info@nachklang.app">info@nachklang.app</a></p>
+  <p style="margin-top: 14px; font-size: 0.72rem; color: rgba(255,255,255,0.70);">© 2026 NACHKLANG</p>
+  <p style="margin-top: 10px; font-size: 0.72rem; color: rgba(255,255,255,0.70);">
+    <a href="privacy.html" style="color: inherit; text-decoration: underline;">Política de privacidad</a>
+  </p>
+</footer>
+
+</body>
+</html>
