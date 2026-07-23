@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>謝謝您 – Nachklang</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--beige:#f9f6f1;--navy:#1a1a2e;--gold:#c9922a;
+--text:#3a3a3a;--text-light:#6b6b6b;--white:#ffffff;--border:rgba(26,26,46,.10);
+}
+body{
+font-family:'Noto Sans TC',sans-serif;
+background:var(--beige);color:var(--navy);
+line-height:1.7;font-weight:300;-webkit-font-smoothing:antialiased;
+min-height:100vh;display:flex;flex-direction:column;
+}
+header{
+padding:1.5rem;display:flex;align-items:center;
+max-width:860px;margin:0 auto;width:100%;
+}
+.logo-wrap{display:flex;align-items:center;gap:.4rem;text-decoration:none}
+.logo-dot{width:9px;height:9px;border-radius:50%;background:var(--gold);}
+.logo-text{font-family:'Noto Serif TC',serif;font-size:1.2rem;font-weight:600;letter-spacing:.08em;color:var(--navy);}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:3rem 1.5rem;}
+.thanks-box{max-width:480px;text-align:center;}
+.icon{
+width:56px;height:56px;background:var(--white);border:1px solid var(--border);
+border-radius:50%;display:flex;align-items:center;justify-content:center;
+margin:0 auto 1.5rem;font-size:1.4rem;color:var(--gold);
+}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+h1{font-family:'Noto Serif TC',serif;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;line-height:1.5;color:var(--navy);margin-bottom:1.25rem;}
+p{color:var(--text-light);font-size:.98rem;line-height:1.8;margin-bottom:.85rem;}
+.divider{width:40px;height:1px;background:var(--gold);margin:2rem auto;opacity:.4;}
+.back-link{display:inline-block;font-size:.9rem;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:2px;transition:border-color .2s;}
+.back-link:hover{border-color:var(--gold);color:var(--gold);}
+footer{text-align:center;padding:1.5rem;font-size:.78rem;color:var(--text-light);border-top:1px solid var(--border);}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+
+<header>
+<a href="index.html" class="logo-wrap">
+<span class="logo-dot"></span>
+<span class="logo-text">Nachklang</span>
+</a>
+</header>
+
+<main>
+<div class="thanks-box">
+<div class="icon">✓</div>
+<div class="eyebrow">已收到</div>
+<h1>謝謝您留下信箱</h1>
+<p>我們已經記下您的電子信箱。如果台灣版有具體進展，我們會寫信通知您。</p>
+<p>只會在有實際進展時聯絡，不會有其他用途。</p>
+<div class="divider"></div>
+<a href="index.html" class="back-link">回到首頁</a>
+</div>
+</main>
+
+<footer>
+&copy; 2026 NACHKLANG &nbsp;·&nbsp;
+<a href="privacy.html">隱私權政策</a>
+</footer>
+
+</body>
+</html>
