@@ -483,6 +483,41 @@
   </url>
 
   <url>
+    <loc>https://nachklang.app/us/guides/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://nachklang.app/us/guides/first-steps-after-a-death/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://nachklang.app/us/guides/letters-testamentary-explained/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nachklang.app/us/guides/small-estate-limits-by-state/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nachklang.app/us/guides/digital-estate/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://nachklang.app/tw/</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
