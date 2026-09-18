@@ -92,6 +92,16 @@
       border-radius: 20px; padding: 6px 14px;
       font-size: 0.82rem; font-weight: 500; color: var(--text);
     }
+    .store-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 28px; }
+    .store-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 24px; border-radius: 10px;
+      font-size: 0.92rem; font-weight: 600; text-decoration: none;
+      background: var(--navy); color: var(--white); transition: background 0.2s;
+    }
+    .store-btn:hover { background: #2a2a45; }
+    .store-btn.secondary { background: var(--white); color: var(--navy); border: 1.5px solid var(--border); }
+    .store-btn.secondary:hover { border-color: var(--gold); color: var(--gold); background: var(--white); }
 
     /* SECTIONS */
     .section { padding: 64px 5%; }
@@ -284,7 +294,7 @@
       <div class="logo-tagline">Behutsam begleitet</div>
     </div>
   </a>
-  <span class="header-badge">Bald im App Store</span>
+  <span class="header-badge">Jetzt verfügbar</span>
 </header>
 
 
@@ -301,9 +311,13 @@
   </p>
   <div class="hero-badges">
     <span class="badge">100&#8239;% DSGVO-konform</span>
-    <span class="badge">Bald für iOS &amp; Android</span>
+    <span class="badge">Für iOS &amp; Android</span>
     <span class="badge">DE · AT · CH</span>
     <span class="badge">Briefe in 60&#8239;Sek.</span>
+  </div>
+  <div class="store-buttons">
+    <a href="https://apps.apple.com/de/app/id6780616655" class="store-btn">Jetzt im App Store</a>
+    <a href="https://play.google.com/store/apps/details?id=app.nachklang" class="store-btn secondary">Jetzt bei Google Play</a>
   </div>
 </section>
 
@@ -510,20 +524,17 @@
 <!-- SIGNUP -->
 <!-- ÄNDERUNG 1: Formular-Sektion – kein Bug im Code, war nur Rendering-Artefakt -->
 <section class="signup-section fade-in">
-  <div class="section-label">Wir bauen NACHKLANG gerade</div>
+  <div class="section-label">Jetzt verfügbar</div>
   <h2 class="section-title" style="max-width: 540px; margin: 0 auto 10px;">
-    Möchten Sie informiert werden, wenn die App bereit ist?
+    Laden Sie NACHKLANG jetzt herunter
   </h2>
   <p class="section-sub" style="margin: 0 auto 36px;">
-    Keine Werbung, kein Newsletter. Nur eine einzige E-Mail, wenn NACHKLANG im App Store erscheint.
+    Für iOS und Android, in Deutschland, Österreich und der Schweiz.
   </p>
-  <form class="signup-form" id="waitlist-form">
-    <div class="form-row">
-      <input class="form-input" type="email" name="email" placeholder="Ihre E-Mail-Adresse" required />
-      <button class="form-btn" type="submit">Informiert bleiben</button>
-    </div>
-    <p class="form-note">Nur eine Nachricht bei App-Launch · Kein Spam · Jederzeit abmeldbar</p>
-  </form>
+  <div class="store-buttons">
+    <a href="https://apps.apple.com/de/app/id6780616655" class="store-btn">Jetzt im App Store</a>
+    <a href="https://play.google.com/store/apps/details?id=app.nachklang" class="store-btn secondary">Jetzt bei Google Play</a>
+  </div>
 </section>
 
 
@@ -553,7 +564,7 @@
   <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: rgba(255,255,255,0.35); margin-bottom: 14px; letter-spacing: 0.08em;">
     · · ·
   </p>
-  <p>NACHKLANG · Behutsam begleitet · Kommt 2026 für iOS &amp; Android</p>
+  <p>NACHKLANG · Behutsam begleitet · Für iOS &amp; Android</p>
   <p style="margin-top: 8px;">
     Fragen? Schreiben Sie uns:
     <a href="mailto:info@nachklang.app">info@nachklang.app</a>
@@ -572,29 +583,6 @@
 
 
 <script>
-  document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const btn = this.querySelector('button');
-    btn.textContent = '...';
-    btn.disabled = true;
-    try {
-      const res = await fetch('https://formspree.io/f/mykbyrbp', {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(this)
-      });
-      if (res.ok) {
-        window.location.href = '/danke.html';
-      } else {
-        btn.textContent = 'Informiert bleiben';
-        btn.disabled = false;
-      }
-    } catch {
-      btn.textContent = 'Informiert bleiben';
-      btn.disabled = false;
-    }
-  });
-
   // Fallback: make everything visible immediately, then enhance with animation
   document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
 
