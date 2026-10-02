@@ -84,6 +84,11 @@ transition:border-color .2s,transform .2s,box-shadow .2s;
 .signup-form button{padding:.85rem 1.8rem;background:var(--gold);color:white;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;font-family:'Source Sans 3',sans-serif;transition:background .3s,transform .2s;}
 .signup-form button:hover{background:var(--gold-light);transform:translateY(-1px)}
 .signup-privacy{font-size:.75rem;color:rgba(255,255,255,.4);margin-top:1rem;}
+.cta-store-buttons{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;}
+.cta-store-btn{display:inline-block;padding:.85rem 1.8rem;border-radius:8px;font-size:1rem;font-weight:600;text-decoration:none;font-family:'Source Sans 3',sans-serif;background:var(--gold);color:white;border:2px solid var(--gold);transition:background .3s,transform .2s;}
+.cta-store-btn:hover{background:var(--gold-light);border-color:var(--gold-light);transform:translateY(-1px)}
+.cta-store-btn.secondary{background:transparent;color:white;border-color:rgba(255,255,255,.35);}
+.cta-store-btn.secondary:hover{border-color:var(--gold);color:var(--gold);background:transparent}
 footer{text-align:center;padding:2.5rem 1.5rem;border-top:1px solid rgba(201,146,42,.15);}
 .footer-candle{font-size:1.5rem;margin-bottom:.5rem}
 .footer-brand{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--navy);font-weight:600;letter-spacing:.05em;}
@@ -347,20 +352,20 @@ nachklang.app
 </div>
 
 <div class="cta-section">
-<div class="cta-label">Nachklang · Kommt August 2026</div>
+<div class="cta-label">Nachklang · Jetzt verfügbar</div>
 <h2>Alle Verträge auf einmal kündigen</h2>
-<p>Nachklang erkennt alle laufenden Verträge, generiert die notwendigen Kündigungsschreiben und erinnert Sie an Fristen – direkt auf Ihrem iPhone. Alle Daten bleiben auf Ihrem Gerät.</p>
-<form class="signup-form" action="https://formspree.io/f/mykbyrbp" method="POST">
-<input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
-<button type="submit">Jetzt auf die Warteliste</button>
-</form>
-<p class="signup-privacy">Kein Spam. Nur eine E-Mail wenn die App bereit ist.</p>
+<p>Nachklang erkennt alle laufenden Verträge, generiert die notwendigen Kündigungsschreiben und erinnert Sie an Fristen – direkt auf Ihrem iPhone oder Android-Gerät. Alle Daten bleiben auf Ihrem Gerät.</p>
+<div class="cta-store-buttons">
+<a href="https://apps.apple.com/de/app/id6780616655" class="cta-store-btn">Jetzt im App Store</a>
+<a href="https://play.google.com/store/apps/details?id=app.nachklang" class="cta-store-btn secondary">Jetzt bei Google Play</a>
+</div>
+<p class="signup-privacy">Für iPhone und Android in Deutschland, Österreich und der Schweiz. Der Download ist kostenlos, die Vollversion ein In-App-Kauf.</p>
 </div>
 
 <footer>
 <div class="footer-candle">🕯️</div>
 <div class="footer-brand">NACHKLANG</div>
-<div class="footer-sub">Behutsam begleitet · Kommt 2026 für iOS</div>
+<div class="footer-sub">Behutsam begleitet · Für iPhone und Android</div>
 <a href="mailto:info@nachklang.app" class="footer-mail">info@nachklang.app</a>
 <div class="footer-links">
 <a href="../datenschutz.html">Datenschutz</a>

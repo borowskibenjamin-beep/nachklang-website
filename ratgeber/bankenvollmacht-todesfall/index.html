@@ -126,6 +126,11 @@ max-width:860px;margin:0 auto;
 .signup-form button{padding:.85rem 1.8rem;background:var(--gold);color:white;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;font-family:'Source Sans 3',sans-serif;transition:background .3s,transform .2s;}
 .signup-form button:hover{background:var(--gold-light);transform:translateY(-1px)}
 .signup-privacy{font-size:.75rem;color:rgba(255,255,255,.4);margin-top:1rem;}
+.cta-store-buttons{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;}
+.cta-store-btn{display:inline-block;padding:.85rem 1.8rem;border-radius:8px;font-size:1rem;font-weight:600;text-decoration:none;font-family:'Source Sans 3',sans-serif;background:var(--gold);color:white;border:2px solid var(--gold);transition:background .3s,transform .2s;}
+.cta-store-btn:hover{background:var(--gold-light);border-color:var(--gold-light);transform:translateY(-1px)}
+.cta-store-btn.secondary{background:transparent;color:white;border-color:rgba(255,255,255,.35);}
+.cta-store-btn.secondary:hover{border-color:var(--gold);color:var(--gold);background:transparent}
 footer{text-align:center;padding:2.5rem 1.5rem;border-top:1px solid rgba(201,146,42,.15);}
 .footer-candle{font-size:1.5rem;margin-bottom:.5rem}
 .footer-brand{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--navy);font-weight:600;letter-spacing:.05em;}
@@ -251,10 +256,11 @@ nachklang.app
 
 <!-- CTA-BOX INLINE -->
 <div style="background:var(--navy);padding:2rem;text-align:center;border-radius:12px;margin:0 0 3rem;">
-<p style="font-size:.75rem;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:.6rem;">Nachklang · Kommt August 2026</p>
+<p style="font-size:.75rem;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:.6rem;">Nachklang · Jetzt verfügbar</p>
 <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:white;font-weight:600;margin-bottom:.75rem;">Bürokratie-Entlastung im Trauerfall</h3>
 <p style="color:rgba(255,255,255,.7);font-size:.95rem;max-width:480px;margin:0 auto 1.5rem;">Mit einer Bankenvollmacht können Sie handeln – mit Nachklang tun Sie es ohne Stress. Unsere App erkennt alle laufenden Verträge und generiert die Kündigungsschreiben automatisch.</p>
-<a href="../../" style="display:inline-block;background:var(--gold);color:white;padding:.8rem 2rem;border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none;transition:background .2s;">Mehr erfahren</a>
+<a href="https://apps.apple.com/de/app/id6780616655" style="display:inline-block;color:white;padding:.8rem 2rem;border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none;margin:.25rem;background:var(--gold);border:2px solid var(--gold);">Jetzt im App Store</a>
+<a href="https://play.google.com/store/apps/details?id=app.nachklang" style="display:inline-block;color:white;padding:.8rem 2rem;border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none;margin:.25rem;background:transparent;border:2px solid rgba(255,255,255,.35);">Jetzt bei Google Play</a>
 </div>
 
 <!-- ABSCHNITT 5 -->
@@ -376,20 +382,20 @@ nachklang.app
 </div>
 
 <div class="cta-section">
-<div class="section-label">Nachklang · Kommt August 2026</div>
+<div class="section-label">Nachklang · Jetzt verfügbar</div>
 <h2>Alle Verträge auf einmal kündigen</h2>
-<p>Nachklang erkennt alle laufenden Verträge, generiert die notwendigen Kündigungsschreiben und erinnert Sie an Fristen – direkt auf Ihrem iPhone. Alle Daten bleiben auf Ihrem Gerät.</p>
-<form class="signup-form" action="https://formspree.io/f/mykbyrbp" method="POST">
-<input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
-<button type="submit">Jetzt auf die Warteliste</button>
-</form>
-<p class="signup-privacy">Kein Spam. Nur eine E-Mail wenn die App bereit ist.</p>
+<p>Nachklang erkennt alle laufenden Verträge, generiert die notwendigen Kündigungsschreiben und erinnert Sie an Fristen – direkt auf Ihrem iPhone oder Android-Gerät. Alle Daten bleiben auf Ihrem Gerät.</p>
+<div class="cta-store-buttons">
+<a href="https://apps.apple.com/de/app/id6780616655" class="cta-store-btn">Jetzt im App Store</a>
+<a href="https://play.google.com/store/apps/details?id=app.nachklang" class="cta-store-btn secondary">Jetzt bei Google Play</a>
+</div>
+<p class="signup-privacy">Für iPhone und Android in Deutschland, Österreich und der Schweiz. Der Download ist kostenlos, die Vollversion ein In-App-Kauf.</p>
 </div>
 
 <footer>
 <div class="footer-candle">🕯️</div>
 <div class="footer-brand">NACHKLANG</div>
-<div class="footer-sub">Behutsam begleitet · Kommt 2026 für iOS</div>
+<div class="footer-sub">Behutsam begleitet · Für iPhone und Android</div>
 <a href="mailto:info@nachklang.app" class="footer-mail">info@nachklang.app</a>
 <div class="footer-links">
 <a href="../../datenschutz.html">Datenschutz</a>
