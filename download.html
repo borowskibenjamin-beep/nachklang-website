@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NACHKLANG laden – App Store &amp; Google Play</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://nachklang.app/" />
+  <style>
+    :root { --beige:#f9f6f1; --blue:#1a1a2e; --gold:#c9922a; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+           background:var(--beige); color:var(--blue); font-family:-apple-system,"Source Sans 3",system-ui,sans-serif;
+           text-align:center; padding:24px; }
+    main { max-width:420px; }
+    h1 { font-family:"Cormorant Garamond",Georgia,serif; font-weight:500; font-size:2.2rem; margin:0 0 8px; letter-spacing:.04em; }
+    p { line-height:1.5; margin:0 0 24px; }
+    a.btn { display:block; padding:14px 20px; margin:0 0 12px; border-radius:10px; text-decoration:none;
+            background:var(--blue); color:var(--beige); font-weight:600; }
+    a.btn.secondary { background:transparent; color:var(--blue); border:2px solid var(--blue); }
+    small { display:block; margin-top:20px; color:var(--gold); }
+  </style>
+</head>
+<body>
+<main>
+  <h1>NACHKLANG</h1>
+  <p>Sie werden gleich zu Ihrem Store weitergeleitet. Falls nicht, wählen Sie hier:</p>
+  <a class="btn" href="https://apps.apple.com/de/app/id6780616655">Jetzt im App Store (iPhone)</a>
+  <a class="btn secondary" href="https://play.google.com/store/apps/details?id=app.nachklang">Jetzt bei Google Play (Android)</a>
+  <small>Alle Daten bleiben auf Ihrem Gerät.</small>
+</main>
+<script>
+  (function () {
+    var ua = navigator.userAgent || "";
+    var apple = "https://apps.apple.com/de/app/id6780616655";
+    var play = "https://play.google.com/store/apps/details?id=app.nachklang";
+    var isIOS = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    if (isIOS) { location.replace(apple); }
+    else if (/Android/.test(ua)) { location.replace(play); }
+  })();
+</script>
+</body>
+</html>

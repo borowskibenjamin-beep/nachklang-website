@@ -502,5 +502,16 @@ nachklang.app
 </div>
 </footer>
 
+<script>
+/* Kampagnen-Zuordnung ohne Tracking: Nur wenn der Besuch aus einer Google-Ads-Anzeige kommt (gclid in der URL),
+   bekommt der Google-Play-Link einen referrer. Nichts wird gespeichert oder gesendet. */
+(function () {
+  if (!/[?&]gclid=/.test(location.search)) return;
+  var ref = encodeURIComponent("utm_source=google_ads&utm_medium=cpc&utm_campaign=test_okt2026");
+  document.querySelectorAll('a[href^="https://play.google.com/store/apps/details?id=app.nachklang"]').forEach(function (a) {
+    a.href += "&referrer=" + ref;
+  });
+})();
+</script>
 </body>
 </html>
