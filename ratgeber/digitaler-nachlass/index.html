@@ -564,7 +564,7 @@ nachklang.app
 <script>
 /* Kampagnen-Zuordnung ohne Tracking: Der Google-Play-Link bekommt einen referrer (nur eine Kampagnenbezeichnung,
    nichts wird gespeichert oder gesendet). Besuch aus einer Google-Ads-Anzeige (gclid in der URL) = google_ads,
-   sonst = Ratgeber. Auswertung: Play Console, Statistiken, Akquisition. */
+   sonst = Ratgeber. Auswertung: Play Console (Statistiken, Akquisition) und App Store Connect (App-Analyse, Kampagnen). */
 (function () {
   var fromAds = /[?&]gclid=/.test(location.search);
   var slug = (location.pathname.match(/ratgeber\/([^\/]+)/) || [])[1] || "ratgeber";
@@ -573,6 +573,10 @@ nachklang.app
     : "utm_source=ratgeber&utm_medium=website&utm_campaign=" + slug);
   document.querySelectorAll('a[href^="https://play.google.com/store/apps/details?id=app.nachklang"]').forEach(function (a) {
     a.href += "&referrer=" + ref;
+  });
+  /* App Store: Kampagnenbezeichnung (ct) + Anbieter-Token (pt) für App Analytics. Anzeigen = anzeige_okt2026, sonst ratgeber. */
+  document.querySelectorAll('a[href^="https://apps.apple.com/de/app/id6780616655"]').forEach(function (a) {
+    a.href = "https://apps.apple.com/de/app/id6780616655?pt=128674349&ct=" + (fromAds ? "anzeige_okt2026" : "ratgeber") + "&mt=8";
   });
 })();
 

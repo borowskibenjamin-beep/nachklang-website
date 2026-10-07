@@ -31,9 +31,17 @@
 </main>
 <script>
   (function () {
+    /* Kampagnen-Zuordnung ohne Tracking: ?utm_source=<quelle> (z. B. flyer, youtube, ratgeber) wird nur als
+       Kampagnenbezeichnung an den Store-Link gehängt (App Store: ct/pt, Google Play: referrer).
+       Nichts wird gespeichert oder von uns gesendet. */
+    var m = location.search.match(/[?&]utm_source=([a-z0-9_-]{1,30})/i);
+    var src = m ? m[1].toLowerCase() : "download";
+    var apple = "https://apps.apple.com/de/app/id6780616655?pt=128674349&ct=" + src + "&mt=8";
+    var play = "https://play.google.com/store/apps/details?id=app.nachklang&referrer=" +
+               encodeURIComponent("utm_source=" + src + "&utm_medium=download_seite");
+    document.querySelector('a[href^="https://apps.apple.com"]').href = apple;
+    document.querySelector('a[href^="https://play.google.com"]').href = play;
     var ua = navigator.userAgent || "";
-    var apple = "https://apps.apple.com/de/app/id6780616655";
-    var play = "https://play.google.com/store/apps/details?id=app.nachklang";
     var isIOS = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
     if (isIOS) { location.replace(apple); }
     else if (/Android/.test(ua)) { location.replace(play); }
