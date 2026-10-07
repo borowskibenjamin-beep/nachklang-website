@@ -332,6 +332,50 @@ text-decoration:none;margin:0 .5rem;
 .pdf-banner{flex-direction:column;align-items:flex-start}
 .site-header{flex-direction:row}
 }
+
+/* APP-LEISTE (Ratgeber-Anzeigenseiten): erscheint nach kurzem Scrollen, blendet sich am Seitenende aus */
+.header-app{
+display:inline-flex;align-items:center;
+font-size:.8rem;font-weight:600;letter-spacing:.02em;
+color:var(--navy);text-decoration:none;
+border:1px solid var(--gold);border-radius:2rem;
+padding:.3rem .8rem;white-space:nowrap;
+transition:background .2s,color .2s;
+}
+.header-app:hover,.header-app:focus-visible{background:var(--gold);color:#fff}
+.header-right{display:flex;align-items:center;gap:.8rem}
+.app-bar{
+position:fixed;left:0;right:0;bottom:0;z-index:50;
+background:var(--navy);color:var(--beige);
+padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom));
+box-shadow:0 -6px 24px rgba(26,26,46,.25);
+transform:translateY(110%);transition:transform .35s ease;
+}
+.app-bar.is-visible{transform:translateY(0)}
+.app-bar-inner{max-width:860px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .9rem}
+.app-bar-text{flex:1 1 100%;font-size:.82rem;line-height:1.3;color:rgba(249,246,241,.85);padding-right:2rem}
+.app-bar-text strong{color:var(--gold-light);font-weight:600}
+.app-bar-btns{flex:1 1 100%;display:flex;gap:.6rem}
+.app-bar-btn{
+flex:1;display:flex;align-items:center;justify-content:center;
+min-height:44px;border-radius:8px;
+font-size:.95rem;font-weight:600;text-decoration:none;
+background:var(--gold);color:#fff;
+}
+.app-bar-btn.secondary{background:transparent;color:var(--beige);border:1px solid rgba(249,246,241,.45)}
+.app-bar-btn:focus-visible,.app-bar-close:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px}
+.app-bar-close{
+position:absolute;top:.35rem;right:.5rem;width:36px;height:36px;
+background:none;border:0;color:rgba(249,246,241,.7);font-size:1.4rem;line-height:1;cursor:pointer;
+}
+@media(min-width:640px){
+.app-bar-text{flex:1 1 auto;font-size:.95rem;padding-right:0}
+.app-bar-btns{flex:0 0 auto}
+.app-bar-btn{flex:none;padding:0 1.2rem}
+.app-bar-close{position:static;order:3}
+}
+@media(prefers-reduced-motion:reduce){.app-bar{transition:none}}
+body.has-app-bar{padding-bottom:0}
 </style>
 </head>
 <body>
@@ -341,10 +385,13 @@ text-decoration:none;margin:0 .5rem;
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
 nachklang.app
 </a>
+<div class="header-right">
+<a href="/download?utm_source=ratgeber" class="header-app">App laden</a>
 <a href="../../" class="logo-wrap" style="text-decoration:none">
 <span class="logo-dot"></span>
 <span class="logo-text">Nachklang</span>
 </a>
+</div>
 </header>
 
 <!-- HERO -->
@@ -593,15 +640,55 @@ Den Verstorbenen beim Einwohnermeldeamt abmelden – in vielen Gemeinden überni
 </footer>
 
 
+<!-- APP-LEISTE -->
+<aside class="app-bar" id="app-bar" role="region" aria-label="Nachklang laden" aria-hidden="true">
+<div class="app-bar-inner">
+<p class="app-bar-text"><strong>Nachklang</strong> findet die Verträge und schreibt die Briefe dazu.</p>
+<div class="app-bar-btns">
+<a href="https://apps.apple.com/de/app/id6780616655" class="app-bar-btn" tabindex="-1">App Store</a>
+<a href="https://play.google.com/store/apps/details?id=app.nachklang" class="app-bar-btn secondary" tabindex="-1">Google Play</a>
+</div>
+<button type="button" class="app-bar-close" id="app-bar-close" aria-label="Leiste schließen" tabindex="-1">&times;</button>
+</div>
+</aside>
+
 <script>
-/* Kampagnen-Zuordnung ohne Tracking: Nur wenn der Besuch aus einer Google-Ads-Anzeige kommt (gclid in der URL),
-   bekommt der Google-Play-Link einen referrer. Nichts wird gespeichert oder gesendet. */
+/* Kampagnen-Zuordnung ohne Tracking: Der Google-Play-Link bekommt einen referrer (nur eine Kampagnenbezeichnung,
+   nichts wird gespeichert oder gesendet). Besuch aus einer Google-Ads-Anzeige (gclid in der URL) = google_ads,
+   sonst = Ratgeber. Auswertung: Play Console, Statistiken, Akquisition. */
 (function () {
-  if (!/[?&]gclid=/.test(location.search)) return;
-  var ref = encodeURIComponent("utm_source=google_ads&utm_medium=cpc&utm_campaign=test_okt2026");
+  var fromAds = /[?&]gclid=/.test(location.search);
+  var slug = (location.pathname.match(/ratgeber\/([^\/]+)/) || [])[1] || "ratgeber";
+  var ref = encodeURIComponent(fromAds
+    ? "utm_source=google_ads&utm_medium=cpc&utm_campaign=test_okt2026"
+    : "utm_source=ratgeber&utm_medium=website&utm_campaign=" + slug);
   document.querySelectorAll('a[href^="https://play.google.com/store/apps/details?id=app.nachklang"]').forEach(function (a) {
     a.href += "&referrer=" + ref;
   });
+})();
+
+/* App-Leiste: nach ca. 12 % Scrollweg einblenden, am Seitenende (Download-Block) und nach Schließen ausblenden. */
+(function () {
+  var bar = document.getElementById("app-bar");
+  if (!bar) return;
+  var closed = false, atEnd = false;
+  var focusables = bar.querySelectorAll("a,button");
+  function update() {
+    var doc = document.documentElement;
+    var scrolled = (window.scrollY || doc.scrollTop) / Math.max(1, doc.scrollHeight - window.innerHeight);
+    var show = !closed && !atEnd && scrolled > 0.12;
+    bar.classList.toggle("is-visible", show);
+    bar.setAttribute("aria-hidden", show ? "false" : "true");
+    focusables.forEach(function (el) { el.tabIndex = show ? 0 : -1; });
+  }
+  var endBlock = document.querySelector(".cta-section");
+  if (endBlock && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (e) { atEnd = e[0].isIntersecting; update(); }, { threshold: 0.15 }).observe(endBlock);
+  }
+  document.getElementById("app-bar-close").addEventListener("click", function () { closed = true; update(); });
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
 })();
 </script>
 </body>
