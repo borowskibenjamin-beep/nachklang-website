@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Vollständige Begleitung geschenkt – Nachklang</title>
+<meta name="description" content="Bis 31. Dezember 2026 schenkt Nachklang Hinterbliebenen die vollständige Begleitung: Verträge erkennen, Kündigungsbriefe erstellen, Fristen im Blick – statt 39 €.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --beige: #f9f6f1;
+    --blau: #1a1a2e;
+    --gold: #c9922a;
+    --text: #2b2b3a;
+    --grau: #6b6b78;
+    --weiss: #ffffff;
+    --linie: #e7dfd2;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--beige);
+    color: var(--text);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 19px;
+    line-height: 1.65;
+  }
+  a { color: var(--blau); }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 20px; }
+
+  header { padding: 28px 0; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--blau); }
+  .logo-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--gold); }
+  .logo-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; }
+
+  .hero { padding: 32px 20px 40px; }
+  .eyebrow {
+    font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 14px;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: clamp(34px, 7vw, 46px); line-height: 1.15; color: var(--blau);
+    margin-bottom: 18px;
+  }
+  .preis { font-size: 20px; margin-bottom: 8px; }
+  .preis s { color: var(--grau); }
+  .preis strong { color: var(--blau); }
+  .frist { color: var(--grau); font-size: 17px; }
+
+  section { padding: 36px 0; border-top: 1px solid var(--linie); }
+  h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 30px; color: var(--blau); margin-bottom: 18px; line-height: 1.2;
+  }
+  .punkte { list-style: none; }
+  .punkte li { padding: 14px 0 14px 34px; position: relative; }
+  .punkte li::before {
+    content: ""; position: absolute; left: 4px; top: 24px;
+    width: 10px; height: 10px; border-radius: 50%; background: var(--gold);
+  }
+  .punkte strong { color: var(--blau); display: block; }
+
+  .warum p + p { margin-top: 14px; }
+  .unterschrift { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--blau); margin-top: 18px; }
+
+  .karte {
+    background: var(--weiss); border: 1px solid var(--linie); border-radius: 16px;
+    padding: 28px 22px; margin-top: 8px;
+  }
+  label { display: block; font-weight: 600; color: var(--blau); margin: 18px 0 6px; font-size: 17px; }
+  label:first-of-type { margin-top: 0; }
+  input[type="text"], input[type="email"], select {
+    width: 100%; font: inherit; font-size: 18px; padding: 14px 14px;
+    border: 1px solid #d6ccbb; border-radius: 10px; background: var(--weiss); color: var(--text);
+  }
+  input:focus, select:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+  .geraete { display: flex; gap: 12px; }
+  .geraete label {
+    flex: 1; margin: 0; font-weight: 400; border: 1px solid #d6ccbb; border-radius: 10px;
+    padding: 14px; cursor: pointer; display: flex; align-items: center; gap: 10px; color: var(--text);
+  }
+  .geraete input { width: 20px; height: 20px; accent-color: var(--blau); }
+  .einwilligung { display: flex; gap: 12px; align-items: flex-start; font-weight: 400; font-size: 16px; color: var(--grau); margin-top: 22px; }
+  .einwilligung input { width: 22px; height: 22px; margin-top: 3px; flex-shrink: 0; accent-color: var(--blau); }
+  button {
+    width: 100%; margin-top: 24px; font: inherit; font-size: 19px; font-weight: 600;
+    background: var(--blau); color: var(--weiss); border: none; border-radius: 12px;
+    padding: 17px; cursor: pointer;
+  }
+  button:hover { background: #2a2a48; }
+  button:disabled { opacity: 0.6; cursor: default; }
+  .hinweis { font-size: 16px; color: var(--grau); margin-top: 16px; text-align: center; }
+
+  .meldung { display: none; text-align: center; padding: 10px 0; }
+  .meldung h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--blau); margin-bottom: 10px; font-weight: 600; }
+  .fehler { display: none; color: #9b3b2a; font-size: 16px; margin-top: 14px; text-align: center; }
+
+  footer { padding: 40px 0 50px; text-align: center; color: var(--grau); font-size: 15px; border-top: 1px solid var(--linie); }
+  .kerze { font-size: 24px; margin-bottom: 8px; }
+  footer a { color: var(--grau); }
+
+  @media (max-width: 480px) {
+    body { font-size: 18px; }
+    .geraete { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="/"><span class="logo-dot"></span><span class="logo-name">Nachklang</span></a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <p class="eyebrow">Bis 31. Dezember 2026</p>
+    <h1>Wir schenken Ihnen die vollständige Begleitung.</h1>
+    <p class="preis"><s>39 €</s> &nbsp;<strong>kostenlos</strong> für Ihren Trauerfall</p>
+    <p class="frist">Einfach unten anfragen – Sie erhalten Ihren persönlichen Zugangscode per E-Mail.</p>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>Was Nachklang für Sie übernimmt</h2>
+      <ul class="punkte">
+        <li><strong>Laufende Verträge finden</strong>Kontoauszug fotografieren – Nachklang erkennt Abos, Versicherungen und Verträge, die weiter abbuchen.</li>
+        <li><strong>Kündigungsbriefe in einer Minute</strong>Vorausgefüllt mit den Angaben aus der Sterbeurkunde. Ausdrucken, unterschreiben, abschicken.</li>
+        <li><strong>Fristen im Blick</strong>Nachklang erinnert Sie, was als Nächstes zu tun ist.</li>
+        <li><strong>Ihre Daten bleiben auf Ihrem Gerät</strong>Kontoauszüge werden nicht hochgeladen. Alles wird direkt auf Ihrem Smartphone verarbeitet.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="warum">
+    <div class="wrap">
+      <h2>Warum wir das verschenken</h2>
+      <p>Nachklang ist neu. Ich habe die App entwickelt, weil nach einem Todesfall so viel Papierkram auf einmal kommt – in einer Zeit, in der eigentlich kein Kopf dafür frei ist.</p>
+      <p>Damit Nachklang wirklich hilft, möchte ich von Menschen lernen, die gerade in dieser Situation sind. Deshalb schenke ich Ihnen den vollen Zugang. Wenn Sie mögen, frage ich Sie später einmal, wie es Ihnen damit ergangen ist – mehr nicht.</p>
+      <p class="unterschrift">Benjamin Borowski, Penzberg</p>
+    </div>
+  </section>
+
+  <section id="anfragen">
+    <div class="wrap">
+      <h2>Zugangscode anfragen</h2>
+      <div class="karte">
+        <form id="codeForm" action="https://formspree.io/f/mykbyrbp" method="POST">
+          <input type="hidden" name="_subject" value="Freicode-Anfrage – Aktion bis 31.12.">
+          <input type="hidden" name="aktion" value="freicode-dez-2026">
+          <input type="hidden" name="quelle" id="quelle" value="direkt">
+
+          <label for="name">Ihr Vorname</label>
+          <input type="text" id="name" name="vorname" autocomplete="given-name" required>
+
+          <label for="email">Ihre E-Mail-Adresse</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+
+          <label>Ihr Smartphone</label>
+          <div class="geraete">
+            <label><input type="radio" name="geraet" value="iPhone" required> iPhone</label>
+            <label><input type="radio" name="geraet" value="Android"> Android</label>
+          </div>
+
+          <label for="herkunft">Wie haben Sie von uns erfahren? <span style="font-weight:400;color:var(--grau)">(freiwillig)</span></label>
+          <select id="herkunft" name="herkunft">
+            <option value="">Bitte wählen</option>
+            <option>Bestattungsinstitut</option>
+            <option>Google-Suche</option>
+            <option>YouTube</option>
+            <option>Facebook / Gruppe</option>
+            <option>Freunde / Familie</option>
+            <option>Anders</option>
+          </select>
+
+          <label class="einwilligung">
+            <input type="checkbox" name="einwilligung" value="ja" required>
+            <span>Ich bin einverstanden, dass Nachklang meine E-Mail-Adresse nutzt, um mir den Zugangscode zu senden und mich einmalig nach meiner Erfahrung zu fragen. Mehr in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</span>
+          </label>
+
+          <button type="submit" id="sendenBtn">Zugangscode anfragen</button>
+          <p class="fehler" id="fehler">Das hat leider nicht geklappt. Bitte versuchen Sie es noch einmal oder schreiben Sie an info@nachklang.app.</p>
+          <p class="hinweis">Kein Abo, keine Zahlungsdaten. Sie erhalten den Code in der Regel innerhalb von 24 Stunden.</p>
+        </form>
+
+        <div class="meldung" id="danke">
+          <h3>Vielen Dank.</h3>
+          <p>Ihr persönlicher Zugangscode ist unterwegs. Bitte schauen Sie in den nächsten Stunden in Ihr Postfach – auch in den Spam-Ordner.</p>
+        </div>
+
+        <div class="meldung" id="beendet">
+          <h3>Die Aktion ist beendet.</h3>
+          <p>Danke für Ihr Interesse. Nachklang erhalten Sie weiterhin im App Store und bei Google Play – die Analyse Ihrer Verträge ist kostenlos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="kerze">🕯</div>
+    <p>Nachklang · Behutsam begleitet</p>
+    <p><a href="/">nachklang.app</a> · <a href="mailto:info@nachklang.app">info@nachklang.app</a> · <a href="/datenschutz.html#impressum">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></p>
+  </div>
+</footer>
+
+<script>
+  // Aktionsende: nach dem 31.12.2026 wird das Formular automatisch ausgeblendet
+  var ENDE = new Date('2027-01-01T00:00:00+01:00');
+  var form = document.getElementById('codeForm');
+
+  if (new Date() >= ENDE) {
+    form.style.display = 'none';
+    document.getElementById('beendet').style.display = 'block';
+  }
+
+  // Herkunft aus dem Link übernehmen, z. B. nachklang.app/aktion.html?quelle=bestatter
+  try {
+    var q = new URLSearchParams(window.location.search).get('quelle');
+    if (q) document.getElementById('quelle').value = q.slice(0, 40);
+  } catch (e) {}
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = document.getElementById('sendenBtn');
+    var fehler = document.getElementById('fehler');
+    btn.disabled = true;
+    btn.textContent = 'Wird gesendet …';
+    fehler.style.display = 'none';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (res) {
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('danke').style.display = 'block';
+      } else {
+        throw new Error('Fehler');
+      }
+    }).catch(function () {
+      fehler.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Zugangscode anfragen';
+    });
+  });
+</script>
+</body>
+</html>
