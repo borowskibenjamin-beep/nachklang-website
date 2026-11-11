@@ -162,6 +162,16 @@ background:none;border:0;color:rgba(249,246,241,.7);font-size:1.4rem;line-height
 .app-bar-close{position:static;order:3}
 }
 @media(prefers-reduced-motion:reduce){.app-bar{transition:none}}
+.header-app{
+display:inline-flex;align-items:center;
+font-size:.8rem;font-weight:600;letter-spacing:.02em;
+color:var(--navy);text-decoration:none;
+border:1px solid var(--gold);border-radius:2rem;
+padding:.3rem .8rem;white-space:nowrap;
+transition:background .2s,color .2s;
+}
+.header-app:hover,.header-app:focus-visible{background:var(--gold);color:#fff}
+.header-right{display:flex;align-items:center;gap:.8rem}
 </style>
 </head>
 <body>
@@ -171,10 +181,13 @@ background:none;border:0;color:rgba(249,246,241,.7);font-size:1.4rem;line-height
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
 nachklang.app
 </a>
+<div class="header-right">
+<a href="/download?utm_source=ratgeber" class="header-app">App laden</a>
 <a href="../../" class="logo-wrap" style="text-decoration:none">
 <span class="logo-dot"></span>
 <span class="logo-text">Nachklang</span>
 </a>
+</div>
 </header>
 
 <div class="hero">
